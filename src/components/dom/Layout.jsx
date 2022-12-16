@@ -1,5 +1,6 @@
 import { useRef, forwardRef } from 'react'
 import { mergeRefs } from 'react-merge-refs'
+import Navigation from './Navigation'
 
 const Layout = forwardRef(({ children, ...props }, ref) => {
   const localRef = useRef()
@@ -8,6 +9,7 @@ const Layout = forwardRef(({ children, ...props }, ref) => {
       ref={mergeRefs([ref, localRef])}
       className='absolute top-0 left-0 z-10 w-screen h-screen overflow-hidden dom bg-zinc-900 text-gray-50'
     >
+      <Navigation />
       {children}
     </div>
   )
