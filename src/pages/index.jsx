@@ -9,7 +9,7 @@ const World = dynamic(() => import('@/components/canvas/scene-components/World.j
 
 // Dom components go here
 export default function Page(props) {
-  return <h1>hello</h1>
+  return <div className='absolute px-1 py-2 bg-black left-50 top-50 h-max w-max'>{props.title}</div>
 }
 
 // Canvas components go here

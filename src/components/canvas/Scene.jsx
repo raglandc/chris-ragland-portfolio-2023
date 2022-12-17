@@ -5,7 +5,10 @@ import { Perf } from 'r3f-perf'
 export default function Scene({ children, ...props }) {
   // Everything defined in here will persist between route changes, only children are swapped
   return (
-    <Canvas {...props}>
+    <Canvas
+      {...props}
+      className='grid-span-1 md:grid-span-2 lg:col-span-4'
+    >
       <OrbitControls />
       <directionalLight
         intensity={0.75}
