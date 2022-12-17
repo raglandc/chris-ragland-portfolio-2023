@@ -1,9 +1,12 @@
 import { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
+import { useControls } from 'leva'
 
 export default function World() {
   const planeRef = useRef()
+
+  // const { rx, ry } = useControls({ rx: 0.01, ry: 0.01 })
 
   useFrame((state, delta) => {
     planeRef.current.rotation.x += delta * 0.01
@@ -17,7 +20,7 @@ export default function World() {
     <group>
       <primitive
         object={world.scene}
-        rotation={[Math.PI * 0.1, 0.25, 0]}
+        rotation={[Math.PI * 0.13, 0.41, 0]}
       />
 
       <primitive
