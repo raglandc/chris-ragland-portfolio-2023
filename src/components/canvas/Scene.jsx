@@ -9,10 +9,10 @@ export default function Scene({ children, ...props }) {
       {...props}
       className='grid-span-1 md:grid-span-2 lg:col-span-4'
     >
-      <OrbitControls />
+      {/* <OrbitControls /> */}
       <directionalLight
-        intensity={0.75}
-        rotation={[Math.PI, 0, 0]}
+        intensity={0.3}
+        position={[0, 1, 1]}
       />
       <ambientLight intensity={1} />
       {children}

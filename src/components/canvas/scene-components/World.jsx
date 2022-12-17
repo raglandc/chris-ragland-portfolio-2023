@@ -4,14 +4,10 @@ import { useFrame } from '@react-three/fiber'
 
 export default function World() {
   const planeRef = useRef()
-  const worldRef = useRef()
 
   useFrame((state, delta) => {
-    planeRef.current.rotation.x += 0.01 * delta * 0.062
-    planeRef.current.rotation.z += -Math.PI * delta * 0.062
-
-    worldRef.current.rotation.y += delta * 0.0025
-    worldRef.current.rotation.z += -Math.PI * delta * 0.0025
+    planeRef.current.rotation.x += delta * 0.01
+    planeRef.current.rotation.z += -delta * 0.25
   })
 
   const plane = useGLTF('./models/plane.glb')
@@ -20,9 +16,8 @@ export default function World() {
   return (
     <group>
       <primitive
-        ref={worldRef}
         object={world.scene}
-        rotation={[Math.PI * 0.1, 0, 0]}
+        rotation={[Math.PI * 0.1, 0.25, 0]}
       />
 
       <primitive
