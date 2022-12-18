@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Preload } from '@react-three/drei'
+import { OrbitControls, Preload, ScrollControls } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 
 export default function Scene({ children, ...props }) {
@@ -15,7 +15,12 @@ export default function Scene({ children, ...props }) {
         position={[0, 1, 1]}
       />
       <ambientLight intensity={1} />
-      {children}
+      <ScrollControls
+        pages={4}
+        damping={4}
+      >
+        {children}
+      </ScrollControls>
       <Preload all />
       {/* <Perf position='top-left' /> */}
     </Canvas>
