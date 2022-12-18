@@ -17,6 +17,12 @@ export default function SceneOne() {
   const world = useGLTF('./models/earth.glb')
 
   return (
+    // <Canvas>
+    //   <directionalLight
+    //     intensity={0.3}
+    //     position={[0, 1, 1]}
+    //   />
+    //   <ambientLight intensity={1} />
     <group>
       <primitive
         object={world.scene}
@@ -28,5 +34,6 @@ export default function SceneOne() {
         object={plane.scene}
       />
     </group>
+    // </Canvas>
   )
 }

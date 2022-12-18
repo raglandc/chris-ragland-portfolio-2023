@@ -11,16 +11,16 @@ export default function App({ Component, pageProps = { title: 'Chris Ragland' } 
   return (
     <>
       <Header title={pageProps.title} />
+      {Component?.canvas && (
+        <Scene
+          className='pointer-events-none'
+          eventSource={ref}
+          eventPrefix='client'
+        >
+          {Component.canvas(pageProps)}
+        </Scene>
+      )}
       <Layout ref={ref}>
-        {Component?.canvas && (
-          <Scene
-            className='pointer-events-none'
-            eventSource={ref}
-            eventPrefix='client'
-          >
-            {Component.canvas(pageProps)}
-          </Scene>
-        )}
         <Component {...pageProps} />
         {/* The canvas can either be in front of the dom or behind. If it is in front it can overlay contents.
          * Setting the event source to a shared parent allows both the dom and the canvas to receive events.
