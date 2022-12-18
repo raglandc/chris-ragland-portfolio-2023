@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        'ping-slow': 'ping 8s linear',
+        'ping-slow': 'ping 3s ease-out infinite',
       },
     },
   },

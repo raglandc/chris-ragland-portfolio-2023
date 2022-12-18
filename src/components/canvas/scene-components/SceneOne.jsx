@@ -15,7 +15,6 @@ export default function SceneOne() {
 
   const plane = useGLTF('./models/plane.glb')
   const world = useGLTF('./models/earth.glb')
-  console.log(world)
 
   return (
     // <Canvas>
@@ -30,14 +29,22 @@ export default function SceneOne() {
         rotation={[Math.PI * 0.13, 0.41, 0]}
       >
         <Html
-          className='animate-ping'
           position={[
-            world.scene.children[0].position.x - 0.078,
+            world.scene.children[0].position.x - 0.07,
             world.scene.children[0].position.y + 0.1,
             world.scene.children[0].position.z + 0.1,
           ]}
         >
-          <div className='w-4 h-4 bg-blue-600 rounded-full animate-ping-slow' />
+          <div className='w-5 h-5 bg-blue-600 rounded-full opacity-75 animate-ping-slow' />
+        </Html>
+        <Html
+          position={[
+            world.scene.children[1].position.x - 0.07,
+            world.scene.children[1].position.y + 0.07,
+            world.scene.children[1].position.z + 0.1,
+          ]}
+        >
+          <div className='w-5 h-5 bg-blue-600 rounded-full opacity-75 animate-ping-slow' />
         </Html>
       </primitive>
 
