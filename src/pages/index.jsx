@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic'
 // If something goes wrong go back to a static import to show the error.
 // https://github.com/pmndrs/react-three-next/issues/49
 // const Logo = dynamic(() => import('@/components/canvas/Logo'), { ssr: false })
-const World = dynamic(() => import('@/components/canvas/scene-components/World.jsx'))
+const SceneOne = dynamic(() => import('@/components/canvas/scene-components/SceneOne.jsx'))
 
 // Dom components go here
 export default function Page(props) {
@@ -19,7 +19,7 @@ export default function Page(props) {
 // Canvas components go here
 // It will receive same props as the Page component (from getStaticProps, etc.)
 // Page.canvas = (props) => <Logo scale={0.5} route='/blob' position-y={-1} />
-Page.canvas = (props) => <World />
+Page.canvas = (props) => <SceneOne />
 
 export async function getStaticProps() {
   return { props: { title: 'Chris Ragland' } }

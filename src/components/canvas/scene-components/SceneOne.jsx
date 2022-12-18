@@ -3,7 +3,7 @@ import { useGLTF, Text } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useControls } from 'leva'
 
-export default function World() {
+export default function SceneOne() {
   const planeRef = useRef()
 
   // const { rx, ry } = useControls({ rx: 0.01, ry: 0.01 })
