@@ -29,22 +29,24 @@ export default function SceneOne() {
         rotation={[Math.PI * 0.13, 0.41, 0]}
       >
         <Html
+          center
           position={[
-            world.scene.children[0].position.x - 0.07,
-            world.scene.children[0].position.y + 0.1,
-            world.scene.children[0].position.z + 0.1,
+            world.scene.children[0].position.x,
+            world.scene.children[0].position.y,
+            world.scene.children[0].position.z,
           ]}
         >
-          <div className='w-5 h-5 bg-blue-600 rounded-full opacity-75 animate-ping-slow' />
+          <div className='bg-blue-600 rounded-full opacity-75 w-7 h-7 animate-ping-slow' />
         </Html>
         <Html
+          center
           position={[
-            world.scene.children[1].position.x - 0.07,
-            world.scene.children[1].position.y + 0.07,
-            world.scene.children[1].position.z + 0.1,
+            world.scene.children[1].position.x,
+            world.scene.children[1].position.y,
+            world.scene.children[1].position.z,
           ]}
         >
-          <div className='w-5 h-5 bg-blue-600 rounded-full opacity-75 animate-ping-slow' />
+          <div className='bg-blue-600 rounded-full opacity-75 w-7 h-7 animate-ping-slow' />
         </Html>
       </primitive>
 
