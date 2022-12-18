@@ -29,7 +29,16 @@ export default function SceneOne() {
         object={world.scene}
         rotation={[Math.PI * 0.13, 0.41, 0]}
       >
-        <Html position={world.scene.children[0].position}>x</Html>
+        <Html
+          className='animate-ping'
+          position={[
+            world.scene.children[0].position.x - 0.078,
+            world.scene.children[0].position.y + 0.1,
+            world.scene.children[0].position.z + 0.1,
+          ]}
+        >
+          <div className='w-4 h-4 bg-blue-600 rounded-full animate-ping-slow' />
+        </Html>
       </primitive>
 
       <primitive
