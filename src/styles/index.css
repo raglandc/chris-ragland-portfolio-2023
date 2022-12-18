@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-primary: 99 102 241;
+    --color-secondary: 79 70 229;
+    --text-primary: 23 23 23;
+    --text-secondary: 38 38 38;
+  }
+
   * {
     box-sizing: border-box;
   }

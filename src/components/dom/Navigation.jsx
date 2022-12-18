@@ -16,7 +16,7 @@ export default function Navigation() {
       <div className='flex flex-row order-2 w-max'>
         <div
           onClick={toggleLightMode}
-          className='flex items-center mx-2 rounded-full hover:text-indigo-400 hover:cursor-pointer'
+          className='flex items-center mx-2 rounded-full hover:text-primary hover:cursor-pointer'
         >
           {lightMode ? <MoonIcon className='w-5 h-5' /> : <SunIcon className='w-5 h-5' />}
         </div>
