@@ -13,7 +13,11 @@ export default function App({ Component, pageProps = { title: 'Chris Ragland' } 
       <Header title={pageProps.title} />
       <Layout ref={ref}>
         {Component?.canvas && (
-          <Scene className='pointer-events-none' eventSource={ref} eventPrefix='client'>
+          <Scene
+            className='pointer-events-none'
+            eventSource={ref}
+            eventPrefix='client'
+          >
             {Component.canvas(pageProps)}
           </Scene>
         )}

@@ -17,7 +17,7 @@ export default function Scene({ children, ...props }) {
       <ambientLight intensity={1} />
       {children}
       <Preload all />
-      <Perf position='bottom-left' />
+      <Perf position='top-left' />
     </Canvas>
   )
 }
