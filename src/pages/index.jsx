@@ -9,11 +9,7 @@ const SceneOne = dynamic(() => import('@/components/canvas/scene-components/Scen
 
 // Dom components go here
 export default function Page(props) {
-  return (
-    <div className='px-1 py-2 bg-black h-max w-max col-span-ful'>
-      <h1 className='px-5 py-3 text-red-600'>Hello</h1>
-    </div>
-  )
+  return <div></div>
 }
 
 // Canvas components go here
