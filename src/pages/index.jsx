@@ -9,7 +9,7 @@ const SceneOne = dynamic(() => import('@/components/canvas/scene-components/Scen
 
 // Dom components go here
 export default function Page(props) {
-  return <div>hello</div>
+  return <div className='w-full bg-black h-1/2 '>hello</div>
 }
 
 // Canvas components go here
