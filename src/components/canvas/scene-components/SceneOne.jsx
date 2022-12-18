@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { useGLTF, Text } from '@react-three/drei'
+import { useGLTF, Html } from '@react-three/drei'
 import { useFrame, Canvas } from '@react-three/fiber'
 import { useControls } from 'leva'
 
@@ -15,6 +15,7 @@ export default function SceneOne() {
 
   const plane = useGLTF('./models/plane.glb')
   const world = useGLTF('./models/earth.glb')
+  console.log(world)
 
   return (
     // <Canvas>
@@ -27,7 +28,9 @@ export default function SceneOne() {
       <primitive
         object={world.scene}
         rotation={[Math.PI * 0.13, 0.41, 0]}
-      />
+      >
+        <Html position={world.scene.children[0].position}>x</Html>
+      </primitive>
 
       <primitive
         ref={planeRef}

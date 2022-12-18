@@ -6,7 +6,7 @@
   * {
     box-sizing: border-box;
   }
-  
+
   html,
   body,
   #__next {
@@ -15,5 +15,11 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
+  }
+}
+
+@layer utilities {
+  .cliper {
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
   }
 }
