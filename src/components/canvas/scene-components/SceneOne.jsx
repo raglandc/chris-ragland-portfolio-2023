@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { useGLTF, Text } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
+import { useFrame, Canvas } from '@react-three/fiber'
 import { useControls } from 'leva'
 
 export default function SceneOne() {
