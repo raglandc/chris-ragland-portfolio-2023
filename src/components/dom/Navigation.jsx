@@ -10,17 +10,18 @@ export default function Navigation() {
   }
 
   return (
-    <nav className='z-10 flex items-center justify-around w-screen py-4 h-max'>
+    <nav className='z-10 flex items-center justify-between w-screen h-20 px-6'>
       <div className='order-1'>CR</div>
-      <span className='order-2'>
+
+      <div className='flex flex-row order-2 w-max'>
+        <div
+          onClick={toggleLightMode}
+          className='flex items-center mx-2 rounded-full hover:text-indigo-400 hover:cursor-pointer'
+        >
+          {lightMode ? <MoonIcon className='w-5 h-5' /> : <SunIcon className='w-5 h-5' />}
+        </div>
         <ContactButton />
-      </span>
-      <span
-        onClick={toggleLightMode}
-        className='order-3 p-1 rounded-full hover:bg-indigo-300 hover:cursor-pointer hover:text-white'
-      >
-        {lightMode ? <MoonIcon className='w-5 h-5' /> : <SunIcon className='w-5 h-5' />}
-      </span>
+      </div>
     </nav>
   )
 }
