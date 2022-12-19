@@ -1,10 +1,12 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useGLTF, Html } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useControls } from 'leva'
 
 export default function SceneOne() {
   const planeRef = useRef()
+  const [showFlorida, setShowFlorida] = useState(false)
+  const [showIndiana, setShowIndiana] = useState(false)
 
   // const { rx, ry } = useControls({ rx: 0.01, ry: 0.01 })
 
