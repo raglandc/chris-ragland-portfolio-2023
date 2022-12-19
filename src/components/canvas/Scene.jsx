@@ -15,7 +15,7 @@ export default function Scene({ children, ...props }) {
         position={[0, 1, 1]}
       />
       <ambientLight intensity={1} />
-      {children}
+      <ScrollControls>{children}</ScrollControls>
       <Preload all />
       {/* <Perf position='top-left' /> */}
     </Canvas>
