@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { useGLTF, Html } from '@react-three/drei'
-import { useFrame, Canvas } from '@react-three/fiber'
+import { useFrame } from '@react-three/fiber'
 import { useControls } from 'leva'
 
 export default function SceneOne() {
@@ -17,12 +17,6 @@ export default function SceneOne() {
   const world = useGLTF('./models/earth.glb')
 
   return (
-    // <Canvas>
-    //   <directionalLight
-    //     intensity={0.3}
-    //     position={[0, 1, 1]}
-    //   />
-    //   <ambientLight intensity={1} />
     <group>
       <primitive
         object={world.scene}
@@ -36,7 +30,10 @@ export default function SceneOne() {
             world.scene.children[0].position.z,
           ]}
         >
-          <div className='bg-blue-600 rounded-full opacity-75 w-7 h-7 animate-ping-slow' />
+          <div
+            onClick={() => console.log('hello')}
+            className='rounded-full opacity-75 bg-primary w-7 h-7 animate-ping-slow'
+          />
         </Html>
         <Html
           center
@@ -46,7 +43,7 @@ export default function SceneOne() {
             world.scene.children[1].position.z,
           ]}
         >
-          <div className='bg-blue-600 rounded-full opacity-75 w-7 h-7 animate-ping-slow' />
+          <div className='rounded-full opacity-75 bg-primary w-7 h-7 animate-ping-slow' />
         </Html>
       </primitive>
 
@@ -55,6 +52,5 @@ export default function SceneOne() {
         object={plane.scene}
       />
     </group>
-    // </Canvas>
   )
 }
