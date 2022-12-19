@@ -7,6 +7,7 @@ import Modal from '@/components/util/Modal'
 export default function SceneOne(props) {
   const planeRef = useRef()
   const [showIndiana, setShowIndiana] = useState(false)
+  const [showFlorida, setShowFlorida] = useState(false)
   // const { rx, ry } = useControls({ rx: 0.01, ry: 0.01 })
 
   useFrame((_, delta) => {
@@ -32,10 +33,12 @@ export default function SceneOne(props) {
               world.scene.children[0].position.z,
             ]}
           >
-            <div
-              onClick={() => setShowIndiana((prev) => !prev)}
-              className='rounded-full opacity-75 bg-primary w-7 h-7 animate-ping-slow'
-            />
+            {showFlorida ? null : (
+              <div
+                onClick={() => setShowIndiana((prev) => !prev)}
+                className='rounded-full opacity-75 bg-primary w-7 h-7 animate-ping-slow'
+              />
+            )}
           </Html>
         ) : (
           <Html fullscreen>
@@ -54,7 +57,7 @@ export default function SceneOne(props) {
             world.scene.children[1].position.z,
           ]}
         >
-          <div className='rounded-full opacity-75 bg-primary w-7 h-7 animate-ping-slow' />
+          {!showIndiana ? null : <div className='rounded-full opacity-75 bg-primary w-7 h-7 animate-ping-slow' />}
         </Html>
       </primitive>
 
