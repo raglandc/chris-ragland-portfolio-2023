@@ -6,8 +6,7 @@ import Modal from '@/components/util/Modal'
 
 export default function SceneOne(props) {
   const planeRef = useRef()
-  const [showIndiana, setShowIndiana] = useState(false)
-  const [showFlorida, setShowFlorida] = useState(false)
+  const [showState, setShowState] = useState({ indiana: false, florida: false })
   // const { rx, ry } = useControls({ rx: 0.01, ry: 0.01 })
 
   useFrame((_, delta) => {
@@ -24,7 +23,7 @@ export default function SceneOne(props) {
         object={world.scene}
         rotation={[Math.PI * 0.13, 0.41, 0]}
       >
-        {showIndiana ? (
+        {!showState.indiana ? (
           <Html
             center
             position={[
@@ -33,9 +32,9 @@ export default function SceneOne(props) {
               world.scene.children[0].position.z,
             ]}
           >
-            {showFlorida ? null : (
+            {showState.florida ? null : (
               <div
-                onClick={() => setShowIndiana((prev) => !prev)}
+                onClick={() => setShowState({ indiana: true, florida: false })}
                 className='rounded-full opacity-75 bg-primary w-7 h-7 animate-ping-slow'
               />
             )}
@@ -43,22 +42,38 @@ export default function SceneOne(props) {
         ) : (
           <Html fullscreen>
             <Modal
-              setShowIndiana={setShowIndiana}
+              setShowState={setShowState}
               state={'Indiana'}
               description={'Hey chris'}
             />
           </Html>
         )}
-        <Html
-          center
-          position={[
-            world.scene.children[1].position.x,
-            world.scene.children[1].position.y,
-            world.scene.children[1].position.z,
-          ]}
-        >
-          {!showIndiana ? null : <div className='rounded-full opacity-75 bg-primary w-7 h-7 animate-ping-slow' />}
-        </Html>
+
+        {!showState.florida ? (
+          <Html
+            center
+            position={[
+              world.scene.children[1].position.x,
+              world.scene.children[1].position.y,
+              world.scene.children[1].position.z,
+            ]}
+          >
+            {showState.indiana ? null : (
+              <div
+                onClick={() => setShowState({ indiana: false, florida: true })}
+                className='rounded-full opacity-75 bg-primary w-7 h-7 animate-ping-slow'
+              />
+            )}
+          </Html>
+        ) : (
+          <Html fullscreen>
+            <Modal
+              setShowState={setShowState}
+              state={'Florida'}
+              description={'Hey chris'}
+            />
+          </Html>
+        )}
       </primitive>
 
       <primitive
