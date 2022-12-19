@@ -39,7 +39,11 @@ export default function SceneOne(props) {
           </Html>
         ) : (
           <Html fullscreen>
-            <Modal setShowIndiana={setShowIndiana} />
+            <Modal
+              setShowIndiana={setShowIndiana}
+              state={'Indiana'}
+              description={'Hey chris'}
+            />
           </Html>
         )}
         <Html
