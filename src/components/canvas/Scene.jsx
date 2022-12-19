@@ -9,7 +9,7 @@ export default function Scene({ children, ...props }) {
       {...props}
       className='absolute top-0 left-0 w-full'
     >
-      <OrbitControls />
+      {/* <OrbitControls /> */}
       <directionalLight
         intensity={0.3}
         position={[0, 1, 1]}
