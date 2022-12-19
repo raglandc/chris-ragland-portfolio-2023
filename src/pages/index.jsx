@@ -9,7 +9,16 @@ const SceneOne = dynamic(() => import('@/components/canvas/scene-components/Scen
 
 // Dom components go here
 export default function Page(props) {
-  return
+  return (
+    <>
+      <section className='order-1 h-screen'>
+        <div>text</div>
+      </section>
+      <section className='order-2 h-screen col-span-full'>
+        <div>text</div>
+      </section>
+    </>
+  )
 }
 
 // Canvas components go here
