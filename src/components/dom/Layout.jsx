@@ -1,6 +1,7 @@
 import { useRef, forwardRef } from 'react'
 import { mergeRefs } from 'react-merge-refs'
 import Navigation from './Navigation'
+import Footer from './Footer'
 
 const Layout = forwardRef(({ children, ...props }, ref) => {
   const localRef = useRef()
@@ -11,6 +12,7 @@ const Layout = forwardRef(({ children, ...props }, ref) => {
     >
       <Navigation />
       {children}
+      <Footer />
     </div>
   )
 })

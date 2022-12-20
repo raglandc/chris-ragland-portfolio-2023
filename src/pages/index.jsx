@@ -32,7 +32,6 @@ export default function Page(props) {
           <SceneOne />
         </SceneContainer>
       </section>
-      <footer className='order-4 h-10 bg-black col-span-full'></footer>
     </>
   )
 }
