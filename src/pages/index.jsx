@@ -16,7 +16,7 @@ export default function Page(props) {
         <Scene>
           <SceneOne />
         </Scene>
-        <div className='absolute top-0 left-0 z-10 flex items-center justify-center w-full h-full'>
+        <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
           <h1>Chris Ragland</h1>
         </div>
       </section>
