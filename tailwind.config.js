@@ -5,6 +5,7 @@ module.exports = {
   theme: {
     colors: {
       white: 'rgb(var(--color-white) / <alpha-value>)',
+      black: 'rgb(var(--color-black) / <alpha-value>)',
       primary: 'rgb(var(--color-primary)  / <alpha-value>)',
       secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
       textPrimary: 'rgb(var(--text-primary) / <alpha-value>)',
