@@ -2,6 +2,7 @@ import { useGLTF, Float } from '@react-three/drei'
 import dynamic from 'next/dynamic'
 
 const CoffeeCup = dynamic(() => import('@/components/canvas/scene-components/CoffeeCup.jsx'))
+const ReactLogo = dynamic(() => import('@/components/canvas/scene-components/ReactLogo.jsx'))
 
 export default function SceneTwo(props) {
   return (
@@ -10,6 +11,7 @@ export default function SceneTwo(props) {
       speed={0.5}
     >
       <CoffeeCup />
+      <ReactLogo />
     </Float>
   )
 }
