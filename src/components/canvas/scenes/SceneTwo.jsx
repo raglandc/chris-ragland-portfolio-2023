@@ -1,4 +1,4 @@
-import { useGLTF, Float } from '@react-three/drei'
+import { Float } from '@react-three/drei'
 import dynamic from 'next/dynamic'
 
 const CoffeeCup = dynamic(() => import('@/components/canvas/scene-components/CoffeeCup.jsx'))
