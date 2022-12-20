@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic'
 // https://github.com/pmndrs/react-three-next/issues/49
 // const Logo = dynamic(() => import('@/components/canvas/Logo'), { ssr: false })
 const SceneOne = dynamic(() => import('@/components/canvas/scene-components/SceneOne.jsx'))
+const SceneTwo = dynamic(() => import('@/components/canvas/scene-components/SceneTwo.jsx'))
 const Scene = dynamic(() => import('@/components/canvas/Scene.jsx'))
 
 // Dom components go here
@@ -22,10 +23,7 @@ export default function Page(props) {
       </section>
       <section className='relative order-2 h-screen col-span-full'>
         <Scene>
-          <mesh>
-            <boxGeometry />
-            <meshNormalMaterial color='red' />
-          </mesh>
+          <SceneTwo />
         </Scene>
       </section>
     </>
