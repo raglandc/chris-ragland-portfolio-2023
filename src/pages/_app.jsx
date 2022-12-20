@@ -4,14 +4,14 @@ import Header from '@/config'
 import Layout from '@/components/dom/Layout'
 import '@/styles/index.css'
 
-const Scene = dynamic(() => import('@/components/canvas/Scene'), { ssr: true })
+// const Scene = dynamic(() => import('@/components/canvas/Scene'), { ssr: true })
 
 export default function App({ Component, pageProps = { title: 'Chris Ragland' } }) {
   const ref = useRef()
   return (
     <>
       <Header title={pageProps.title} />
-      {Component?.canvas && (
+      {/* {Component?.canvas && (
         <Scene
           className='pointer-events-none'
           eventSource={ref}
@@ -19,7 +19,7 @@ export default function App({ Component, pageProps = { title: 'Chris Ragland' } 
         >
           {Component.canvas(pageProps)}
         </Scene>
-      )}
+      )} */}
       <Layout
         ref={ref}
         className='text-textPrimary'

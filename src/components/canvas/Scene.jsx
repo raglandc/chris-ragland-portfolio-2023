@@ -7,7 +7,7 @@ export default function Scene({ children, ...props }) {
   return (
     <Canvas
       {...props}
-      className='absolute top-0 left-0 w-full'
+      className='absolute top-0 left-0 w-full h-full -z-10'
     >
       {/* <OrbitControls /> */}
       <directionalLight
@@ -15,7 +15,7 @@ export default function Scene({ children, ...props }) {
         position={[0, 1, 1]}
       />
       <ambientLight intensity={1} />
-      <ScrollControls>{children}</ScrollControls>
+      {children}
       <Preload all />
       {/* <Perf position='top-left' /> */}
     </Canvas>
