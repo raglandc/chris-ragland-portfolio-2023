@@ -25,6 +25,9 @@ export default function Page(props) {
         <SceneContainer>
           <SceneTwo />
         </SceneContainer>
+        <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
+          <div className='w-3/4 bg-white/20 backdrop-blur-lg drop-shadow-md h-1/4'></div>
+        </div>
       </section>
     </>
   )
