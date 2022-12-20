@@ -14,9 +14,7 @@ export default function Page(props) {
   return (
     <>
       <section className='relative order-1 h-screen col-span-full'>
-        <SceneContainer>
-          <SceneOne />
-        </SceneContainer>
+        <SceneContainer></SceneContainer>
         <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
           <h1>Chris Ragland</h1>
         </div>
@@ -29,6 +27,12 @@ export default function Page(props) {
           <div className='w-3/4 bg-white/20 backdrop-blur-lg drop-shadow-md h-1/4'></div>
         </div>
       </section>
+      <section className='relative order-3 h-screen -z-10 col-span-full'>
+        <SceneContainer>
+          <SceneOne />
+        </SceneContainer>
+      </section>
+      <footer className='order-4 h-10 bg-black col-span-full'></footer>
     </>
   )
 }
