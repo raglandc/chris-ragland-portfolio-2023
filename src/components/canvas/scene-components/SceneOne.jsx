@@ -35,7 +35,7 @@ export default function SceneOne(props) {
             {showState.florida ? null : (
               <div
                 onClick={() => setShowState({ indiana: true, florida: false })}
-                className='rounded-full opacity-75 bg-primary w-7 h-7 animate-ping-slow'
+                className='z-30 rounded-full opacity-75 bg-primary w-7 h-7 animate-ping-slow'
               />
             )}
           </Html>
