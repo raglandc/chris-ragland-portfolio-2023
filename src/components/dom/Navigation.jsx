@@ -1,4 +1,4 @@
-import ContactButton from '../util/ContactButton'
+import ContactButton from './ContactButton'
 
 export default function Navigation() {
   return (

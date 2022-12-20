@@ -21,7 +21,7 @@ export default function Page(props) {
           </mesh>
         </SceneContainer>
         <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
-          <h1 className='w-2/4 h-1/4'>Chris Ragland</h1>
+          <h1 className='w-2/4 h-1/4'></h1>
         </div>
       </section>
 
@@ -30,11 +30,23 @@ export default function Page(props) {
           <SceneTwo />
         </SceneContainer>
         <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
-          <div className='w-3/4 bg-white/20 backdrop-blur-lg drop-shadow-md h-1/4'>TEST</div>
+          <div className='w-3/4 bg-white/20 backdrop-blur-lg drop-shadow-md h-1/4'>Skills</div>
         </div>
       </section>
 
       <section className='relative order-3 h-screen -z-10 col-span-full'>
+        <SceneContainer>
+          <mesh>
+            <boxGeometry />
+            <meshBasicMaterial />
+          </mesh>
+        </SceneContainer>
+        <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
+          <div className='w-3/4 bg-white/20 backdrop-blur-lg drop-shadow-md h-1/4'>Ambulance</div>
+        </div>
+      </section>
+
+      <section className='relative order-4 h-screen -z-10 col-span-full'>
         <SceneContainer>
           <SceneOne />
         </SceneContainer>
