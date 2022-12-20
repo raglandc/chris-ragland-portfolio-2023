@@ -5,26 +5,26 @@ import dynamic from 'next/dynamic'
 // If something goes wrong go back to a static import to show the error.
 // https://github.com/pmndrs/react-three-next/issues/49
 // const Logo = dynamic(() => import('@/components/canvas/Logo'), { ssr: false })
-const SceneOne = dynamic(() => import('@/components/canvas/scene-components/SceneOne.jsx'))
-const SceneTwo = dynamic(() => import('@/components/canvas/scene-components/SceneTwo.jsx'))
-const Scene = dynamic(() => import('@/components/canvas/Scene.jsx'))
+const SceneOne = dynamic(() => import('@/components/canvas/scenes/SceneOne.jsx'))
+const SceneTwo = dynamic(() => import('@/components/canvas/scenes/SceneTwo.jsx'))
+const SceneContainer = dynamic(() => import('@/components/canvas/SceneContainer.jsx'))
 
 // Dom components go here
 export default function Page(props) {
   return (
     <>
       <section className='relative order-1 h-screen col-span-full'>
-        <Scene>
+        <SceneContainer>
           <SceneOne />
-        </Scene>
+        </SceneContainer>
         <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
           <h1>Chris Ragland</h1>
         </div>
       </section>
       <section className='relative order-2 h-screen col-span-full'>
-        <Scene>
+        <SceneContainer>
           <SceneTwo />
-        </Scene>
+        </SceneContainer>
       </section>
     </>
   )

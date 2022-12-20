@@ -2,7 +2,7 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Preload, ScrollControls } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 
-export default function Scene({ children, ...props }) {
+export default function SceneContainer({ children, ...props }) {
   // Everything defined in here will persist between route changes, only children are swapped
   return (
     <Canvas
