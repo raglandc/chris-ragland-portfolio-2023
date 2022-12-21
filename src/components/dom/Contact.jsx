@@ -1,4 +1,4 @@
-import { FaLinkedin, FaInstagram } from 'react-icons/fa'
+import { FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa'
 import { MdAlternateEmail } from 'react-icons/md'
 import { useState } from 'react'
 import Portal from '../util/Portal'
@@ -34,7 +34,7 @@ function ContactWindow(props) {
     <Portal>
       <div className='w-3/4 bg-white rounded-lg'>
         <div className='flex justify-between w-full p-4 rounded-t-lg'>
-          <h1 className=''>
+          <h1 className='text-lg font-bold'>
             Say <span className='text-primary'>Hi</span> 👋{' '}
           </h1>
           <p
@@ -50,6 +50,11 @@ function ContactWindow(props) {
             link='https://www.linkedin.com/in/raglandc/'
             icon={<FaLinkedin />}
             title='LinkedIn'
+          />
+          <ContactLink
+            link='https://www.github.com/raglandc'
+            icon={<FaGithub />}
+            title='GitHub'
           />
           <ContactLink
             link='https://www.instagram.com/in/chris_ragland/'
@@ -76,7 +81,7 @@ function ContactLink(props) {
         href={props.link}
         rel='noreferrer'
       >
-        {props.icon}
+        <span className='mr-2 '>{props.icon}</span>
         {props.title}
       </a>
     </li>

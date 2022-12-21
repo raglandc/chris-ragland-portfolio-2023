@@ -35,6 +35,13 @@ export default function Page(props) {
       </section>
 
       <section className='relative order-3 h-screen -z-10 col-span-full'>
+        <SceneContainer></SceneContainer>
+        <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
+          <div className='w-3/4 bg-white/20 backdrop-blur-lg drop-shadow-md h-1/4'>work</div>
+        </div>
+      </section>
+
+      <section className='relative order-4 h-screen -z-10 col-span-full'>
         <SceneContainer>
           <mesh>
             <boxGeometry />
@@ -46,7 +53,7 @@ export default function Page(props) {
         </div>
       </section>
 
-      <section className='relative order-4 h-screen -z-10 col-span-full'>
+      <section className='relative order-5 h-screen -z-10 col-span-full'>
         <SceneContainer>
           <SceneOne />
         </SceneContainer>
