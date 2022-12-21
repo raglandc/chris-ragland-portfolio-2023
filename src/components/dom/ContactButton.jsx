@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Portal from '../util/Portal'
 export default function ContactButton(props) {
   const [showContact, setShowContact] = useState(false)
 
@@ -27,13 +28,13 @@ export default function ContactButton(props) {
 
 function ContactWindow(props) {
   return (
-    <div className='absolute top-0 left-0 w-full h-full bg-black/80'>
-      <div className='w-2/4'>
+    <Portal>
+      <div className='w-2/4 bg-white'>
         <div className='flex justify-around w-full'>
           <h1>Say Hi 👋</h1>
           <p onClick={props.closeHandler}> close [x] </p>
         </div>
       </div>
-    </div>
+    </Portal>
   )
 }
