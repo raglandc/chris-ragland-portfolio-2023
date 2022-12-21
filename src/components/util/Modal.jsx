@@ -1,6 +1,7 @@
+import Portal from './Portal'
 export default function Modal(props) {
   return (
-    <div className='z-20 flex items-center justify-center h-full bg-textSecondary/70'>
+    <Portal>
       <div className='flex flex-col w-3/4 bg-white rounded-lg text-textPrimary h-max '>
         <div className='flex justify-between w-full p-4 text-white rounded-t-lg h-max bg-primary'>
           <h2>{props.state}</h2>
@@ -10,6 +11,6 @@ export default function Modal(props) {
           <p>{props.description}</p>
         </div>
       </div>
-    </div>
+    </Portal>
   )
 }
