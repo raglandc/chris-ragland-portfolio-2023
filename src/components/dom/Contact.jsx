@@ -37,7 +37,13 @@ function ContactWindow(props) {
           <h1 className=''>
             Say <span className='text-primary'>Hi</span> 👋{' '}
           </h1>
-          <p onClick={props.closeHandler}> close [x] </p>
+          <p
+            className='cursor-pointer hover:underline hover:underline-offset-4'
+            onClick={props.closeHandler}
+          >
+            {' '}
+            close [x]{' '}
+          </p>
         </div>
         <ul className='w-full px-4 py-2 h-max'>
           <ContactLink
@@ -71,7 +77,7 @@ function ContactLink(props) {
         rel='noreferrer'
       >
         {props.icon}
-        <span> </span> {props.title}
+        {props.title}
       </a>
     </li>
   )
