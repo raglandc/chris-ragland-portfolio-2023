@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic'
+import LandingScene from '@/components/canvas/scenes/LandingScene'
 
 // Dynamic import is used to prevent a payload when the website starts, that includes threejs, r3f etc..
 // WARNING ! errors might get obfuscated by using dynamic import.
@@ -15,13 +16,14 @@ export default function Page(props) {
     <>
       <section className='relative order-1 h-screen col-span-full'>
         <SceneContainer>
-          <mesh>
-            <boxGeometry />
-            <meshBasicMaterial />
-          </mesh>
+          <color
+            args={['#171717']}
+            attach='background'
+          />
+          <LandingScene />
         </SceneContainer>
         <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
-          <h1 className='w-2/4 h-1/4'></h1>
+          <h1 className='w-2/4 text-white h-1/4'>WELCOME</h1>
         </div>
       </section>
 
