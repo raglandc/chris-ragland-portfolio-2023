@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic'
-import LandingScene from '@/components/canvas/scenes/LandingScene'
+import { Suspense } from 'react'
 
 // Dynamic import is used to prevent a payload when the website starts, that includes threejs, r3f etc..
 // WARNING ! errors might get obfuscated by using dynamic import.
@@ -9,6 +9,7 @@ import LandingScene from '@/components/canvas/scenes/LandingScene'
 const SceneOne = dynamic(() => import('@/components/canvas/scenes/SceneOne.jsx'))
 const SceneTwo = dynamic(() => import('@/components/canvas/scenes/SceneTwo.jsx'))
 const SceneContainer = dynamic(() => import('@/components/canvas/SceneContainer.jsx'))
+const Globe = dynamic(() => import('@/components/canvas/scenes/Globe.jsx'))
 
 // Dom components go here
 export default function Page(props) {
@@ -16,11 +17,12 @@ export default function Page(props) {
     <>
       <section className='relative order-1 h-screen col-span-full'>
         <SceneContainer>
-          <color
-            args={['#171717']}
-            attach='background'
-          />
-          <LandingScene />
+          <Suspense fallback={null}>
+            <Globe
+              scale={2}
+              color='red'
+            />
+          </Suspense>
         </SceneContainer>
         <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
           <h1 className='w-2/4 text-white h-1/4'>WELCOME</h1>
