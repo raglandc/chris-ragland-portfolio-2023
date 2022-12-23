@@ -58,8 +58,14 @@ export default function Page(props) {
       </section>
 
       <section className='relative order-3 h-screen -z-10 col-span-full'>
-        <SceneContainer></SceneContainer>
-        <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
+        <SceneContainer>
+          <color
+            attach='background'
+            args={['#171717']}
+          />
+        </SceneContainer>
+        <div className='absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full'>
+          <h1 className='tracking-wider text-white'>WORK</h1>
           <GlassCard>work</GlassCard>
         </div>
       </section>
@@ -80,9 +86,7 @@ export default function Page(props) {
         <SceneContainer>
           <SceneOne />
         </SceneContainer>
-        <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
-          <div className='w-3/4 bg-white/20 backdrop-blur-lg drop-shadow-md h-1/4'>TEST</div>
-        </div>
+        <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'></div>
       </section>
     </>
   )
