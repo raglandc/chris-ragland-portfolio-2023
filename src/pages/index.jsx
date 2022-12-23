@@ -17,15 +17,20 @@ export default function Page(props) {
     <>
       <section className='relative order-1 h-screen col-span-full'>
         <SceneContainer>
+          <color
+            attach='background'
+            args={['#171717']}
+          />
           <Suspense fallback={null}>
-            <Globe
-              scale={2}
-              color='red'
-            />
+            <Globe scale={1} />
           </Suspense>
         </SceneContainer>
         <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
-          <h1 className='w-2/4 text-white h-1/4'>WELCOME</h1>
+          <div className='flex flex-col items-center justify-center w-2/4 text-white -translate-y-20 h-1/4'>
+            <h1 className=''>Hi, Welcome!</h1>
+            <p className=''>My name is Chris Ragland</p>
+            <p className=''>Scroll to learn more</p>
+          </div>
         </div>
       </section>
 

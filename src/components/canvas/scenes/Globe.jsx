@@ -1,22 +1,30 @@
 import { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useControls } from 'leva'
+import { useFrame } from '@react-three/fiber'
 
 export default function Globe({ ...props }) {
   const ref = useRef()
-  // const { x, y, z } = useControls({
-  //   x: { value: -1.8, min: -10, max: 10, step: 0.01 },
-  //   y: { value: 0, min: -10, max: 10, step: 0.01 },
-  //   z: { value: -1.0, min: -10, max: 10, step: 0.01 },
-  // })
 
-  const { scene } = useGLTF('./models/globe-v1.glb')
+  useFrame((state, delta) => {
+    ref.current.rotation.y += delta * 0.025
+  })
+
+  const { scene } = useGLTF('./models/globe.glb')
 
   return (
-    <primitive
-      {...props}
-      ref={ref}
-      object={scene}
-    />
+    <group>
+      <directionalLight
+        intensity={0.3}
+        position={[0, 1, 2]}
+      />
+      <primitive
+        {...props}
+        position={[0, -1.25, 1.25]}
+        rotation-x={Math.PI * 0.1}
+        ref={ref}
+        object={scene}
+      />
+    </group>
   )
 }
