@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
+import GlassCard from '@/components/util/GlassCard'
 
 // Dynamic import is used to prevent a payload when the website starts, that includes threejs, r3f etc..
 // WARNING ! errors might get obfuscated by using dynamic import.
@@ -17,6 +18,10 @@ export default function Page(props) {
     <>
       <section className='relative order-1 h-screen col-span-full'>
         <SceneContainer>
+          <directionalLight
+            intensity={0.3}
+            position={[0, 1, 2]}
+          />
           <color
             attach='background'
             args={['#171717']}
@@ -36,17 +41,26 @@ export default function Page(props) {
 
       <section className='relative order-2 h-screen col-span-full'>
         <SceneContainer>
+          <color
+            attach='background'
+            args={['#171717']}
+          />
+          <directionalLight
+            intensity={0.3}
+            position={[0, 1, 2]}
+          />
           <SceneTwo />
         </SceneContainer>
-        <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
-          <div className='w-3/4 bg-white/20 backdrop-blur-lg drop-shadow-md h-1/4'>Skills</div>
+        <div className='absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full'>
+          <h1 className='tracking-wider text-white'>SKILLS</h1>
+          <GlassCard>Skills</GlassCard>
         </div>
       </section>
 
       <section className='relative order-3 h-screen -z-10 col-span-full'>
         <SceneContainer></SceneContainer>
         <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
-          <div className='w-3/4 bg-white/20 backdrop-blur-lg drop-shadow-md h-1/4'>work</div>
+          <GlassCard>work</GlassCard>
         </div>
       </section>
 
@@ -58,7 +72,7 @@ export default function Page(props) {
           </mesh>
         </SceneContainer>
         <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
-          <div className='w-3/4 bg-white/20 backdrop-blur-lg drop-shadow-md h-1/4'>Ambulance</div>
+          <GlassCard>Ambulance</GlassCard>
         </div>
       </section>
 

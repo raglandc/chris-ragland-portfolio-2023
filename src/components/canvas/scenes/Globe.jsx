@@ -14,10 +14,6 @@ export default function Globe({ ...props }) {
 
   return (
     <group>
-      <directionalLight
-        intensity={0.3}
-        position={[0, 1, 2]}
-      />
       <primitive
         {...props}
         position={[0, -1.25, 1.25]}
