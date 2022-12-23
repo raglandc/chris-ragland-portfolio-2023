@@ -7,23 +7,23 @@ const SceneContainer = dynamic(() => import('@/components/canvas/SceneContainer.
 
 export default function SceneTwo({
   speed = 1,
-  count = 80,
+  count = 25,
   depth = 80,
   easing = (x) => Math.sqrt(1 - Math.pow(x - 1, 2)),
 }) {
   return (
     <SceneContainer
-      // gl={{ antialias: false }}
+      gl={{ antialias: false }}
       dpr={[1, 1.5]}
-      camera={{ position: [0, 0, 10], fov: 35, near: 0.01, far: depth + 15 }}
+      camera={{ position: [0, 0, 10], fov: 30, near: 0.01, far: depth + 25 }}
     >
+      <directionalLight
+        intensity={0.3}
+        position={[0, 1, 2]}
+      />
       <color
         attach='background'
-        args={['#171717']}
-      />
-      <spotLight
-        position={[10, 20, 10]}
-        intensity={3}
+        args={['#111111']}
       />
       <Suspense>
         {Array.from({ length: count }, (_, i) => (
@@ -34,11 +34,11 @@ export default function SceneTwo({
             speed={speed}
           />
         ))}
-        <EffectComposer multisampling={0}>
+        <EffectComposer>
           <DepthOfField
-            target={[0, 0, depth / 2]}
-            focalLength={0.5}
-            bokehScale={11}
+            target={[0, 0, 60]}
+            focalLength={1}
+            bokehScale={2}
             height={700}
           />
         </EffectComposer>

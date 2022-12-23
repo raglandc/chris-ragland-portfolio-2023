@@ -1,13 +1,11 @@
 import { useRef, useState } from 'react'
 import { useGLTF, Html } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import { useControls } from 'leva'
 import Modal from '@/components/util/Modal'
 
 export default function SceneOne(props) {
   const planeRef = useRef()
   const [showState, setShowState] = useState({ indiana: false, florida: false })
-  // const { rx, ry } = useControls({ rx: 0.01, ry: 0.01 })
 
   useFrame((_, delta) => {
     planeRef.current.rotation.x += delta * 0.01

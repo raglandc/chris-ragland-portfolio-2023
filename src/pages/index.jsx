@@ -24,7 +24,7 @@ export default function Page(props) {
           />
           <color
             attach='background'
-            args={['#171717']}
+            args={['#111111']}
           />
           <Suspense fallback={null}>
             <Globe scale={1} />
