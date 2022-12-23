@@ -31,9 +31,11 @@ export default function Page(props) {
           </Suspense>
         </SceneContainer>
         <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
-          <div className='flex flex-col items-center justify-center w-2/4 text-white -translate-y-20 h-1/4'>
+          <div className='flex flex-col items-center justify-center text-xl text-white w-max -translate-y-20 h-1/4'>
             <h1 className=''>Hi, Welcome!</h1>
-            <p className=''>My name is Chris Ragland</p>
+            <p className=''>
+              My name is <span className='text-primary'>Chris Ragland</span>
+            </p>
             <p className=''>Scroll to learn more</p>
           </div>
         </div>
@@ -77,10 +79,10 @@ export default function Page(props) {
       </section>
 
       <section className='relative order-5 h-screen -z-10 col-span-full'>
+        <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'></div>
         <SceneContainer>
           <SceneOne />
         </SceneContainer>
-        <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'></div>
       </section>
     </>
   )
