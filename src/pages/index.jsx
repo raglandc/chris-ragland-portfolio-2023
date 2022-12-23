@@ -39,23 +39,17 @@ export default function Page(props) {
         </div>
       </section>
 
+      {/*------------- SECTION 2 ------------ SECTION 2 ------------*/}
+
       <section className='relative order-2 h-screen col-span-full'>
-        <SceneContainer>
-          <color
-            attach='background'
-            args={['#171717']}
-          />
-          <directionalLight
-            intensity={0.3}
-            position={[0, 1, 2]}
-          />
-          <SceneTwo />
-        </SceneContainer>
+        <SceneTwo />
         <div className='absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full'>
           <h1 className='tracking-wider text-white'>SKILLS</h1>
           <GlassCard>Skills</GlassCard>
         </div>
       </section>
+
+      {/*------------- SECTION 3 ------------ SECTION 3 ---------------*/}
 
       <section className='relative order-3 h-screen -z-10 col-span-full'>
         <SceneContainer>

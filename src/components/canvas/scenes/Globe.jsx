@@ -1,6 +1,5 @@
 import { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
-import { useControls } from 'leva'
 import { useFrame } from '@react-three/fiber'
 
 export default function Globe({ ...props }) {
