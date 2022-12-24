@@ -1,27 +1,41 @@
 import { FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa'
 import { MdAlternateEmail } from 'react-icons/md'
 import { useState } from 'react'
-import Portal from '../util/Portal'
+import Portal from '../util/Portal.jsx'
 
-export default function ContactButton(props) {
-  const [showContact, setShowContact] = useState(false)
+export default function Menu(props) {
+  const [showMenu, setShowMenu] = useState(false)
 
-  const showContactHandler = () => {
-    setShowContact((prev) => !prev)
+  const showMenuHandler = () => {
+    setShowMenu((prev) => !prev)
   }
 
   return (
     <>
-      <button
-        onClick={showContactHandler}
-        className='px-2 py-1 text-white shadow-md active:shadow-sm rounded-md hover:bg-secondary bg-primary h-max'
+      <div
+        onClick={showMenuHandler}
+        className='flex flex-col justify-around w-4 h-max'
       >
-        Contact
-      </button>
+        <div
+          className={
+            !showMenu
+              ? 'w-full h-px bg-white my-0.5 ease-in-out'
+              : 'ease-in-out w-full h-px bg-white my-0.5 translate-y-1 rotate-45'
+          }
+        />
+        <div className={!showMenu ? 'w-full h-px bg-white my-0.5 ease-in-out' : ' ease-in-out bg-white scale-x-0'} />
+        <div
+          className={
+            !showMenu
+              ? 'w-full h-px bg-white my-0.5 ease-in-out'
+              : 'ease-in-out w-full h-px bg-white my-0.5 translate-y-0.5 -rotate-45'
+          }
+        />
+      </div>
 
-      {showContact && (
-        <ContactWindow
-          closeHandler={showContactHandler}
+      {showMenu && (
+        <MenuWindow
+          closeHandler={showMenuHandler}
           layoutRef={props.layoutRef}
         />
       )}
@@ -29,7 +43,7 @@ export default function ContactButton(props) {
   )
 }
 
-function ContactWindow(props) {
+function MenuWindow(props) {
   return (
     <Portal>
       <div className='w-3/4 bg-white rounded-lg'>

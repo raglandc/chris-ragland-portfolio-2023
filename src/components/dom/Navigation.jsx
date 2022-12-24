@@ -1,4 +1,4 @@
-import Contact from './Contact'
+import Menu from './Menu.jsx'
 
 export default function Navigation(props) {
   return (
@@ -7,7 +7,7 @@ export default function Navigation(props) {
         <div className='w-2/4'>CR</div>
 
         <div className='flex flex-row justify-end w-2/4'>
-          <Contact />
+          <Menu />
         </div>
       </div>
     </nav>
