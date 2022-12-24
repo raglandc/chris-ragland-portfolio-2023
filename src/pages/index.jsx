@@ -16,8 +16,8 @@ const Globe = dynamic(() => import('@/components/canvas/scenes/Globe.jsx'))
 export default function Page(props) {
   return (
     <>
-      <section className='relative order-1 h-screen col-span-full'>
-        <SceneContainer>
+      <section className='relative order-1 h-screen bg-black col-span-full'>
+        {/* <SceneContainer>
           <directionalLight
             intensity={0.3}
             position={[0, 1, 2]}
@@ -29,7 +29,7 @@ export default function Page(props) {
           <Suspense fallback={null}>
             <Globe scale={1} />
           </Suspense>
-        </SceneContainer>
+        </SceneContainer> */}
         <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
           <div className='flex flex-col items-center justify-center text-xl text-white w-max -translate-y-20 h-1/4'>
             <h1 className=''>Hi, Welcome!</h1>

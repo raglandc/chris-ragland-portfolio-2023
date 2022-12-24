@@ -14,23 +14,13 @@ export default function Menu(props) {
     <>
       <div
         onClick={showMenuHandler}
-        className='flex flex-col justify-around w-4 h-max'
+        className='flex flex-col items-end justify-center w-5 cursor-pointer h-max hover:scale-110 ease-in-out'
       >
+        <div className={'w-full h-px bg-white my-0.5'} />
         <div
-          className={
-            !showMenu
-              ? 'w-full h-px bg-white my-0.5 ease-in-out'
-              : 'ease-in-out w-full h-px bg-white my-0.5 translate-y-1 rotate-45'
-          }
+          className={!showMenu ? 'w-full h-px bg-white my-0.5 ease-in-out' : 'ease-in-out h-px my-0.5 bg-white w-2/4'}
         />
-        <div className={!showMenu ? 'w-full h-px bg-white my-0.5 ease-in-out' : ' ease-in-out bg-white scale-x-0'} />
-        <div
-          className={
-            !showMenu
-              ? 'w-full h-px bg-white my-0.5 ease-in-out'
-              : 'ease-in-out w-full h-px bg-white my-0.5 translate-y-0.5 -rotate-45'
-          }
-        />
+        <div className={'w-full h-px bg-white my-0.5'} />
       </div>
 
       {showMenu && (
