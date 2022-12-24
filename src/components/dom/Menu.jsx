@@ -39,7 +39,7 @@ function MenuWindow(props) {
       <div className='w-3/4 bg-white rounded-lg'>
         <div className='flex justify-between w-full p-4 rounded-t-lg'>
           <h1 className='text-lg font-bold'>
-            Say <span className='text-primary'>Hi</span> 👋{' '}
+            Say <span className='text-indigo-600'>Hi</span> 👋{' '}
           </h1>
           <p
             className='cursor-pointer hover:underline hover:underline-offset-4'

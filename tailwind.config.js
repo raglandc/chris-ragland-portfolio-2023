@@ -3,17 +3,22 @@ module.exports = {
   content: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'], // remove unused styles in production
   darkMode: 'media', // or 'media' or 'class'
   theme: {
-    colors: {
-      white: 'rgb(var(--color-white) / <alpha-value>)',
-      black: 'rgb(var(--color-black) / <alpha-value>)',
-      primary: 'rgb(var(--color-primary)  / <alpha-value>)',
-      secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
-      textPrimary: 'rgb(var(--text-primary) / <alpha-value>)',
-      textSecondary: 'rgb(var(--text-secondary) / <alpha-value>)',
-    },
     extend: {
       animation: {
+        text: 'text 5s ease-in-out infinite',
         'ping-slow': 'ping 3s ease-out infinite',
+      },
+      keyframes: {
+        text: {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center',
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center',
+          },
+        },
       },
     },
   },

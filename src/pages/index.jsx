@@ -30,21 +30,23 @@ export default function Page(props) {
             <Globe scale={1} />
           </Suspense>
         </SceneContainer> */}
-        <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
-          <div className='flex flex-col items-center justify-center text-xl text-white w-max -translate-y-20 h-1/4'>
-            <h1 className='text-8xl'>Hi, Welcome!</h1>
-            <p className=''>
-              My name is <span className='text-primary'>Chris Ragland</span>
-            </p>
-            <p className=''>Scroll to learn more</p>
+        <div className='absolute top-0 left-0 flex flex-col justify-center w-full h-full text-center'>
+          <div className='flex flex-col items-center justify-center w-full h-full font-bold text-white'>
+            <h1 className='text-5xl'>
+              Hi, my name is{' '}
+              <span class='font-black text-transparent animate-text bg-gradient-to-r from-blue-500 via-fuchsia-600 to-fuchsia-600 bg-clip-text'>
+                Chris Ragland
+              </span>
+            </h1>
           </div>
+          <p className='my-6 text-white justify-self-end'>Scroll to learn more</p>
         </div>
       </section>
 
       {/*------------- SECTION 2 ------------ SECTION 2 ------------*/}
 
       <section className='relative order-2 h-screen col-span-full'>
-        <SceneTwo />
+        {/* <SceneTwo /> */}
         <div className='absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full'>
           <h1 className='tracking-wider text-white'>SKILLS</h1>
           <GlassCard>Skills</GlassCard>
@@ -67,12 +69,12 @@ export default function Page(props) {
       </section>
 
       <section className='relative order-4 h-screen -z-10 col-span-full'>
-        <SceneContainer>
+        {/* <SceneContainer>
           <mesh>
             <boxGeometry />
             <meshBasicMaterial />
           </mesh>
-        </SceneContainer>
+        </SceneContainer> */}
         <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
           <GlassCard>Ambulance</GlassCard>
         </div>
@@ -80,9 +82,9 @@ export default function Page(props) {
 
       <section className='relative order-5 h-screen -z-10 col-span-full'>
         <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'></div>
-        <SceneContainer>
+        {/* <SceneContainer>
           <SceneOne />
-        </SceneContainer>
+        </SceneContainer> */}
       </section>
     </>
   )
