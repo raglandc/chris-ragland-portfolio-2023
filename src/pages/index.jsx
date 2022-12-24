@@ -32,7 +32,7 @@ export default function Page(props) {
         </SceneContainer> */}
         <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
           <div className='flex flex-col items-center justify-center text-xl text-white w-max -translate-y-20 h-1/4'>
-            <h1 className=''>Hi, Welcome!</h1>
+            <h1 className='text-8xl'>Hi, Welcome!</h1>
             <p className=''>
               My name is <span className='text-primary'>Chris Ragland</span>
             </p>
