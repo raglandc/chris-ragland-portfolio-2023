@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import { useRef, useState } from 'react'
-import { Detailed, useGLTF } from '@react-three/drei'
+import { useGLTF } from '@react-three/drei'
 import { useFrame, useThree } from '@react-three/fiber'
 
 export default function ReactLogo({ index, z, speed }) {
