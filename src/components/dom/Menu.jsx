@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa'
 import { MdAlternateEmail } from 'react-icons/md'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Portal from '../util/Portal.jsx'
 
-export default function Menu(props) {
+export default function Menu() {
   const [showMenu, setShowMenu] = useState(false)
 
   const showMenuHandler = () => {
@@ -31,7 +31,10 @@ export default function Menu(props) {
 
 function MenuWindow({ closeHandler }) {
   return (
-    <Portal>
+    <Portal
+      onClick={closeHandler}
+      className='fixed top-0 left-0 z-20 flex items-center justify-center w-full h-full bg-black/80'
+    >
       <motion.div
         initial={{ x: '-100%', opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -42,13 +45,7 @@ function MenuWindow({ closeHandler }) {
           <h1 className='text-lg font-bold'>
             Say <span className='text-indigo-600'>Hi</span> 👋{' '}
           </h1>
-          <p
-            className='cursor-pointer hover:underline hover:underline-offset-4'
-            onClick={closeHandler}
-          >
-            {' '}
-            close [x]{' '}
-          </p>
+          <p className='cursor-pointer hover:underline hover:underline-offset-4'> close [x] </p>
         </div>
         <ul className='w-full px-4 py-2 h-max'>
           <ContactLink

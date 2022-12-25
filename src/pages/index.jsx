@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
+import Typewriter from 'typewriter-effect'
 import { Suspense } from 'react'
 import GlassCard from '@/components/util/GlassCard'
 
@@ -44,6 +45,16 @@ export default function Page(props) {
                 Chris Ragland
               </span>
             </h1>
+            <h2 className='mt-5 text-5xl'>
+              <Typewriter
+                options={{
+                  strings: ['student', 'developer', "coffee ❤️'er"],
+                  autoStart: true,
+                  loop: true,
+                  cursor: '_',
+                }}
+              />
+            </h2>
           </motion.div>
           <motion.p
             initial={{ opacity: 0 }}

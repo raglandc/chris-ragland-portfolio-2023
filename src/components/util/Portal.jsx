@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 
-export default function Portal({ children }) {
+export default function Portal({ children, ...props }) {
   const ref = useRef(null)
   const [mounted, setMounted] = useState(false)
 
@@ -10,12 +10,5 @@ export default function Portal({ children }) {
     setMounted(true)
   }, [])
 
-  return mounted && ref.current
-    ? createPortal(
-        <div className='fixed top-0 left-0 z-20 flex items-center justify-center w-full h-full bg-black/80'>
-          {children}
-        </div>,
-        ref.current,
-      )
-    : null
+  return mounted && ref.current ? createPortal(<div {...props}>{children}</div>, ref.current) : null
 }
