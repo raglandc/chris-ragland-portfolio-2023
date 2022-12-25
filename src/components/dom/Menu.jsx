@@ -1,6 +1,7 @@
+import { useState } from 'react'
 import { FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa'
 import { MdAlternateEmail } from 'react-icons/md'
-import { useState } from 'react'
+import { motion } from 'framer-motion'
 import Portal from '../util/Portal.jsx'
 
 export default function Menu(props) {
@@ -23,27 +24,27 @@ export default function Menu(props) {
         <div className={'w-full h-px bg-white my-0.5'} />
       </div>
 
-      {showMenu && (
-        <MenuWindow
-          closeHandler={showMenuHandler}
-          layoutRef={props.layoutRef}
-        />
-      )}
+      {showMenu && <MenuWindow closeHandler={showMenuHandler} />}
     </>
   )
 }
 
-function MenuWindow(props) {
+function MenuWindow({ closeHandler }) {
   return (
     <Portal>
-      <div className='w-3/4 bg-white rounded-lg'>
+      <motion.div
+        initial={{ y: '-100%', opacity: 0, scale: 0.25 }}
+        animate={{ y: 0, opacity: 1, scale: 1 }}
+        transition={{ duration: 0.2 }}
+        className='w-3/4 bg-white rounded-lg'
+      >
         <div className='flex justify-between w-full p-4 rounded-t-lg'>
           <h1 className='text-lg font-bold'>
             Say <span className='text-indigo-600'>Hi</span> 👋{' '}
           </h1>
           <p
             className='cursor-pointer hover:underline hover:underline-offset-4'
-            onClick={props.closeHandler}
+            onClick={closeHandler}
           >
             {' '}
             close [x]{' '}
@@ -71,22 +72,22 @@ function MenuWindow(props) {
             title='Chrisragland97@gmail.com'
           />
         </ul>
-      </div>
+      </motion.div>
     </Portal>
   )
 }
 
-function ContactLink(props) {
+function ContactLink({ link, icon, title }) {
   return (
     <li className='w-full my-2'>
       <a
         className='flex items-center w-full py-2'
         target='_blank'
-        href={props.link}
+        href={link}
         rel='noreferrer'
       >
-        <span className='mr-2 '>{props.icon}</span>
-        {props.title}
+        <span className='mr-2'>{icon}</span>
+        {title}
       </a>
     </li>
   )
