@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic'
+import { motion } from 'framer-motion'
 import { Suspense } from 'react'
 import GlassCard from '@/components/util/GlassCard'
 
@@ -31,15 +32,27 @@ export default function Page(props) {
           </Suspense>
         </SceneContainer> */}
         <div className='absolute top-0 left-0 flex flex-col justify-center w-full h-full text-center'>
-          <div className='flex flex-col items-center justify-center w-full h-full font-bold text-white'>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5, delay: 1, ease: 'easeInOut' }}
+            className='flex flex-col items-center justify-center w-full h-full font-bold text-white'
+          >
             <h1 className='text-5xl'>
               hi, my name is{' '}
               <span class='font-black text-transparent animate-text bg-gradient-to-r from-blue-500 via-fuchsia-600 to-fuchsia-600 bg-clip-text'>
                 Chris Ragland
               </span>
             </h1>
-          </div>
-          <p className='my-6 text-white/60 justify-self-end'>Scroll to learn more</p>
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2, ease: 'easeOut', duration: 2 }}
+            className='my-6 text-white/60 justify-self-end'
+          >
+            Scroll to learn more
+          </motion.p>
         </div>
       </section>
 

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa'
 import { MdAlternateEmail } from 'react-icons/md'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import Portal from '../util/Portal.jsx'
 
 export default function Menu(props) {
@@ -33,8 +33,8 @@ function MenuWindow({ closeHandler }) {
   return (
     <Portal>
       <motion.div
-        initial={{ y: '-100%', opacity: 0, scale: 0.25 }}
-        animate={{ y: 0, opacity: 1, scale: 1 }}
+        initial={{ x: '-100%', opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.2 }}
         className='w-3/4 bg-white rounded-lg'
       >
