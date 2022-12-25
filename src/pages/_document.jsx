@@ -5,7 +5,8 @@ export default function Document() {
       <Head />
       <body>
         <Main />
-        <div id='portal' />
+        <div id='backdrop-root' />
+        <div id='portal-root' />
         <NextScript />
       </body>
     </Html>

@@ -39,13 +39,19 @@ function MenuWindow({ closeHandler }) {
         initial={{ x: '-100%', opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.2 }}
-        className='w-3/4 bg-white rounded-lg'
+        className='z-30 w-3/4 bg-white rounded-lg'
       >
         <div className='flex justify-between w-full p-4 rounded-t-lg'>
           <h1 className='text-lg font-bold'>
             Say <span className='text-indigo-600'>Hi</span> 👋{' '}
           </h1>
-          <p className='cursor-pointer hover:underline hover:underline-offset-4'> close [x] </p>
+          <p
+            className='cursor-pointer hover:underline hover:underline-offset-4'
+            onClick={closeHandler}
+          >
+            {' '}
+            close [x]{' '}
+          </p>
         </div>
         <ul className='w-full px-4 py-2 h-max'>
           <ContactLink

@@ -12,3 +12,7 @@ export default function Portal({ children, ...props }) {
 
   return mounted && ref.current ? createPortal(<div {...props}>{children}</div>, ref.current) : null
 }
+
+function PortalOverlay({ children }) {
+  return <span>{children}</span>
+}
