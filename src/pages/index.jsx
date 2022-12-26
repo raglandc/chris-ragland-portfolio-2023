@@ -70,7 +70,7 @@ export default function Page(props) {
 
       {/*------------- SECTION 2 ------------ SECTION 2 ------------*/}
 
-      <section className='relative order-2 h-screen col-span-full'>
+      <section className='relative flex flex-col justify-around order-2 h-full col-span-full'>
         {/* <SceneTwo /> */}
         <SkillList />
       </section>
