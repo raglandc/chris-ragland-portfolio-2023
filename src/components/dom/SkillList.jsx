@@ -1,5 +1,3 @@
-import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa'
-
 export default function SkillList({ ...props }) {
   return (
     <div
@@ -12,7 +10,7 @@ export default function SkillList({ ...props }) {
       <p className='relative my-5 text-white'>
         <span className='mx-2 text-3xl'>&ldquo;</span>The best way to predict the future is to invent it
         <span className='mx-2 text-3xl'>&rdquo;</span>
-        <span className='absolute italic -right-4 -bottom-8'>- Alan Kay</span>
+        <span className='absolute italic -right-1 -bottom-8'>- Alan Kay</span>
       </p>
     </div>
   )
