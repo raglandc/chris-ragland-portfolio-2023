@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import { useInView } from 'framer-motion'
 import {
   SiJavascript,
   SiReact,
@@ -28,22 +29,42 @@ const skillsArray = [
 ]
 
 export default function SkillList({ ...props }) {
+  const headerRef = useRef(null)
+  const quoteRef = useRef(null)
+  const headerInView = useInView(headerRef, { once: true })
+  const quoteInView = useInView(quoteRef, { once: true })
   return (
     <>
       <div
         {...props}
-        className='flex flex-col items-center justify-center w-full my-10 h-max'
+        className='flex flex-col items-center justify-center w-full mb-20 mt-28'
       >
-        <h1 className='w-3/4 text-5xl font-bold font-black text-left text-transparent text-white animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
+        <h1
+          ref={headerRef}
+          style={{
+            transform: headerInView ? 'none' : 'translateX(-200px)',
+            opacity: headerInView ? 1 : 0,
+            transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+          }}
+          className='w-3/4 text-5xl font-bold font-black text-left text-transparent text-white animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'
+        >
           Skills
         </h1>
-        <p className='relative my-5 text-white'>
-          <span className='mx-2 text-3xl'>&ldquo;</span>The best way to predict the future is to invent it
+        <p
+          ref={quoteRef}
+          style={{
+            opacity: quoteInView ? 1 : 0,
+            transition: 'all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+          }}
+          className='relative my-5 text-center text-white'
+        >
+          <span className='mx-2 text-3xl'>&ldquo;</span>The only way to learn a new programming language is by writing
+          programs in it.
           <span className='mx-2 text-3xl'>&rdquo;</span>
-          <span className='absolute italic -right-1 -bottom-8'>- Alan Kay</span>
+          <span className='absolute italic right-3 -bottom-8'>- Dennis Ritchie</span>
         </p>
       </div>
-      <div className='w-full p-1 grid place-content-center place-items-center grid-cols-3 gap-2 h-max'>
+      <div className='w-full px-2  grid place-content-stretch grid-cols-3 gap-2 h-max'>
         {skillsArray.map((item, index) => {
           return (
             <SkillCard
@@ -59,15 +80,21 @@ export default function SkillList({ ...props }) {
 }
 
 function SkillCard({ title, logo }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
   return (
-    <motion.div
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
-      transition={{ duration: 1, ease: 'easeInOut' }}
-      className='flex flex-col items-center justify-center  w-32 h-24 px-4 py-3 text-white border shadow-lg shadow-yellow-500/40 backdrop-blur-2xl bg-white/30 rounded-xl'
+    <span
+      ref={ref}
+      style={{
+        transform: isInView ? 'none' : 'translateY(100px)',
+        opacity: isInView ? 1 : 0,
+        transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+      }}
     >
-      <h1 className='mb-2'>{title}</h1>
-      <span className='text-2xl'>{logo}</span>
-    </motion.div>
+      <div className='flex flex-col items-center justify-center px-4 py-3 text-white border shadow-lg shadow-yellow-500/40 backdrop-blur-2xl bg-white/30 rounded-xl'>
+        <h1 className='mb-2'>{title}</h1>
+        <span className='text-2xl'>{logo}</span>
+      </div>
+    </span>
   )
 }
