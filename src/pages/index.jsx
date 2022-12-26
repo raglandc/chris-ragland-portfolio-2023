@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import Typewriter from 'typewriter-effect'
 import { Suspense } from 'react'
 import GlassCard from '@/components/util/GlassCard'
+import SkillList from '@/components/dom/SkillList'
 
 // Dynamic import is used to prevent a payload when the website starts, that includes threejs, r3f etc..
 // WARNING ! errors might get obfuscated by using dynamic import.
@@ -18,7 +19,7 @@ const Globe = dynamic(() => import('@/components/canvas/scenes/Globe.jsx'))
 export default function Page(props) {
   return (
     <>
-      <section className='relative order-1 h-screen bg-black col-span-full'>
+      <section className='relative order-1 h-screen col-span-full'>
         {/* <SceneContainer>
           <directionalLight
             intensity={0.3}
@@ -71,10 +72,7 @@ export default function Page(props) {
 
       <section className='relative order-2 h-screen col-span-full'>
         {/* <SceneTwo /> */}
-        <div className='absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full'>
-          <h1 className='tracking-wider text-white'>SKILLS</h1>
-          <GlassCard>Skills</GlassCard>
-        </div>
+        <SkillList />
       </section>
 
       {/*------------- SECTION 3 ------------ SECTION 3 ---------------*/}
