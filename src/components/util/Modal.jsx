@@ -1,4 +1,4 @@
-import Portal from './Portal'
+import Portal from './PortalOverlay'
 export default function Modal(props) {
   return (
     <Portal>

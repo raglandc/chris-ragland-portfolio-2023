@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { createPortal } from 'react-dom'
 
 export default function PortalBackdrop({ ...props }) {
@@ -13,8 +13,8 @@ export default function PortalBackdrop({ ...props }) {
   return mounted && ref.current
     ? createPortal(
         <div
-          className='fixed top-0 left-0 w-full h-full bg-black/60'
           {...props}
+          className='fixed top-0 left-0 z-20 w-full h-full bg-black/60'
         />,
         ref.current,
       )

@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa'
 import { MdAlternateEmail } from 'react-icons/md'
+import { VscClose } from 'react-icons/vsc'
 import { motion } from 'framer-motion'
-import Portal from '../util/Portal.jsx'
+import PortalOverlay from '../util/PortalOverlay.jsx'
+import PortalBackdrop from '../util/PortalBackdrop.jsx'
 
 export default function Menu() {
   const [showMenu, setShowMenu] = useState(false)
@@ -24,34 +26,33 @@ export default function Menu() {
         <div className={'w-full h-px bg-white my-0.5'} />
       </div>
 
-      {showMenu && <MenuWindow closeHandler={showMenuHandler} />}
+      {showMenu && (
+        <>
+          <PortalBackdrop onClick={showMenuHandler} />
+          <MenuWindow closeHandler={showMenuHandler} />
+        </>
+      )}
     </>
   )
 }
 
-function MenuWindow({ closeHandler }) {
+function MenuWindow({ closeHandler, ...props }) {
   return (
-    <Portal
-      onClick={closeHandler}
-      className='fixed top-0 left-0 z-20 flex items-center justify-center w-full h-full bg-black/80'
-    >
+    <PortalOverlay className='fixed z-30 w-max -translate-y-2/4 -translate-x-2/4 top-2/4 left-2/4 h-max'>
       <motion.div
         initial={{ x: '-100%', opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.2 }}
-        className='z-30 w-3/4 bg-white rounded-lg'
+        className='px-3 text-lg bg-white rounded-lg w-max'
       >
-        <div className='flex justify-between w-full p-4 rounded-t-lg'>
-          <h1 className='text-lg font-bold'>
+        <div className='flex items-center justify-between w-full px-2 pt-4 rounded-t-lg'>
+          <h1 className='text-2xl font-bold'>
             Say <span className='text-indigo-600'>Hi</span> 👋{' '}
           </h1>
-          <p
-            className='cursor-pointer hover:underline hover:underline-offset-4'
+          <VscClose
+            className='p-1 cursor-pointer w-max h-max hover:rounded-full hover:bg-black/30'
             onClick={closeHandler}
-          >
-            {' '}
-            close [x]{' '}
-          </p>
+          />
         </div>
         <ul className='w-full px-4 py-2 h-max'>
           <ContactLink
@@ -76,7 +77,7 @@ function MenuWindow({ closeHandler }) {
           />
         </ul>
       </motion.div>
-    </Portal>
+    </PortalOverlay>
   )
 }
 
