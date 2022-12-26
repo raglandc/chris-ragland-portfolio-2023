@@ -39,29 +39,31 @@ export default function SkillList({ ...props }) {
         {...props}
         className='flex flex-col items-center justify-center w-full mb-20 mt-28'
       >
-        <h1
+        <h2
           ref={headerRef}
           style={{
             transform: headerInView ? 'none' : 'translateX(-200px)',
             opacity: headerInView ? 1 : 0,
             transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
           }}
-          className='w-3/4 text-5xl font-bold font-black text-left text-transparent text-white animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'
+          className='w-11/12 my-8 text-2xl'
         >
-          Skills
-        </h1>
+          <span className='font-bold font-black text-left text-transparent text-white animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
+            Yeah, I like to learn
+          </span>
+          📚
+        </h2>
         <p
           ref={quoteRef}
           style={{
             opacity: quoteInView ? 1 : 0,
             transition: 'all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
           }}
-          className='relative my-5 text-center text-white'
+          className='relative my-8 text-center text-white'
         >
-          <span className='mx-2 text-3xl'>&ldquo;</span>The only way to learn a new programming language is by writing
-          programs in it.
+          <span className='mx-2 text-3xl'>&ldquo;</span>The more I learn, the more I realize how much I don&apos;t know.
           <span className='mx-2 text-3xl'>&rdquo;</span>
-          <span className='absolute italic right-3 -bottom-8'>- Dennis Ritchie</span>
+          <span className='absolute italic right-3 -bottom-8'>- Albert Einstein</span>
         </p>
       </div>
       <div className='w-full px-2  grid place-content-stretch grid-cols-3 gap-2 h-max'>

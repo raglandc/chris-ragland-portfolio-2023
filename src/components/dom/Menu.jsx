@@ -38,16 +38,16 @@ export default function Menu() {
 
 function MenuWindow({ closeHandler, ...props }) {
   return (
-    <PortalOverlay className='fixed z-30 w-max -translate-y-2/4 -translate-x-2/4 top-2/4 left-2/4 h-max'>
+    <PortalOverlay className='fixed z-30 flex justify-center w-full -translate-y-2/4 -translate-x-2/4 top-2/4 left-2/4 h-max'>
       <motion.div
         initial={{ x: '-100%', opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.2 }}
-        className='px-3 text-lg bg-white rounded-lg w-max'
+        className='px-3 text-lg bg-white rounded-xl w-max'
       >
-        <div className='flex items-center justify-between w-full px-2 pt-4 rounded-t-lg'>
+        <div className='flex items-center justify-between w-full px-3 pt-4 rounded-t-lg'>
           <h1 className='text-2xl font-bold'>
-            Say <span className='text-indigo-600'>Hi</span> 👋{' '}
+            Say <span className='text-indigo-600'>Hi</span> 👋
           </h1>
           <VscClose
             className='p-1 cursor-pointer w-max h-max hover:rounded-full hover:bg-black/30'
