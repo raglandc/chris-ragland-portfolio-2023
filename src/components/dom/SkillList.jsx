@@ -50,7 +50,7 @@ export default function SkillList({ ...props }) {
           }}
           className='w-11/12 my-8 text-2xl'
         >
-          <span className='font-bold font-black text-left text-transparent text-white animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
+          <span className='font-bold text-left text-transparent text-white animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
             Yeah, I like to learn
           </span>
           📚
