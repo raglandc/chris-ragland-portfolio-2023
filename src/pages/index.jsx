@@ -13,7 +13,6 @@ import Scroll from '@/components/dom/Scroll'
 // https://github.com/pmndrs/react-three-next/issues/49
 // const Logo = dynamic(() => import('@/components/canvas/Logo'), { ssr: false })
 const SceneOne = dynamic(() => import('@/components/canvas/scenes/SceneOne.jsx'))
-const SceneTwo = dynamic(() => import('@/components/canvas/scenes/SceneTwo.jsx'))
 const SceneContainer = dynamic(() => import('@/components/canvas/SceneContainer.jsx'))
 const Globe = dynamic(() => import('@/components/canvas/scenes/Globe.jsx'))
 
@@ -22,24 +21,11 @@ export default function Page(props) {
   return (
     <>
       <section className='relative order-1 h-screen col-span-full'>
-        {/* <SceneContainer>
-          <directionalLight
-            intensity={0.3}
-            position={[0, 1, 2]}
-          />
-          <color
-            attach='background'
-            args={['#111111']}
-          />
-          <Suspense fallback={null}>
-            <Globe scale={1} />
-          </Suspense>
-        </SceneContainer> */}
         <div className='absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full text-center'>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, delay: 1, ease: 'easeInOut' }}
+            transition={{ duration: 1.5, delay: 0.5, ease: 'easeInOut' }}
             className='flex flex-col items-center justify-center w-full h-full font-bold text-white'
           >
             <h1 className='text-5xl'>
@@ -59,28 +45,31 @@ export default function Page(props) {
               />
             </h2>
           </motion.div>
-          <Image
-            src='/img/banner.png'
-            alt='coffee cup, laptop, pencil'
-            width={1024}
-            height={1024}
-          />
-          <Scroll />
-          {/* <motion.p
+          <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 2, ease: 'easeOut', duration: 2 }}
-            className='my-6 text-white/60 justify-self-end'
+            transition={{ duration: 1.5, delay: 0.5, ease: 'easeInOut' }}
           >
-            Scroll to learn more
-          </motion.p> */}
+            <Image
+              src='/img/banner.png'
+              alt='coffee cup, laptop, pencil'
+              width={1024}
+              height={1024}
+            />
+          </motion.span>
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5, delay: 2.0, ease: 'easeInOut' }}
+          >
+            <Scroll />
+          </motion.span>
         </div>
       </section>
 
       {/*------------- SECTION 2 ------------ SECTION 2 ------------*/}
 
       <section className='relative flex flex-col justify-around order-2 h-max col-span-full'>
-        {/* <SceneTwo /> */}
         <SkillList />
       </section>
 
