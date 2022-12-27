@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Typewriter from 'typewriter-effect'
 import { Suspense } from 'react'
@@ -57,6 +58,12 @@ export default function Page(props) {
               />
             </h2>
           </motion.div>
+          <Image
+            src='/img/banner.png'
+            alt='coffee cup, laptop, pencil'
+            width={1024}
+            height={1024}
+          />
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
