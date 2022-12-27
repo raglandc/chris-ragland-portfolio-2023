@@ -12,6 +12,7 @@ import {
   SiThreedotjs,
   SiHtml5,
   SiCss3,
+  SiMongodb,
 } from 'react-icons/si'
 
 const skillsArray = [
@@ -26,6 +27,7 @@ const skillsArray = [
   { title: 'Blender', logo: <SiBlender /> },
   { title: 'ThreeJs', logo: <SiThreedotjs /> },
   { title: 'Svelte', logo: <SiSvelte /> },
+  { title: 'MongoDB', logo: <SiMongodb /> },
 ]
 
 export default function SkillList({ ...props }) {
@@ -93,7 +95,7 @@ function SkillCard({ title, logo }) {
         transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
       }}
     >
-      <div className='flex flex-col items-center justify-center px-4 py-3 text-white border shadow-lg shadow-yellow-500/40 backdrop-blur-2xl bg-white/30 rounded-xl'>
+      <div className='flex flex-col items-center justify-center px-4 py-5 text-white bg-black rounded-lg'>
         <h1 className='mb-2'>{title}</h1>
         <span className='text-2xl'>{logo}</span>
       </div>
