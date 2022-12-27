@@ -75,19 +75,18 @@ export default function Page(props) {
 
       {/*------------- SECTION 3 ------------ SECTION 3 ---------------*/}
 
-      <section className='relative order-3 h-screen -z-10 col-span-full'>
-        <SceneContainer>
-          <color
-            attach='background'
-            args={['#171717']}
-          />
-        </SceneContainer>
-        <div className='absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full'>
-          <h1 className='tracking-wider text-white'>WORK</h1>
-          <GlassCard>work</GlassCard>
+      <section className='relative order-3 h-screen col-span-full'>
+        <div className='absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full text-white'>
+          <h1 className='w-11/12 text-2xl'>
+            <span className='font-bold text-left text-transparent text-white animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
+              Work hard, play hard{' '}
+            </span>
+            💼
+          </h1>
         </div>
       </section>
 
+      {/*------------- SECTION 4 ------------ SECTION 4 ---------------*/}
       <section className='relative order-4 h-screen -z-10 col-span-full'>
         {/* <SceneContainer>
           <mesh>
@@ -99,6 +98,8 @@ export default function Page(props) {
           <GlassCard>Ambulance</GlassCard>
         </div>
       </section>
+
+      {/*------------- SECTION 5 ------------ SECTION 5 ---------------*/}
 
       <section className='relative order-5 h-screen -z-10 col-span-full'>
         <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'></div>
