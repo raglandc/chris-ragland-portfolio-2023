@@ -30,6 +30,9 @@ module.exports = {
           },
         },
       },
+      backgroundImage: {
+        'hero-banner': "url('/img/banner-2.png')",
+      },
     },
   },
   variants: {

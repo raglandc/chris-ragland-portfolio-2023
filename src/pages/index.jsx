@@ -21,7 +21,7 @@ export default function Page(props) {
   return (
     <>
       <section className='relative order-1 h-screen col-span-full'>
-        <div className='absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full text-center'>
+        <div className='absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full text-center bg-gradient-to-b from-black'>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -29,7 +29,7 @@ export default function Page(props) {
             className='flex flex-col items-center justify-center w-full h-full font-bold text-white'
           >
             <h1 className='text-5xl'>
-              hi, my name is{' '}
+              Hi, my name is{' '}
               <span class='font-black text-transparent animate-text bg-gradient-to-r from-blue-500 via-fuchsia-600 to-fuchsia-600 bg-clip-text'>
                 Chris Ragland
               </span>
@@ -51,7 +51,7 @@ export default function Page(props) {
             transition={{ duration: 1.5, delay: 0.5, ease: 'easeInOut' }}
           >
             <Image
-              src='/img/banner.png'
+              src='/img/banner-2.png'
               alt='coffee cup, laptop, pencil'
               width={1024}
               height={1024}
@@ -60,7 +60,7 @@ export default function Page(props) {
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, delay: 2.0, ease: 'easeInOut' }}
+            transition={{ duration: 1.5, delay: 3.0, ease: 'easeInOut' }}
           >
             <Scroll />
           </motion.span>
@@ -78,8 +78,8 @@ export default function Page(props) {
       <section className='relative order-3 h-screen col-span-full'>
         <div className='absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full text-white'>
           <h1 className='w-11/12 text-2xl'>
-            <span className='font-bold text-left text-transparent text-white animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
-              Work hard, play hard{' '}
+            <span className='font-bold text-left text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
+              I work hard...{' '}
             </span>
             💼
           </h1>
@@ -87,15 +87,20 @@ export default function Page(props) {
       </section>
 
       {/*------------- SECTION 4 ------------ SECTION 4 ---------------*/}
-      <section className='relative order-4 h-screen -z-10 col-span-full'>
+      <section className='relative order-4 h-screen col-span-full'>
         {/* <SceneContainer>
           <mesh>
             <boxGeometry />
             <meshBasicMaterial />
           </mesh>
         </SceneContainer> */}
-        <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
-          <GlassCard>Ambulance</GlassCard>
+        <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full text-white'>
+          <h1 className='w-11/12 text-2xl'>
+            <span className='font-bold text-left text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
+              ...and play harder{' '}
+            </span>
+            🎸
+          </h1>
         </div>
       </section>
 
