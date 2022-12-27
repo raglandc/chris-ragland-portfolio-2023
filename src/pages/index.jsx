@@ -34,7 +34,7 @@ export default function Page(props) {
             <Globe scale={1} />
           </Suspense>
         </SceneContainer> */}
-        <div className='absolute top-0 left-0 flex flex-col justify-center w-full h-full text-center'>
+        <div className='absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full text-center'>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
