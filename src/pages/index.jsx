@@ -5,6 +5,7 @@ import Typewriter from 'typewriter-effect'
 import { Suspense } from 'react'
 import GlassCard from '@/components/util/GlassCard'
 import SkillList from '@/components/dom/SkillList'
+import Scroll from '@/components/dom/Scroll'
 
 // Dynamic import is used to prevent a payload when the website starts, that includes threejs, r3f etc..
 // WARNING ! errors might get obfuscated by using dynamic import.
@@ -64,14 +65,15 @@ export default function Page(props) {
             width={1024}
             height={1024}
           />
-          <motion.p
+          <Scroll />
+          {/* <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2, ease: 'easeOut', duration: 2 }}
             className='my-6 text-white/60 justify-self-end'
           >
             Scroll to learn more
-          </motion.p>
+          </motion.p> */}
         </div>
       </section>
 

@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       animation: {
         text: 'text 5s ease-in-out infinite',
+        wheel: 'wheel 3s ease-in-out infinite',
         'ping-slow': 'ping 3s ease-out infinite',
       },
       keyframes: {
@@ -17,6 +18,15 @@ module.exports = {
           '50%': {
             'background-size': '200% 200%',
             'background-position': 'right center',
+          },
+        },
+        wheel: {
+          '0%': {
+            opacity: '1',
+          },
+          '100%': {
+            opacity: '0',
+            top: '2.4rem',
           },
         },
       },
