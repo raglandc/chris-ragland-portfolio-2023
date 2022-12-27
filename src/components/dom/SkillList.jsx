@@ -96,7 +96,7 @@ function SkillCard({ title, logo }) {
       }}
     >
       <div className='flex flex-col items-center justify-center px-4 py-5 text-white bg-black rounded-lg'>
-        <h1 className='mb-2'>{title}</h1>
+        <h1 className='mb-3'>{title}</h1>
         <span className='text-2xl'>{logo}</span>
       </div>
     </span>
