@@ -26,17 +26,17 @@ export default function Page(props) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, delay: 0.5, ease: 'easeInOut' }}
-            className='flex flex-col items-center justify-center w-full h-full font-bold text-white'
+            className='flex flex-col items-center justify-center w-full h-full font-bold text-white translate-y-16'
           >
-            <h1 className='w-11/12 text-5xl'>Hi,</h1>
-            <h1 className='w-11/12 text-5xl'> my name is </h1>
-            <h1 className='w-11/12 text-5xl'>
-              <span class='font-black text-transparent animate-text bg-gradient-to-r from-blue-500 via-fuchsia-600 to-fuchsia-600 bg-clip-text'>
-                Chris Ragland
-              </span>
-              .
+            <h1 className='w-10/12 text-5xl'>Hi,</h1>
+            <h1 className='w-10/12 text-5xl'> my name is </h1>
+            <h1 className='w-10/12 text-6xl font-black text-transparent animate-text bg-gradient-to-r from-blue-500 via-fuchsia-600 to-fuchsia-600 bg-clip-text'>
+              Chris
             </h1>
-            <h2 className='mt-10 text-4xl'>
+            <h1 className='w-10/12 pb-1 text-6xl font-black text-transparent animate-text bg-gradient-to-r from-blue-500 via-fuchsia-600 to-fuchsia-600 bg-clip-text'>
+              Ragland
+            </h1>
+            <h2 className='mt-8 text-4xl'>
               <Typewriter
                 options={{
                   strings: ['student', 'developer', "coffee ❤️'er"],
@@ -53,7 +53,7 @@ export default function Page(props) {
             transition={{ duration: 1.5, delay: 0.5, ease: 'easeInOut' }}
           >
             <Image
-              src='/img/banner-2.png'
+              src='/img/banner-3.png'
               alt='coffee cup, laptop, pencil'
               width={1024}
               height={1024}
