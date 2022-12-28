@@ -28,14 +28,15 @@ export default function Page(props) {
             transition={{ duration: 1.5, delay: 0.5, ease: 'easeInOut' }}
             className='flex flex-col items-center justify-center w-full h-full font-bold text-white'
           >
-            <h1 className='w-11/12 text-4xl'>
-              Hi, my name is{' '}
+            <h1 className='w-11/12 text-5xl'>Hi,</h1>
+            <h1 className='w-11/12 text-5xl'> my name is </h1>
+            <h1 className='w-11/12 text-5xl'>
               <span class='font-black text-transparent animate-text bg-gradient-to-r from-blue-500 via-fuchsia-600 to-fuchsia-600 bg-clip-text'>
                 Chris Ragland
               </span>
               .
             </h1>
-            <h2 className='mt-5 text-4xl'>
+            <h2 className='mt-10 text-4xl'>
               <Typewriter
                 options={{
                   strings: ['student', 'developer', "coffee ❤️'er"],
