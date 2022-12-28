@@ -20,26 +20,26 @@ const Globe = dynamic(() => import('@/components/canvas/scenes/Globe.jsx'))
 export default function Page(props) {
   return (
     <>
-      <section className='relative order-1 h-screen col-span-full'>
+      <section className='relative order-1 min-h-screen col-span-full'>
         <div className='absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full bg-gradient-to-b from-black'>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, delay: 0.5, ease: 'easeInOut' }}
-            className='flex flex-col items-center justify-center w-full h-full font-bold text-white translate-y-16'
+            className='flex flex-col items-center justify-center w-full h-full font-bold translate-y-4'
           >
-            <h1 className='w-10/12 text-5xl'>Hi,</h1>
-            <h1 className='w-10/12 text-5xl'> my name is </h1>
-            <h1 className='w-10/12 text-6xl font-black text-transparent animate-text bg-gradient-to-r from-blue-500 via-fuchsia-600 to-fuchsia-600 bg-clip-text'>
+            <h1 className='w-10/12 text-4xl'>Hi,</h1>
+            <h1 className='w-10/12 text-4xl'> my name is </h1>
+            <h1 className='w-10/12 text-5xl font-black text-transparent animate-text bg-gradient-to-r from-blue-600 via-fuchsia-500 to-fuchsia-600 bg-clip-text'>
               Chris
             </h1>
-            <h1 className='w-10/12 pb-1 text-6xl font-black text-transparent animate-text bg-gradient-to-r from-blue-500 via-fuchsia-600 to-fuchsia-600 bg-clip-text'>
+            <h1 className='w-10/12 pb-1 text-5xl font-black text-transparent animate-text bg-gradient-to-l from-blue-600 via-fuchsia-500 to-fuchsia-600 bg-clip-text'>
               Ragland
             </h1>
-            <h2 className='mt-8 text-4xl'>
+            <h2 className='w-10/12 mt-12 ml-3 text-3xl'>
               <Typewriter
                 options={{
-                  strings: ['student', 'developer', "coffee ❤️'er"],
+                  strings: ['student.', 'developer.', "coffee ❤️'er."],
                   autoStart: true,
                   loop: true,
                   cursor: '_',
@@ -53,7 +53,7 @@ export default function Page(props) {
             transition={{ duration: 1.5, delay: 0.5, ease: 'easeInOut' }}
           >
             <Image
-              src='/img/banner-3.png'
+              src='/img/banner-7.png'
               alt='coffee cup, laptop, pencil'
               width={1024}
               height={1024}
@@ -78,7 +78,7 @@ export default function Page(props) {
       {/*------------- SECTION 3 ------------ SECTION 3 ---------------*/}
 
       <section className='relative order-3 h-screen col-span-full'>
-        <div className='absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full text-white'>
+        <div className='absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full '>
           <h1 className='w-11/12 text-2xl'>
             <span className='font-bold text-left text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
               I work hard...{' '}
@@ -96,7 +96,7 @@ export default function Page(props) {
             <meshBasicMaterial />
           </mesh>
         </SceneContainer> */}
-        <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full text-white'>
+        <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full '>
           <h1 className='w-11/12 text-2xl'>
             <span className='font-bold text-left text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
               ...and play harder{' '}
