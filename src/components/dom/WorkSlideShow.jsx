@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Image from 'next/legacy/image'
-import { motion } from 'framer-motion'
+import { useInView } from 'framer-motion'
 import PortalOverlay from '../util/PortalOverlay'
 import PortalBackdrop from '../util/PortalBackdrop'
 import { VscClose } from 'react-icons/vsc'
@@ -22,23 +22,34 @@ import {
 
 export default function WorkSlideShow() {
   return (
-    <div className='w-9/12 h-max'>
-      {workArray.map((item, index) => (
-        <Slide
-          key={index}
-          title={item.title}
-          link={item.link}
-          image={item.image}
-          projectType={item.projectType}
-          description={item.description}
-          skills={item.skills}
-        />
-      ))}
+    <div className='flex flex-col items-center justify-center w-full h-full '>
+      <h1 className='w-11/12 text-2xl'>
+        <span className='font-bold text-left text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
+          I work hard...{' '}
+        </span>
+        💼
+      </h1>
+      <div className='w-9/12 h-max'>
+        {workArray.map((item, index) => (
+          <Slide
+            key={index}
+            title={item.title}
+            link={item.link}
+            image={item.image}
+            projectType={item.projectType}
+            description={item.description}
+            skills={item.skills}
+          />
+        ))}
+      </div>
     </div>
   )
 }
 
 function Slide({ title, link, description, image, projectType, skills }) {
+  const cardRef = useRef(null)
+  const cardInView = useInView(cardRef, { once: true })
+
   const [showPopUp, setShowPopUp] = useState(false)
   const showPopUpHandler = () => {
     setShowPopUp((prev) => !prev)
@@ -46,12 +57,14 @@ function Slide({ title, link, description, image, projectType, skills }) {
 
   return (
     <>
-      <motion.div
+      <div
+        ref={cardRef}
+        style={{
+          opacity: cardInView ? 1 : 0,
+          transform: cardInView ? 'translateY(0)' : 'translateY(100%)',
+          transition: 'all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+        }}
         onClick={showPopUpHandler}
-        initial={{ x: '-200%' }}
-        animate={{ x: 0 }}
-        whileHover={{ scale: 1.025 }}
-        transition={{ ease: 'easeOut' }}
         className='w-full my-8 rounded-lg cursor-pointer h-max bg-white/20 backdrop-blur-lg drop-shadow-md'
       >
         <div className='relative w-full h-48 rounded-t-lg'>
@@ -67,7 +80,7 @@ function Slide({ title, link, description, image, projectType, skills }) {
           <h3 className='font-bold'>{title}</h3>
           <p className='text-slate-400'>{projectType}</p>
         </div>
-      </motion.div>
+      </div>
 
       {showPopUp && (
         <>
@@ -108,7 +121,7 @@ function SlidePopUp({ title, link, image, projectType, description, closeHandler
               style={{ borderRadius: '.5rem' }}
             />
           </div>
-          <p className='w-10/12 py-4'>{description}</p>
+          <p className='w-10/12 py-4 text-slate-300'>{description}</p>
           <p className='w-10/12 pt-3 text-center border-t'>Project Skills</p>
           <div className='flex flex-wrap items-center justify-around w-10/12 py-4 mb-3 text-xl border-b'>
             {skills.map((item, index) => (
