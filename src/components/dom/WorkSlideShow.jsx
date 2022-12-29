@@ -6,12 +6,6 @@ import PortalBackdrop from '../util/PortalBackdrop'
 import { VscClose } from 'react-icons/vsc'
 
 export default function WorkSlideShow() {
-  const [showPopUp, setShowPopUp] = useState(false)
-
-  const showPopUpHandler = () => {
-    setShowPopUp((prev) => !prev)
-  }
-
   return (
     <div className='w-9/12 h-max'>
       {workArray.map((item, index) => (
@@ -22,15 +16,18 @@ export default function WorkSlideShow() {
           image={item.image}
           projectType={item.projectType}
           description={item.description}
-          showPopUp={showPopUp}
-          showPopUpHandler={showPopUpHandler}
         />
       ))}
     </div>
   )
 }
 
-function Slide({ title, link, description, image, projectType, showPopUp, showPopUpHandler }) {
+function Slide({ title, link, description, image, projectType }) {
+  const [showPopUp, setShowPopUp] = useState(false)
+  const showPopUpHandler = () => {
+    setShowPopUp((prev) => !prev)
+  }
+
   return (
     <>
       <motion.div
