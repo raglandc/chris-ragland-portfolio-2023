@@ -6,6 +6,7 @@ import { Suspense } from 'react'
 import GlassCard from '@/components/util/GlassCard'
 import SkillList from '@/components/dom/SkillList'
 import Scroll from '@/components/dom/Scroll'
+import WorkSlideShow from '@/components/dom/WorkSlideShow'
 
 // Dynamic import is used to prevent a payload when the website starts, that includes threejs, r3f etc..
 // WARNING ! errors might get obfuscated by using dynamic import.
@@ -85,6 +86,7 @@ export default function Page(props) {
             </span>
             💼
           </h1>
+          <WorkSlideShow />
         </div>
       </section>
 
