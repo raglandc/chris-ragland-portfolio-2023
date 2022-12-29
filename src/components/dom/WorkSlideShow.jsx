@@ -3,28 +3,32 @@ import Image from 'next/legacy/image'
 import { useInView } from 'framer-motion'
 import { VscClose } from 'react-icons/vsc'
 import {
-  SiJavascript,
   SiReact,
   SiTypescript,
   SiBlender,
-  SiCplusplus,
-  SiC,
   SiNextdotjs,
   SiSvelte,
   SiThreedotjs,
-  SiHtml5,
   SiCss3,
   SiMongodb,
   SiAuth0,
 } from 'react-icons/si'
 import PortalOverlay from '../util/PortalOverlay'
 import PortalBackdrop from '../util/PortalBackdrop'
-import Button from '../util/Button'
 
 export default function WorkSlideShow() {
+  const headerRef = useRef()
+  const headerInView = useInView(headerRef, { once: true, margin: '0px 400% 0px 0px' })
   return (
     <div className='flex flex-col items-center justify-center w-full h-full '>
-      <h1 className='w-11/12 text-2xl'>
+      <h1
+        ref={headerRef}
+        style={{
+          opacity: headerInView ? 1 : 0,
+          transition: 'all 2s ease-in-out',
+        }}
+        className='w-11/12 text-2xl'
+      >
         <span className='font-bold text-left text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
           I work hard...{' '}
         </span>
@@ -104,15 +108,15 @@ function Slide({ title, link, description, image, projectType, skills }) {
 function SlidePopUp({ title, link, image, description, closeHandler, skills }) {
   return (
     <PortalOverlay className='fixed z-30 flex justify-center w-full max-h-screen max-w-screen -translate-y-2/4 -translate-x-2/4 top-2/4 left-2/4 h-max text-slate-100'>
-      <div className='flex flex-col items-center w-10/12 py-3 rounded-lg bg-slate-800'>
+      <div className='flex flex-col items-center w-10/12 py-3 my-4 overflow-y-scroll rounded-lg bg-slate-800'>
         <div className='flex items-center justify-between px-6 py-3'>
-          <h1 className='text-4xl font-bold'>{title}</h1>
+          <h1 className='w-11/12 text-4xl font-bold'>{title}</h1>
           <VscClose
             className='p-1 cursor-pointer w-max h-max hover:rounded-full hover:bg-slate-900/30'
             onClick={closeHandler}
           />
         </div>
-        <div className='flex flex-col items-center w-10/12 overflow-y-scroll'>
+        <div className='flex flex-col items-center w-10/12'>
           <div className='relative w-full h-48'>
             <Image
               src={image}
@@ -122,13 +126,20 @@ function SlidePopUp({ title, link, image, description, closeHandler, skills }) {
               style={{ borderRadius: '.5rem' }}
             />
           </div>
-          <Button
-            title={'Visit Site'}
-            link={link}
-          />
+          {link && (
+            <button className='w-full py-1 mt-4 border rounded-lg bg-slate-500/30 hover:bg-slate-500/50'>
+              <a
+                target='_blank'
+                href={link}
+                rel='noreferrer'
+              >
+                Visit Site
+              </a>
+            </button>
+          )}
           <p className='py-4 text-slate-300'>{description}</p>
           <p className='pt-3 text-center'>Project Skills</p>
-          <div className='flex flex-wrap items-center justify-around w-full py-4 mb-3 text-xl'>
+          <div className='flex flex-wrap items-center justify-around w-full pt-4 my-2 mb-3 text-xl'>
             {skills.map((item, index) => (
               <span key={index}>{item}</span>
             ))}
@@ -172,7 +183,7 @@ const workArray = [
   },
   {
     title: 'Vidal Developers V2',
-    link: '/',
+    link: '',
     image: '/img/work-images/vidal-version-2-landing-page.webp',
     projectType: 'Web Development',
     description:
@@ -181,6 +192,7 @@ const workArray = [
       <SiTypescript key={'Typescript Logo'} />,
       <SiSvelte key={'Svelte Logo'} />,
       <SiThreedotjs key={'ThreeJS Logo'} />,
+      <SiBlender key={'Blender Logo'} />,
     ],
   },
 ]

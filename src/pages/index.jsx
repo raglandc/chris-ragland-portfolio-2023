@@ -80,7 +80,7 @@ export default function Page(props) {
 
       {/*------------- SECTION 3 ------------ SECTION 3 ---------------*/}
 
-      <section className='order-3 my-10 h-max col-span-full'>
+      <section className='order-3 mt-20 h-max col-span-full'>
         <WorkSlideShow />
       </section>
 

@@ -66,7 +66,7 @@ function MenuWindow({ closeHandler }) {
             title='GitHub'
           />
           <ContactLink
-            link='https://www.instagram.com/in/chris_ragland/'
+            link='https://www.instagram.com/chris_ragland/'
             icon={<FaInstagram />}
             title='Instagram'
           />
