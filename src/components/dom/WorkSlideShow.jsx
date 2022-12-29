@@ -1,8 +1,6 @@
 import { useState, useRef } from 'react'
 import Image from 'next/legacy/image'
 import { useInView } from 'framer-motion'
-import PortalOverlay from '../util/PortalOverlay'
-import PortalBackdrop from '../util/PortalBackdrop'
 import { VscClose } from 'react-icons/vsc'
 import {
   SiJavascript,
@@ -19,6 +17,9 @@ import {
   SiMongodb,
   SiAuth0,
 } from 'react-icons/si'
+import PortalOverlay from '../util/PortalOverlay'
+import PortalBackdrop from '../util/PortalBackdrop'
+import Button from '../util/Button'
 
 export default function WorkSlideShow() {
   return (
@@ -100,10 +101,10 @@ function Slide({ title, link, description, image, projectType, skills }) {
   )
 }
 
-function SlidePopUp({ title, link, image, projectType, description, closeHandler, skills }) {
+function SlidePopUp({ title, link, image, description, closeHandler, skills }) {
   return (
-    <PortalOverlay className='fixed z-30 flex justify-center w-full max-h-screen -translate-y-2/4 -translate-x-2/4 top-2/4 left-2/4 h-max text-slate-100'>
-      <div className='w-10/12 py-3 rounded-lg bg-slate-800'>
+    <PortalOverlay className='fixed z-30 flex justify-center w-full max-h-screen max-w-screen -translate-y-2/4 -translate-x-2/4 top-2/4 left-2/4 h-max text-slate-100'>
+      <div className='flex flex-col items-center w-10/12 py-3 rounded-lg bg-slate-800'>
         <div className='flex items-center justify-between px-6 py-3'>
           <h1 className='text-4xl font-bold'>{title}</h1>
           <VscClose
@@ -111,8 +112,8 @@ function SlidePopUp({ title, link, image, projectType, description, closeHandler
             onClick={closeHandler}
           />
         </div>
-        <div className='flex flex-col items-center w-full overflow-y-scroll'>
-          <div className='relative w-10/12 h-48'>
+        <div className='flex flex-col items-center w-10/12 overflow-y-scroll'>
+          <div className='relative w-full h-48'>
             <Image
               src={image}
               alt={`${title} website`}
@@ -121,9 +122,13 @@ function SlidePopUp({ title, link, image, projectType, description, closeHandler
               style={{ borderRadius: '.5rem' }}
             />
           </div>
-          <p className='w-10/12 py-4 text-slate-300'>{description}</p>
-          <p className='w-10/12 pt-3 text-center border-t'>Project Skills</p>
-          <div className='flex flex-wrap items-center justify-around w-10/12 py-4 mb-3 text-xl border-b'>
+          <Button
+            title={'Visit Site'}
+            link={link}
+          />
+          <p className='py-4 text-slate-300'>{description}</p>
+          <p className='pt-3 text-center'>Project Skills</p>
+          <div className='flex flex-wrap items-center justify-around w-full py-4 mb-3 text-xl'>
             {skills.map((item, index) => (
               <span key={index}>{item}</span>
             ))}
