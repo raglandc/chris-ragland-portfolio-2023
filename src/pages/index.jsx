@@ -21,8 +21,10 @@ const Globe = dynamic(() => import('@/components/canvas/scenes/Globe.jsx'))
 export default function Page(props) {
   return (
     <>
-      <section className='relative order-1 min-h-screen col-span-full'>
-        <div className='absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full bg-gradient-to-b from-black'>
+      <section className='order-1 min-h-screen col-span-full'>
+        {/* The div below is for the space that would be present if nav was not fixed */}
+        <div className='flex flex-col items-center justify-center w-full h-full bg-gradient-to-b from-black'>
+          <div className='w-full h-12 mt-4 transparent' />
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -37,7 +39,7 @@ export default function Page(props) {
             <h1 className='w-10/12 pb-1 text-5xl font-black text-transparent animate-text bg-gradient-to-l from-blue-600 via-fuchsia-500 to-fuchsia-600 bg-clip-text'>
               Ragland
             </h1>
-            <h2 className='w-10/12 mt-12 ml-3 text-3xl'>
+            <h2 className='w-10/12 mt-8 ml-3 text-3xl'>
               <Typewriter
                 options={{
                   strings: ['student.', 'developer.', "coffee ❤️'er."],
