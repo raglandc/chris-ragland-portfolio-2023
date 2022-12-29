@@ -39,7 +39,7 @@ export default function Page(props) {
             <h1 className='w-10/12 pb-1 text-5xl font-black text-transparent animate-text bg-gradient-to-l from-blue-600 via-fuchsia-500 to-fuchsia-600 bg-clip-text'>
               Ragland
             </h1>
-            <h2 className='w-10/12 mt-8 ml-3 text-3xl'>
+            <h2 className='w-10/12 mt-8 ml-3 text-4xl text-slate-400'>
               <Typewriter
                 options={{
                   strings: ['student.', 'developer.', "coffee ❤️'er."],
@@ -56,7 +56,7 @@ export default function Page(props) {
             transition={{ duration: 1.5, delay: 0.5, ease: 'easeInOut' }}
           >
             <Image
-              src='/img/banner-7.png'
+              src='/img/banner.png'
               alt='coffee cup, laptop, pencil'
               width={1024}
               height={1024}

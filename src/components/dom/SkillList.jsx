@@ -65,7 +65,7 @@ export default function SkillList({ ...props }) {
         >
           <span className='mx-2 text-3xl'>&ldquo;</span>The more I learn, the more I realize how much I don&apos;t know.
           <span className='mx-2 text-3xl'>&rdquo;</span>
-          <span className='absolute italic right-5 -bottom-8'>- Albert Einstein</span>
+          <span className='absolute italic text-slate-400 right-5 -bottom-8'>- Albert Einstein</span>
         </p>
       </div>
       <div className='w-full px-2  grid place-content-stretch grid-cols-3 gap-2 h-max'>
