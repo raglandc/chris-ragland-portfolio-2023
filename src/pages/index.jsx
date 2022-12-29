@@ -74,14 +74,14 @@ export default function Page(props) {
 
       {/*------------- SECTION 2 ------------ SECTION 2 ------------*/}
 
-      <section className='relative flex flex-col justify-around order-2 h-max col-span-full'>
+      <section className='flex flex-col justify-around order-2 h-max col-span-full'>
         <SkillList />
       </section>
 
       {/*------------- SECTION 3 ------------ SECTION 3 ---------------*/}
 
-      <section className='relative order-3 h-screen col-span-full'>
-        <div className='absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full '>
+      <section className='order-3 h-screen col-span-full'>
+        <div className='flex flex-col items-center justify-center w-full h-full '>
           <h1 className='w-11/12 text-2xl'>
             <span className='font-bold text-left text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
               I work hard...{' '}
@@ -93,14 +93,8 @@ export default function Page(props) {
       </section>
 
       {/*------------- SECTION 4 ------------ SECTION 4 ---------------*/}
-      <section className='relative order-4 h-screen col-span-full'>
-        {/* <SceneContainer>
-          <mesh>
-            <boxGeometry />
-            <meshBasicMaterial />
-          </mesh>
-        </SceneContainer> */}
-        <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full '>
+      <section className='order-4 h-screen col-span-full'>
+        <div className='flex items-center justify-center w-full h-full '>
           <h1 className='w-11/12 text-2xl'>
             <span className='font-bold text-left text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
               ...and play harder{' '}
