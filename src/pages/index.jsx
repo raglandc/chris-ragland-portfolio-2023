@@ -80,7 +80,7 @@ export default function Page(props) {
 
       {/*------------- SECTION 3 ------------ SECTION 3 ---------------*/}
 
-      <section className='order-3 h-screen col-span-full'>
+      <section className='order-3 my-10 h-max col-span-full'>
         <div className='flex flex-col items-center justify-center w-full h-full '>
           <h1 className='w-11/12 text-2xl'>
             <span className='font-bold text-left text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
