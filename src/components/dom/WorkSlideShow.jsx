@@ -1,7 +1,17 @@
+import { useState } from 'react'
 import Image from 'next/legacy/image'
 import { motion } from 'framer-motion'
+import PortalOverlay from '../util/PortalOverlay'
+import PortalBackdrop from '../util/PortalBackdrop'
+import { VscClose } from 'react-icons/vsc'
 
 export default function WorkSlideShow() {
+  const [showPopUp, setShowPopUp] = useState(false)
+
+  const showPopUpHandler = () => {
+    setShowPopUp((prev) => !prev)
+  }
+
   return (
     <div className='w-9/12 h-max'>
       {workArray.map((item, index) => (
@@ -12,35 +22,67 @@ export default function WorkSlideShow() {
           image={item.image}
           projectType={item.projectType}
           description={item.description}
+          showPopUp={showPopUp}
+          showPopUpHandler={showPopUpHandler}
         />
       ))}
     </div>
   )
 }
 
-function Slide({ title, link, image, projectType }) {
+function Slide({ title, link, description, image, projectType, showPopUp, showPopUpHandler }) {
   return (
-    <motion.div
-      initial={{ x: '-200%' }}
-      animate={{ x: 0 }}
-      whileHover={{ scale: 1.025 }}
-      transition={{ ease: 'easeOut' }}
-      className='w-full my-8 rounded-lg cursor-pointer h-max bg-white/20 backdrop-blur-lg drop-shadow-md'
-    >
-      <div className='relative w-full h-48 rounded-t-lg'>
-        <Image
-          src={image}
-          alt={`${title} website`}
-          layout='fill'
-          objectFit='cover'
-          style={{ borderTopRightRadius: '.5rem', borderTopLeftRadius: '.5rem' }}
-        />
+    <>
+      <motion.div
+        onClick={showPopUpHandler}
+        initial={{ x: '-200%' }}
+        animate={{ x: 0 }}
+        whileHover={{ scale: 1.025 }}
+        transition={{ ease: 'easeOut' }}
+        className='w-full my-8 rounded-lg cursor-pointer h-max bg-white/20 backdrop-blur-lg drop-shadow-md'
+      >
+        <div className='relative w-full h-48 rounded-t-lg'>
+          <Image
+            src={image}
+            alt={`${title} website`}
+            layout='fill'
+            objectFit='cover'
+            style={{ borderTopRightRadius: '.5rem', borderTopLeftRadius: '.5rem' }}
+          />
+        </div>
+        <div className='w-full h-20 px-5 py-4 rounded-b-lg bg-slate-800'>
+          <h3 className='font-bold'>{title}</h3>
+          <p className='text-slate-400'>{projectType}</p>
+        </div>
+      </motion.div>
+
+      {showPopUp && (
+        <>
+          <PortalBackdrop onClick={showPopUpHandler} />
+          <SlidePopUp
+            closeHandler={showPopUpHandler}
+            title={title}
+            projectType={projectType}
+            image={image}
+            link={link}
+            description={description}
+          />
+        </>
+      )}
+    </>
+  )
+}
+
+function SlidePopUp({ title, link, image, projectType, description, closeHandler }) {
+  return (
+    <PortalOverlay className='fixed z-30 flex justify-center w-max -translate-y-2/4 -translate-x-2/4 top-2/4 left-2/4 h-max text-slate-100'>
+      <div className='w-10/12 bg-slate-800'>
+        <div className='flex items-center justify-center'>
+          <h2>{title}</h2>
+          <VscClose />
+        </div>
       </div>
-      <div className='w-full h-20 px-5 py-4 rounded-b-lg bg-slate-800'>
-        <h3 className='font-bold'>{title}</h3>
-        <p className='text-slate-400'>{projectType}</p>
-      </div>
-    </motion.div>
+    </PortalOverlay>
   )
 }
 
