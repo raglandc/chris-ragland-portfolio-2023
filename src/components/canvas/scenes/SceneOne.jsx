@@ -3,7 +3,7 @@ import { useGLTF, Html } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import Modal from '@/components/util/Modal'
 
-export default function SceneOne(props) {
+export default function SceneOne({ ...props }) {
   const planeRef = useRef()
   const [showState, setShowState] = useState({ indiana: false, florida: false })
 
@@ -12,8 +12,8 @@ export default function SceneOne(props) {
     planeRef.current.rotation.z += -delta * 0.25
   })
 
-  const plane = useGLTF('./models/plane.glb')
-  const world = useGLTF('./models/earth.glb')
+  const plane = useGLTF('/models/plane.glb')
+  const world = useGLTF('/models/earth.glb')
 
   return (
     <group>

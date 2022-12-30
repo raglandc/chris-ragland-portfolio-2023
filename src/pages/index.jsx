@@ -1,9 +1,9 @@
+import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Typewriter from 'typewriter-effect'
 import { Suspense } from 'react'
-import GlassCard from '@/components/util/GlassCard'
 import SkillList from '@/components/dom/SkillList'
 import Scroll from '@/components/dom/Scroll'
 import WorkSlideShow from '@/components/dom/WorkSlideShow'
@@ -15,10 +15,10 @@ import WorkSlideShow from '@/components/dom/WorkSlideShow'
 // const Logo = dynamic(() => import('@/components/canvas/Logo'), { ssr: false })
 const SceneOne = dynamic(() => import('@/components/canvas/scenes/SceneOne.jsx'))
 const SceneContainer = dynamic(() => import('@/components/canvas/SceneContainer.jsx'))
-const Globe = dynamic(() => import('@/components/canvas/scenes/Globe.jsx'))
 
 // Dom components go here
 export default function Page(props) {
+  const [showWorld, setShowWorld] = useState(false)
   return (
     <>
       <section className='order-1 min-h-screen col-span-full'>
@@ -98,11 +98,31 @@ export default function Page(props) {
 
       {/*------------- SECTION 5 ------------ SECTION 5 ---------------*/}
 
-      <section className='relative order-5 h-screen -z-10 col-span-full'>
-        <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'></div>
-        {/* <SceneContainer>
-          <SceneOne />
-        </SceneContainer> */}
+      <section className='relative flex flex-col items-center order-5 h-screen text-center col-span-full'>
+        <div className='w-10/12'>
+          <p>
+            As you can see from recent projects, Chris loves working with WebGL and interactive 3D web experiences. The
+            problem is these experiences, depending on your computer device, can be slow or &apos;laggy&apos; for a lack
+            of better words. Chris wants for everyone to have a good experience.
+          </p>
+          <p>
+            If you think your computer or cell phone is up to it, go ahead and click the button below and learn more
+            about Chris&apos; world. 🌎
+          </p>
+        </div>
+        <button
+          className='px-6 py-3 mt-4 border rounded-lg cursor-pointer w-max text-slate-300 hover:bg-slate-700 hover:text-slate-100 bg-slate-800'
+          onClick={() => setShowWorld((prev) => !prev)}
+        >
+          {showWorld ? 'Hide' : 'Show'} 3D World
+        </button>
+        {showWorld && (
+          <SceneContainer>
+            <Suspense fallback={null}>
+              <SceneOne />
+            </Suspense>
+          </SceneContainer>
+        )}
       </section>
     </>
   )
@@ -111,7 +131,7 @@ export default function Page(props) {
 // Canvas components go here
 // It will receive same props as the Page component (from getStaticProps, etc.)
 // Page.canvas = (props) => <Logo scale={0.5} route='/blob' position-y={-1} />
-// Page.canvas = (props) => <SceneOne />
+Page.canvas = (props) => <SceneOne />
 
 export async function getStaticProps() {
   return { props: { title: 'Chris Ragland' } }

@@ -7,9 +7,11 @@ export default function SceneContainer({ children, ...props }) {
   return (
     <Canvas
       {...props}
-      className='absolute top-0 left-0 w-full h-full -z-10'
+      className='absolute top-0 left-0 z-10 w-full h-full'
     >
+      <OrbitControls />
       <ambientLight intensity={1} />
+      <directionalLight intensity={1} />
       {children}
       <Preload all />
       {/* <Perf position='top-left' /> */}
