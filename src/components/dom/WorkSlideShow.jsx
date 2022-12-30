@@ -47,6 +47,24 @@ export default function WorkSlideShow() {
           />
         ))}
       </div>
+      <div className='w-8/12 my-4 text-center'>
+        <p className='text-slate-300'>
+          If you would like to see more of Chris' work, check out his github for more projects. 👨‍💻
+        </p>
+        <div className='relative mt-10 group'>
+          <div className='absolute rounded-lg opacity-75 -inset-0.5 bg-gradient-to-r from-fuchsia-600 to-blue-600 blur group-hover:opacity-100 transition duration-200' />
+          <button className='relative w-full text-center rounded-lg bg-slate-800 text-slate-300 group-hover:text-slate-100'>
+            <a
+              target='_blank'
+              href='https://www.github.com/raglandc'
+              rel='noreferrer'
+              className='block w-full h-full px-6 py-2'
+            >
+              Visit GitHub &rarr;
+            </a>
+          </button>
+        </div>
+      </div>
     </div>
   )
 }
