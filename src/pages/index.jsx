@@ -118,11 +118,7 @@ export default function Page(props) {
         </button>
         {showWorld && (
           <div className='relative w-full h-full'>
-            <SceneContainer>
-              <Suspense fallback={null}>
-                <SceneOne />
-              </Suspense>
-            </SceneContainer>
+            <SceneContainer />
           </div>
         )}
       </section>

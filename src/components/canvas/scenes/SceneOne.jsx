@@ -1,11 +1,9 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { useGLTF, Html } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import Modal from '@/components/util/Modal'
 
-export default function SceneOne({ ...props }) {
+export default function SceneOne({ showState, showStateHandler }) {
   const planeRef = useRef()
-  const [showState, setShowState] = useState({ indiana: false, florida: false })
 
   useFrame((_, delta) => {
     planeRef.current.rotation.x += delta * 0.01
@@ -14,65 +12,18 @@ export default function SceneOne({ ...props }) {
 
   const plane = useGLTF('/models/plane.glb')
   const world = useGLTF('/models/earth.glb')
+  const pinOne = useGLTF('/models/pin-one.glb')
+  const pinTwo = useGLTF('/models/pin-two.glb')
 
   return (
-    <group>
+    <group rotation={[Math.PI * 0.13, 0.41, 0]}>
+      <primitive object={world.scene} />
+      {/* pins on the earth : Florida and Indiana */}
       <primitive
-        object={world.scene}
-        rotation={[Math.PI * 0.13, 0.41, 0]}
-      >
-        {!showState.indiana ? (
-          <Html
-            center
-            position={[
-              world.scene.children[0].position.x,
-              world.scene.children[0].position.y,
-              world.scene.children[0].position.z,
-            ]}
-          >
-            {showState.florida ? null : (
-              <div
-                onClick={() => setShowState({ indiana: true, florida: false })}
-                className='z-30 rounded-full opacity-75 bg-primary w-7 h-7 animate-ping-slow'
-              />
-            )}
-          </Html>
-        ) : (
-          <Html fullscreen>
-            <Modal
-              setShowState={setShowState}
-              state={'Indiana'}
-              description={'Hey chris'}
-            />
-          </Html>
-        )}
-
-        {!showState.florida ? (
-          <Html
-            center
-            position={[
-              world.scene.children[1].position.x,
-              world.scene.children[1].position.y,
-              world.scene.children[1].position.z,
-            ]}
-          >
-            {showState.indiana ? null : (
-              <div
-                onClick={() => setShowState({ indiana: false, florida: true })}
-                className='rounded-full opacity-75 bg-primary w-7 h-7 animate-ping-slow'
-              />
-            )}
-          </Html>
-        ) : (
-          <Html fullscreen>
-            <Modal
-              setShowState={setShowState}
-              state={'Florida'}
-              description={'Hey chris'}
-            />
-          </Html>
-        )}
-      </primitive>
+        onClick={showStateHandler}
+        object={pinOne.scene}
+      />
+      <primitive object={pinTwo.scene} />
 
       <primitive
         ref={planeRef}
