@@ -98,7 +98,7 @@ export default function Page(props) {
 
       {/*------------- SECTION 5 ------------ SECTION 5 ---------------*/}
 
-      <section className='relative flex flex-col items-center order-5 h-screen text-center col-span-full'>
+      <section className='flex flex-col items-center order-5 min-h-screen text-center col-span-full'>
         <div className='w-10/12'>
           <p>
             As you can see from recent projects, Chris loves working with WebGL and interactive 3D web experiences. The
@@ -117,11 +117,13 @@ export default function Page(props) {
           {showWorld ? 'Hide' : 'Show'} 3D World
         </button>
         {showWorld && (
-          <SceneContainer>
-            <Suspense fallback={null}>
-              <SceneOne />
-            </Suspense>
-          </SceneContainer>
+          <div className='relative w-full h-full'>
+            <SceneContainer>
+              <Suspense fallback={null}>
+                <SceneOne />
+              </Suspense>
+            </SceneContainer>
+          </div>
         )}
       </section>
     </>
