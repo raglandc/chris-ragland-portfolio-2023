@@ -60,7 +60,7 @@ export default function WorkSlideShow() {
         className='w-8/12 my-4 text-center'
       >
         <p className='text-slate-300'>
-          If you would like to see more of Chris' work, check out his github for more projects. 👨‍💻
+          If you would like to see more of Chris&apos;s work, check out his github for more projects. 👨‍💻
         </p>
         <div className='relative mt-10 group'>
           <div className='absolute rounded-lg opacity-75 -inset-0.5 bg-gradient-to-r from-fuchsia-600 to-blue-600 blur group-hover:opacity-100 transition duration-200' />
