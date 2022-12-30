@@ -12,13 +12,17 @@ import {
   SiCss3,
   SiMongodb,
   SiAuth0,
+  SiGithub,
 } from 'react-icons/si'
 import PortalOverlay from '../util/PortalOverlay'
 import PortalBackdrop from '../util/PortalBackdrop'
 
 export default function WorkSlideShow() {
-  const headerRef = useRef()
-  const headerInView = useInView(headerRef, { once: true, margin: '0px 400% 0px 0px' })
+  const headerRef = useRef(null)
+  const groupRef = useRef(null)
+  const headerInView = useInView(headerRef, { once: true, margin: '-100px' })
+  const groupInView = useInView(groupRef, { once: true, margin: '-150px' })
+
   return (
     <div className='flex flex-col items-center justify-center w-full h-full '>
       <h1
@@ -47,7 +51,14 @@ export default function WorkSlideShow() {
           />
         ))}
       </div>
-      <div className='w-8/12 my-4 text-center'>
+      <div
+        ref={groupRef}
+        style={{
+          opacity: groupInView ? 1 : 0,
+          transition: 'opacity 2s ease-out',
+        }}
+        className='w-8/12 my-4 text-center'
+      >
         <p className='text-slate-300'>
           If you would like to see more of Chris' work, check out his github for more projects. 👨‍💻
         </p>
@@ -58,9 +69,9 @@ export default function WorkSlideShow() {
               target='_blank'
               href='https://www.github.com/raglandc'
               rel='noreferrer'
-              className='block w-full h-full px-6 py-2'
+              className='flex items-center justify-center w-full h-full px-6 py-2 text-sm'
             >
-              Visit GitHub &rarr;
+              Visit GitHub <SiGithub className='inline ml-2' />
             </a>
           </button>
         </div>
