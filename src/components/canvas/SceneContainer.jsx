@@ -1,6 +1,14 @@
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Environment, Preload, AccumulativeShadows, RandomizedLight } from '@react-three/drei'
+import {
+  OrbitControls,
+  Environment,
+  Preload,
+  AccumulativeShadows,
+  RandomizedLight,
+  useProgress,
+  Html,
+} from '@react-three/drei'
 import PortalBackdrop from '@/components/util/PortalBackdrop'
 import SceneOne from './scenes/SceneOne'
 
@@ -10,6 +18,7 @@ export default function SceneContainer({ children, ...props }) {
     console.log('clicked')
     setShowClicked((prev) => !prev)
   }
+
   // Everything defined in here will persist between route changes, only children are swapped
   return (
     <>
@@ -47,10 +56,17 @@ export default function SceneContainer({ children, ...props }) {
           intensity={1}
           castShadow
         /> */}
-        <SceneOne showStateHandler={showStateHandler} />
+        <Suspense fallback={<Loader />}>
+          <SceneOne showStateHandler={showStateHandler} />
+        </Suspense>
         <Preload all />
       </Canvas>
       {showClicked && <PortalBackdrop onClick={showStateHandler} />}
     </>
   )
+}
+
+function Loader() {
+  const { progress } = useProgress()
+  return <Html center>{progress} % loaded</Html>
 }
