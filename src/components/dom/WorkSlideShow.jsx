@@ -155,6 +155,7 @@ function SlidePopUp({ title, link, image, description, closeHandler, skills }) {
               style={{ borderRadius: '.5rem' }}
             />
           </div>
+          {/* if the project has a link, show a button that will take them to the web page */}
           {link && (
             <button className='w-full py-1 mt-4 border rounded-lg bg-slate-500/30 hover:bg-slate-500/50'>
               <a

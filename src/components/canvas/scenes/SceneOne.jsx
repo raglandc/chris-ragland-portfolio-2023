@@ -4,7 +4,7 @@ import { useGLTF, Html } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useControls } from 'leva'
 
-export default function SceneOne({ showState, showStateHandler }) {
+export default function SceneOne({ showStateHandler }) {
   const planeRef = useRef()
 
   useFrame((_, delta) => {
@@ -27,10 +27,13 @@ export default function SceneOne({ showState, showStateHandler }) {
         />
         {/* pins on the earth : Florida and Indiana */}
         <primitive
-          onClick={showStateHandler}
+          onClick={showStateHandler[0]}
           object={pinOne.scene}
         />
-        <primitive object={pinTwo.scene} />
+        <primitive
+          onClick={showStateHandler[1]}
+          object={pinTwo.scene}
+        />
 
         <primitive
           castShadow
