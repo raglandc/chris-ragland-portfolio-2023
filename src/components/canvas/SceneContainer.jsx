@@ -14,7 +14,7 @@ import SceneOne from './scenes/SceneOne'
 import PortalOverlay from '../util/PortalOverlay'
 import { VscClose } from 'react-icons/vsc'
 
-export default function SceneContainer({ children, ...props }) {
+export default function SceneContainer() {
   const [showIndiana, setShowIndiana] = useState(false)
   const [showFlorida, setShowFlorida] = useState(false)
 
@@ -59,18 +59,6 @@ export default function SceneContainer({ children, ...props }) {
             bias={0.001}
           />
         </AccumulativeShadows>
-        {/* <directionalLight
-          intensity={1}
-          position={[-0.5, 2, 0]}
-          color={'#2563eb'}
-          castShadow
-        />
-        <directionalLight
-          intensity={1}
-          position={[0.5, 2, 0]}
-          color={'#c026d3'}
-          castShadow
-        /> */}
         <Suspense fallback={<Loader />}>
           <SceneOne showStateHandler={[showFloridaHandler, showIndianaHandler]} />
         </Suspense>
@@ -128,7 +116,7 @@ const stateInformation = [
   {
     stateTitle: 'Indiana',
     description:
-      'While Chris was born in South Bend, Indiana; he spent most of his early years in Lafayette, Indiana. Lafayette is where Chris would graduate highschool and begin his experience as a young EMT. Chris worked on the ambulance for about six months before he moved to Florida in the fall of 2016.',
+      'While Chris was born in South Bend, Indiana, he spent most of his early years in Lafayette, Indiana. Lafayette is where Chris would graduate highschool and begin his experience as a young EMT. Chris worked on the ambulance for about six months before he moved to Florida in the fall of 2016.',
   },
   {
     stateTitle: 'Florida',
