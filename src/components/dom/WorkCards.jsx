@@ -99,7 +99,7 @@ function Card({ title, link, description, image, projectType, skills }) {
           transition: 'all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
         }}
         onClick={showPopUpHandler}
-        className='w-11/12 mx-3 my-8 rounded-lg cursor-pointer sm:w-8/12 md:w-1/3 h-max bg-slate-100/20'
+        className='w-11/12 mx-3 my-4 rounded-lg cursor-pointer lg:my-8 sm:w-8/12 md:w-1/3 h-max bg-slate-100/20'
       >
         <div className='relative w-full h-48 rounded-t-lg'>
           <Image
