@@ -31,7 +31,7 @@ export default function WorkCards() {
           opacity: headerInView ? 1 : 0,
           transition: 'all 2s ease-in-out',
         }}
-        className='w-11/12 text-2xl sm:text-4xl'
+        className='w-11/12 mb-10 text-2xl sm:text-4xl'
       >
         <span className='font-bold text-left text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
           I work hard...{' '}
@@ -57,7 +57,7 @@ export default function WorkCards() {
           opacity: groupInView ? 1 : 0,
           transition: 'opacity 2s ease-out',
         }}
-        className='flex flex-col items-center w-8/12 my-4'
+        className='flex flex-col items-center w-8/12 my-4 sm:p-2 sm:w-6/12 xl:w-4/12'
       >
         <p className='text-slate-300'>
           If you would like to see more of Chris&apos;s work, check out his github for more projects. 👨‍💻
@@ -93,25 +93,21 @@ function Card({ title, link, description, image, projectType, skills }) {
     <>
       <div
         ref={cardRef}
-        style={{
-          opacity: cardInView ? 1 : 0,
-          transform: cardInView ? 'translateY(0)' : 'translateY(100%)',
-          transition: 'all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
-        }}
         onClick={showPopUpHandler}
-        className='w-11/12 mx-3 my-4 rounded-lg cursor-pointer lg:my-8 sm:w-8/12 md:w-1/3 h-max bg-slate-100/20'
+        className='w-11/12 mx-2 my-4 rounded-lg cursor-pointer group hover:scale-105 lg:my-8 sm:w-8/12 md:w-1/3 h-max bg-slate-100/20'
       >
-        <div className='relative w-full h-48 rounded-t-lg'>
+        <div className='relative w-full h-48 overflow-hidden rounded-t-lg'>
           <Image
             src={image}
             alt={`${title} website`}
             layout='fill'
             objectFit='cover'
+            className='group-hover:scale-110'
             style={{ borderTopRightRadius: '.5rem', borderTopLeftRadius: '.5rem' }}
           />
         </div>
         <div className='w-full h-24 p-3 rounded-b-lg bg-slate-800'>
-          <h3 className='font-bold'>{title}</h3>
+          <h3 className='font-bold '>{title}</h3>
           <p className='text-slate-400'>{projectType}</p>
         </div>
       </div>

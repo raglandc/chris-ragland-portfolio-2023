@@ -27,17 +27,17 @@ export default function Page(props) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, delay: 0.5, ease: 'easeInOut' }}
-            className='flex flex-col items-center justify-center w-full h-full font-bold translate-y-4'
+            className='flex flex-col items-center justify-center w-full h-full font-bold sm:text-center sm:translate-y-20 translate-y-4'
           >
-            <h1 className='w-10/12 text-4xl lg:text-6xl'>Hi,</h1>
-            <h1 className='w-10/12 text-4xl lg:text-6xl'> my name is </h1>
-            <h1 className='w-10/12 text-5xl font-black text-transparent lg:text-7xl animate-text bg-gradient-to-r from-blue-600 via-fuchsia-500 to-fuchsia-600 bg-clip-text'>
+            <h1 className='w-10/12 text-4xl sm:text-5xl'>Hi,</h1>
+            <h1 className='w-10/12 text-4xl sm:text-5xl '> my name is </h1>
+            <h1 className='w-10/12 text-5xl font-black text-transparent sm:text-6xl animate-text bg-gradient-to-r from-blue-600 via-fuchsia-500 to-fuchsia-600 bg-clip-text'>
               Chris
             </h1>
-            <h1 className='w-10/12 pb-1 text-5xl font-black text-transparent lg:text-7xl animate-text bg-gradient-to-l from-blue-600 via-fuchsia-500 to-fuchsia-600 bg-clip-text'>
+            <h1 className='w-10/12 pb-1 text-5xl font-black text-transparent sm:text-6xl animate-text bg-gradient-to-l from-blue-600 via-fuchsia-500 to-fuchsia-600 bg-clip-text'>
               Ragland
             </h1>
-            <h2 className='w-10/12 mt-8 ml-3 text-4xl lg:text-6xl text-slate-400'>
+            <h2 className='w-10/12 ml-3 text-4xl mt-9 sm:text-5xl text-slate-400'>
               <Typewriter
                 options={{
                   strings: ['student.', 'developer.', "coffee ❤️'er."],
