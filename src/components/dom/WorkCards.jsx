@@ -99,7 +99,7 @@ function Card({ title, link, description, image, projectType, skills }) {
           transition: 'all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
         }}
         onClick={showPopUpHandler}
-        className='w-11/12 mx-3 my-8 rounded-lg cursor-pointer sm:w-8/12 md:w-1/3 h-max bg-white/20 backdrop-blur-lg drop-shadow-md'
+        className='w-11/12 mx-3 my-8 rounded-lg cursor-pointer sm:w-8/12 md:w-1/3 h-max bg-slate-100/20'
       >
         <div className='relative w-full h-48 rounded-t-lg'>
           <Image
@@ -136,8 +136,8 @@ function Card({ title, link, description, image, projectType, skills }) {
 
 function CardPopUp({ title, link, image, description, closeHandler, skills }) {
   return (
-    <PortalOverlay className='fixed z-30 flex justify-center w-full max-h-screen max-w-screen -translate-y-2/4 -translate-x-2/4 top-2/4 left-2/4 h-max text-slate-100'>
-      <div className='flex flex-col items-center w-10/12 py-3 my-4 overflow-y-scroll rounded-lg sm:w-8/12 md:w-7/12 xl:w-4/12 lg:p-3 lg:w-5/12 lg:overflow-y-hidden bg-slate-800'>
+    <PortalOverlay className='fixed z-30 flex justify-center max-h-screen w-max -translate-y-2/4 -translate-x-2/4 top-2/4 left-2/4 h-max text-slate-100'>
+      <div className='flex flex-col items-center py-3 my-4 overflow-y-scroll rounded-lg w-80 md:w-96 lg:p-3 xl:py-6 md:overflow-y-hidden bg-slate-800'>
         <div className='flex items-center justify-between w-full px-6 py-3'>
           <h1 className='w-11/12 text-4xl font-bold'>{title}</h1>
           <VscClose
@@ -168,7 +168,7 @@ function CardPopUp({ title, link, image, description, closeHandler, skills }) {
             </button>
           )}
           <p className='py-4 text-slate-300'>{description}</p>
-          <p className='pt-3 text-center'>Project Skills</p>
+          <p className='pt-3 text-center text-slate-400'>Project Skills</p>
           <div className='flex flex-wrap items-center justify-around w-full pt-4 my-2 mb-3 text-xl'>
             {skills.map((item, index) => (
               <span key={index}>{item}</span>
