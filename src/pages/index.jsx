@@ -19,10 +19,10 @@ export default function Page(props) {
   const [showWorld, setShowWorld] = useState(false)
   return (
     <>
-      <div className='order-first hidden bg-black lg:block h-14 col-span-full' />
-      <section className='order-1 min-h-screen col-span-full'>
+      <div className='absolute top-0 left-0 order-first w-full h-screen bg-gradient-to-b from-black' />
+      <section className='order-1 min-h-screen col-span-full lg:col-start-3 lg:col-end-11 xl:col-start-4 xl:col-end-10'>
         {/* The div below is for the space that would be present if nav was not fixed */}
-        <div className='flex flex-col items-center justify-center w-full h-full bg-gradient-to-b from-black'>
+        <div className='flex flex-col items-center justify-center w-full h-full'>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
