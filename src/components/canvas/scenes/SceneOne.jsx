@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { useGLTF, Stars, Center, Text3D } from '@react-three/drei'
+import { useGLTF, Center, Text3D } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 
 export default function SceneOne({ showStateHandler }) {
@@ -17,10 +17,6 @@ export default function SceneOne({ showStateHandler }) {
 
   return (
     <>
-      <Stars
-        count={1618}
-        radius={100}
-      />
       <Center
         top
         position={[0, 2.5, 0]}

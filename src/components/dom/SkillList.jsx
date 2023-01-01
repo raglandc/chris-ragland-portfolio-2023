@@ -41,7 +41,7 @@ export default function SkillList({ ...props }) {
         {...props}
         className='flex flex-col items-center justify-center w-full mb-20 mt-28'
       >
-        <h2
+        <h1
           ref={headerRef}
           style={{
             transform: headerInView ? 'none' : 'translateX(-200px)',
@@ -54,7 +54,7 @@ export default function SkillList({ ...props }) {
             Yeah, I like to learn
           </span>
           📚
-        </h2>
+        </h1>
         <p
           ref={quoteRef}
           style={{

@@ -17,21 +17,21 @@ import {
 import PortalOverlay from '../util/PortalOverlay'
 import PortalBackdrop from '../util/PortalBackdrop'
 
-export default function WorkSlideShow() {
+export default function WorkCards() {
   const headerRef = useRef(null)
   const groupRef = useRef(null)
   const headerInView = useInView(headerRef, { once: true, margin: '-100px' })
   const groupInView = useInView(groupRef, { once: true, margin: '-150px' })
 
   return (
-    <div className='flex flex-col items-center justify-center w-full h-full '>
+    <div className='flex flex-col items-center justify-center w-full h-full'>
       <h1
         ref={headerRef}
         style={{
           opacity: headerInView ? 1 : 0,
           transition: 'all 2s ease-in-out',
         }}
-        className='w-11/12 text-2xl'
+        className='w-11/12 text-2xl lg:text-4xl'
       >
         <span className='font-bold text-left text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
           I work hard...{' '}
@@ -40,7 +40,7 @@ export default function WorkSlideShow() {
       </h1>
       <div className='w-9/12 h-max'>
         {workArray.map((item, index) => (
-          <Slide
+          <Card
             key={index}
             title={item.title}
             link={item.link}
@@ -80,7 +80,7 @@ export default function WorkSlideShow() {
   )
 }
 
-function Slide({ title, link, description, image, projectType, skills }) {
+function Card({ title, link, description, image, projectType, skills }) {
   const cardRef = useRef(null)
   const cardInView = useInView(cardRef, { once: true })
 
@@ -119,7 +119,7 @@ function Slide({ title, link, description, image, projectType, skills }) {
       {showPopUp && (
         <>
           <PortalBackdrop onClick={showPopUpHandler} />
-          <SlidePopUp
+          <CardPopUp
             closeHandler={showPopUpHandler}
             title={title}
             projectType={projectType}
@@ -134,11 +134,11 @@ function Slide({ title, link, description, image, projectType, skills }) {
   )
 }
 
-function SlidePopUp({ title, link, image, description, closeHandler, skills }) {
+function CardPopUp({ title, link, image, description, closeHandler, skills }) {
   return (
     <PortalOverlay className='fixed z-30 flex justify-center w-full max-h-screen max-w-screen -translate-y-2/4 -translate-x-2/4 top-2/4 left-2/4 h-max text-slate-100'>
-      <div className='flex flex-col items-center w-10/12 py-3 my-4 overflow-y-scroll rounded-lg bg-slate-800'>
-        <div className='flex items-center justify-between px-6 py-3'>
+      <div className='flex flex-col items-center w-10/12 py-3 my-4 overflow-y-scroll rounded-lg lg:p-3 lg:w-5/12 lg:overflow-y-hidden bg-slate-800'>
+        <div className='flex items-center justify-between w-full px-6 py-3'>
           <h1 className='w-11/12 text-4xl font-bold'>{title}</h1>
           <VscClose
             className='p-1 cursor-pointer w-max h-max hover:rounded-full hover:bg-slate-900/30'
