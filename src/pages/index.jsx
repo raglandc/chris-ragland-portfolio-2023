@@ -72,13 +72,13 @@ export default function Page(props) {
 
       {/*------------- SECTION 2 ------------ SECTION 2 ------------*/}
 
-      <section className='flex flex-col justify-around order-2 h-max col-span-full md:col-start-2 md:col-end-12'>
+      <section className='flex flex-col justify-around order-2 h-max col-span-full md:col-start-2 md:col-end-12 xl:col-start-3 xl:col-end-11'>
         <SkillList />
       </section>
 
       {/*------------- SECTION 3 ------------ SECTION 3 ---------------*/}
 
-      <section className='order-3 mt-20 h-max col-span-full md:col-start-2 md:col-end-12 lg:col-start-4 lg:col-end-10'>
+      <section className='order-3 mt-20 h-max col-span-full md:col-start-2 md:col-end-12 xl:col-start-3 xl:col-end-11'>
         <WorkCards />
       </section>
 
@@ -98,7 +98,7 @@ export default function Page(props) {
 
       {/*------------- SECTION 5 ------------ SECTION 5 ---------------*/}
 
-      <section className='flex flex-col items-center order-4 min-h-screen mt-20 text-center col-span-full md:col-start-2 md:col-end-12'>
+      <section className='flex flex-col items-center order-4 min-h-screen mt-20 text-center col-span-full md:col-start-2 md:col-end-12 xl:col-start-3 xl:col-end-11'>
         <h1 className='w-11/12 mb-5 text-2xl text-left'>
           <span className='font-bold text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
             ...and play harder{' '}

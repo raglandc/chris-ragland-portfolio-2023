@@ -31,14 +31,14 @@ export default function WorkCards() {
           opacity: headerInView ? 1 : 0,
           transition: 'all 2s ease-in-out',
         }}
-        className='w-11/12 text-2xl lg:text-4xl'
+        className='w-11/12 text-2xl sm:text-4xl'
       >
         <span className='font-bold text-left text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
           I work hard...{' '}
         </span>
         💼
       </h1>
-      <div className='w-9/12 h-max'>
+      <div className='flex flex-col items-center justify-center w-10/12 md:w-full xl:w-10/12 sm:flex-row  h-max'>
         {workArray.map((item, index) => (
           <Card
             key={index}
@@ -57,12 +57,12 @@ export default function WorkCards() {
           opacity: groupInView ? 1 : 0,
           transition: 'opacity 2s ease-out',
         }}
-        className='w-8/12 my-4 text-center'
+        className='flex flex-col items-center w-8/12 my-4'
       >
         <p className='text-slate-300'>
           If you would like to see more of Chris&apos;s work, check out his github for more projects. 👨‍💻
         </p>
-        <div className='relative mt-10 group'>
+        <div className='relative w-10/12 mt-10 lg:w-8/12 group'>
           <div className='absolute rounded-lg opacity-75 -inset-0.5 bg-gradient-to-r from-fuchsia-600 to-blue-600 blur group-hover:opacity-100 transition duration-200' />
           <button className='relative w-full text-center rounded-lg bg-slate-800 text-slate-300 group-hover:text-slate-100'>
             <a
@@ -99,7 +99,7 @@ function Card({ title, link, description, image, projectType, skills }) {
           transition: 'all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
         }}
         onClick={showPopUpHandler}
-        className='w-full my-8 rounded-lg cursor-pointer h-max bg-white/20 backdrop-blur-lg drop-shadow-md'
+        className='w-11/12 mx-3 my-8 rounded-lg cursor-pointer sm:w-8/12 md:w-1/3 h-max bg-white/20 backdrop-blur-lg drop-shadow-md'
       >
         <div className='relative w-full h-48 rounded-t-lg'>
           <Image
@@ -110,7 +110,7 @@ function Card({ title, link, description, image, projectType, skills }) {
             style={{ borderTopRightRadius: '.5rem', borderTopLeftRadius: '.5rem' }}
           />
         </div>
-        <div className='w-full h-20 px-5 py-4 rounded-b-lg bg-slate-800'>
+        <div className='w-full h-24 p-3 rounded-b-lg bg-slate-800'>
           <h3 className='font-bold'>{title}</h3>
           <p className='text-slate-400'>{projectType}</p>
         </div>
@@ -137,7 +137,7 @@ function Card({ title, link, description, image, projectType, skills }) {
 function CardPopUp({ title, link, image, description, closeHandler, skills }) {
   return (
     <PortalOverlay className='fixed z-30 flex justify-center w-full max-h-screen max-w-screen -translate-y-2/4 -translate-x-2/4 top-2/4 left-2/4 h-max text-slate-100'>
-      <div className='flex flex-col items-center w-10/12 py-3 my-4 overflow-y-scroll rounded-lg lg:p-3 lg:w-5/12 lg:overflow-y-hidden bg-slate-800'>
+      <div className='flex flex-col items-center w-10/12 py-3 my-4 overflow-y-scroll rounded-lg sm:w-8/12 md:w-7/12 xl:w-4/12 lg:p-3 lg:w-5/12 lg:overflow-y-hidden bg-slate-800'>
         <div className='flex items-center justify-between w-full px-6 py-3'>
           <h1 className='w-11/12 text-4xl font-bold'>{title}</h1>
           <VscClose

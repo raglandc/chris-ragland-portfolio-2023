@@ -1,14 +1,6 @@
 import { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
-import {
-  OrbitControls,
-  Environment,
-  Preload,
-  AccumulativeShadows,
-  RandomizedLight,
-  useProgress,
-  Html,
-} from '@react-three/drei'
+import { OrbitControls, Environment, Preload, useProgress, Html } from '@react-three/drei'
 import PortalBackdrop from '@/components/util/PortalBackdrop'
 import SceneOne from './scenes/SceneOne'
 import PortalOverlay from '../util/PortalOverlay'
@@ -35,30 +27,11 @@ export default function SceneContainer() {
         className='absolute top-0 left-0 z-10 w-full h-full'
       >
         <OrbitControls
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
+          maxPolarAngle={Math.PI}
+          minPolarAngle={-Math.PI}
           enableZoom={false}
         />
         <Environment preset='city' />
-        <AccumulativeShadows
-          temporal
-          frames={100}
-          color='orange'
-          colorBlend={2}
-          toneMapped={true}
-          alphaTest={0.9}
-          opacity={2}
-          scale={12}
-        >
-          <RandomizedLight
-            amount={8}
-            radius={4}
-            ambient={0.5}
-            intensity={1}
-            position={[5, 5, -10]}
-            bias={0.001}
-          />
-        </AccumulativeShadows>
         <Suspense fallback={<Loader />}>
           <SceneOne showStateHandler={[showFloridaHandler, showIndianaHandler]} />
         </Suspense>
