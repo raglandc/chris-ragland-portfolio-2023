@@ -1,8 +1,8 @@
 import Head from 'next/head'
 
 const titleDefault = 'Chris Ragland 🚀'
-const url = 'https://cragland.io/'
-const description = 'Chris Ragland, computer science student located in Tampa, Florida'
+const url = 'https://chrisragland.io/'
+const description = 'Chris Ragland, a Computer Science student located in Tampa, Florida'
 const author = 'Chris Ragland'
 
 export default function Header({ title = titleDefault }) {
@@ -39,7 +39,7 @@ export default function Header({ title = titleDefault }) {
       />
       <meta
         name='keywords'
-        content='Software Engineer,Product Manager,Project Manager,Data Scientist,Computer Scientist'
+        content='Software Engineer,Computer Scientist, Computer Science Student, Chris Ragland, Internship, Frontend Engineer'
       />
       <meta
         name='robots'
@@ -65,10 +65,6 @@ export default function Header({ title = titleDefault }) {
         content={url}
       />
       <meta
-        name='og:image'
-        content={'/icons/share.png'}
-      />
-      <meta
         name='og:site_name'
         content={title}
       />
@@ -76,40 +72,10 @@ export default function Header({ title = titleDefault }) {
         name='og:description'
         content={description}
       />
-
-      <link
-        rel='apple-touch-icon'
-        href='/icons/apple-touch-icon.png'
-      />
-      <link
-        rel='apple-touch-icon'
-        sizes='16x16'
-        href='/icons/favicon-16x16.png'
-      />
-      <link
-        rel='apple-touch-icon'
-        sizes='32x32'
-        href='/icons/favicon-32x32.png'
-      />
-      <link
-        rel='apple-touch-icon'
-        sizes='180x180'
-        href='/icons/apple-touch-icon.png'
-      />
       <link
         rel='manifest'
         href='/manifest.json'
       />
-      <link
-        rel='mask-icon'
-        color='#000000'
-        href='/icons/safari-pinned-tab.svg'
-      />
-      <link
-        rel='apple-touch-startup-image'
-        href='/startup.png'
-      />
-
       {/* Meta Tags for HTML pages on Mobile */}
       {/* <meta name="format-detection" content="telephone=yes"/>
         <meta name="HandheldFriendly" content="true"/>  */}
