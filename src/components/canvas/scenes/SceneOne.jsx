@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { useGLTF, Center, Text3D } from '@react-three/drei'
+import { useGLTF, Center, Text3D, meshBounds } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 
 export default function SceneOne({ showStateHandler }) {
@@ -61,6 +61,7 @@ export default function SceneOne({ showStateHandler }) {
             material={materials['pin handle']}
           />
           <mesh
+            raycast={meshBounds}
             castShadow
             receiveShadow
             geometry={nodes.Cube002_1.geometry}
@@ -80,6 +81,7 @@ export default function SceneOne({ showStateHandler }) {
             material={materials['pin handle']}
           />
           <mesh
+            raycast={meshBounds}
             castShadow
             receiveShadow
             geometry={nodes.Cube_1.geometry}

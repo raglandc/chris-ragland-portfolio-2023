@@ -6,6 +6,7 @@ import Typewriter from 'typewriter-effect'
 import SkillList from '@/components/dom/SkillList'
 import Scroll from '@/components/dom/Scroll'
 import WorkCards from '@/components/dom/WorkCards'
+import FadeIcon from '@/components/util/FadeIcon'
 
 // Dynamic import is used to prevent a payload when the website starts, that includes threejs, r3f etc..
 // WARNING ! errors might get obfuscated by using dynamic import.
@@ -127,13 +128,15 @@ export default function Page(props) {
         {showWorld && (
           <div className='relative w-full h-full'>
             <SceneContainer />
+            <FadeIcon
+              iconUrlString={'/icons/swipe-icon.png'}
+              fadeTimeNumber={2500}
+              altString='swipe left or right icon'
+              className='absolute bottom-0 z-30 opacity-1 transition duration-1000 right-1/2 translate-x-1/2'
+            />
           </div>
         )}
       </section>
     </>
   )
-}
-
-export async function getStaticProps() {
-  return { props: { title: 'Chris Ragland' } }
 }
