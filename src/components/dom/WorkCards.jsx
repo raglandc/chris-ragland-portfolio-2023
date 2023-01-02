@@ -94,7 +94,7 @@ function Card({ title, link, description, image, projectType, skills }) {
       <div
         ref={cardRef}
         onClick={showPopUpHandler}
-        className='w-11/12 mx-2 my-4 rounded-lg cursor-pointer group hover:scale-105 lg:my-8 sm:w-8/12 md:w-1/3 h-max bg-slate-100/20'
+        className='w-11/12 mx-2 my-4 rounded-lg cursor-pointer group hover:scale-105 sm:mx-1 lg:my-8 sm:w-8/12 md:w-1/3 h-max bg-slate-100/20'
       >
         <div className='relative w-full h-48 overflow-hidden rounded-t-lg'>
           <Image

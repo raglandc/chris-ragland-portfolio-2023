@@ -48,7 +48,7 @@ export default function SkillList({ ...props }) {
             opacity: headerInView ? 1 : 0,
             transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
           }}
-          className='w-11/12 my-8 text-2xl'
+          className='w-11/12 my-8 text-2xl sm:text-4xl'
         >
           <span className='font-bold text-left text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
             Yeah, I like to learn

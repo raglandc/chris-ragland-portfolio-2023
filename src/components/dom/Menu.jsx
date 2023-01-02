@@ -43,9 +43,9 @@ function MenuWindow({ closeHandler }) {
         initial={{ x: '-100%', opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.2 }}
-        className='px-3 text-lg bg-slate-800 text-slate-100 rounded-xl w-max'
+        className='px-3 text-lg bg-slate-800 text-slate-100 rounded-xl h-80 w-max'
       >
-        <div className='flex items-center justify-between w-full px-3 pt-4 rounded-t-lg'>
+        <div className='flex items-center justify-between w-full px-3 py-4 rounded-t-lg'>
           <h1 className='text-2xl font-bold'>
             Say <span className='font-bold text-indigo-600'>Hi</span> 👋
           </h1>
@@ -54,7 +54,7 @@ function MenuWindow({ closeHandler }) {
             onClick={closeHandler}
           />
         </div>
-        <ul className='w-full px-4 py-2 h-max'>
+        <ul className='flex flex-col items-center justify-center w-full px-4'>
           <ContactLink
             link='https://www.linkedin.com/in/raglandc/'
             icon={<FaLinkedin />}

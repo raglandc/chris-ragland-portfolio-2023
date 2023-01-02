@@ -72,13 +72,13 @@ export default function Page(props) {
 
       {/*------------- SECTION 2 ------------ SECTION 2 ------------*/}
 
-      <section className='flex flex-col justify-around order-2 h-max col-span-full md:col-start-2 md:col-end-12 xl:col-start-3 xl:col-end-11'>
+      <section className='relative flex flex-col justify-around order-2 h-max col-span-full md:col-start-2 md:col-end-12 2xl:col-start-3 2xl:col-end-11'>
         <SkillList />
       </section>
 
       {/*------------- SECTION 3 ------------ SECTION 3 ---------------*/}
 
-      <section className='order-3 mt-20 h-max col-span-full md:col-start-2 md:col-end-12 2xl:col-start-3 2xl:col-end-11'>
+      <section className='order-3 px-2 mt-20 rounded-lg py-9 bg-black/20 h-max col-span-full md:col-start-2 md:col-end-12 2xl:col-start-3 2xl:col-end-11'>
         <WorkCards />
       </section>
 
