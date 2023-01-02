@@ -24,7 +24,7 @@ export default function WorkCards() {
   const groupInView = useInView(groupRef, { once: true, margin: '-150px' })
 
   return (
-    <div className='flex flex-col items-center justify-center w-full h-full'>
+    <div className='flex flex-col items-center justify-center w-full h-full md:w-11/12 lg:w-10/12 xl:w-9/12'>
       <h1
         ref={headerRef}
         style={{
@@ -94,7 +94,7 @@ function Card({ title, link, description, image, projectType, skills }) {
       <div
         ref={cardRef}
         onClick={showPopUpHandler}
-        className='w-11/12 mx-2 my-4 rounded-lg cursor-pointer group hover:scale-105 sm:mx-1 lg:my-8 sm:w-8/12 md:w-1/3 h-max bg-slate-100/20'
+        className='w-11/12 mx-2 my-4 rounded-lg cursor-pointer group hover:scale-105 sm:mx-1 lg:mx-2 lg:my-8 sm:w-8/12 md:w-1/3 h-max bg-slate-100/20'
       >
         <div className='relative w-full h-48 overflow-hidden rounded-t-lg'>
           <Image
@@ -133,7 +133,7 @@ function Card({ title, link, description, image, projectType, skills }) {
 function CardPopUp({ title, link, image, description, closeHandler, skills }) {
   return (
     <PortalOverlay className='fixed z-30 flex justify-center max-h-screen w-max -translate-y-2/4 -translate-x-2/4 top-2/4 left-2/4 h-max text-slate-100'>
-      <div className='flex flex-col items-center py-3 my-4 overflow-y-scroll rounded-lg w-80 md:w-96 lg:p-3 xl:py-6 md:overflow-y-hidden bg-slate-800'>
+      <div className='flex flex-col items-center py-3 my-4 overflow-y-scroll rounded-lg w-80 sm:w-96 lg:p-3 xl:py-6 sm:overflow-y-hidden bg-slate-800'>
         <div className='flex items-center justify-between w-full px-6 py-3'>
           <h1 className='w-11/12 text-4xl font-bold'>{title}</h1>
           <VscClose

@@ -78,7 +78,7 @@ export default function Page(props) {
 
       {/*------------- SECTION 3 ------------ SECTION 3 ---------------*/}
 
-      <section className='order-3 px-2 mt-20 rounded-lg py-9 bg-black/20 h-max col-span-full md:col-start-2 md:col-end-12 2xl:col-start-3 2xl:col-end-11'>
+      <section className='flex flex-col items-center order-3 px-2 py-10 mt-20 bg-black/20 h-max col-span-full'>
         <WorkCards />
       </section>
 
