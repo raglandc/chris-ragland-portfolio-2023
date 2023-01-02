@@ -19,10 +19,9 @@ export default function Page(props) {
   const [showWorld, setShowWorld] = useState(false)
   return (
     <>
-      <div className='absolute top-0 left-0 order-first w-full h-screen bg-gradient-to-b from-black' />
-      <section className='order-1 min-h-screen col-span-full lg:col-start-3 lg:col-end-11 xl:col-start-4 xl:col-end-10'>
+      <section className='flex flex-col items-center order-1 w-full h-max bg-gradient-to-b from-black'>
         {/* The div below is for the space that would be present if nav was not fixed */}
-        <div className='flex flex-col items-center justify-center w-full h-full'>
+        <div className='flex flex-col items-center justify-center w-full h-screen md:w-11/12 lg:w-10/12 xl:w-9/12'>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -71,14 +70,15 @@ export default function Page(props) {
       </section>
 
       {/*------------- SECTION 2 ------------ SECTION 2 ------------*/}
+      {/* md:col-start-2 md:col-end-12 2xl:col-start-3 2xl:col-end-11 */}
 
-      <section className='relative flex flex-col justify-around order-2 h-max col-span-full md:col-start-2 md:col-end-12 2xl:col-start-3 2xl:col-end-11'>
+      <section className='relative flex flex-col items-center justify-around order-2 h-max col-span-full'>
         <SkillList />
       </section>
 
       {/*------------- SECTION 3 ------------ SECTION 3 ---------------*/}
 
-      <section className='flex flex-col items-center order-3 px-2 py-10 mt-20 bg-black/20 h-max col-span-full'>
+      <section className='flex flex-col items-center order-3 px-2 py-10 bg-black/20 h-max col-span-full'>
         <WorkCards />
       </section>
 
@@ -98,30 +98,32 @@ export default function Page(props) {
 
       {/*------------- SECTION 5 ------------ SECTION 5 ---------------*/}
 
-      <section className='flex flex-col items-center order-4 min-h-screen mt-20 text-center col-span-full md:col-start-2 md:col-end-12 xl:col-start-3 xl:col-end-11'>
-        <h1 className='w-11/12 mb-5 text-2xl text-left'>
-          <span className='font-bold text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
-            ...and play harder{' '}
-          </span>
-          🎸
-        </h1>
-        <div className='w-10/12'>
-          <p>
-            As you can see from recent projects, Chris loves working with WebGL and interactive 3D web experiences. The
-            problem is these experiences, depending on your computer device, can be slow or &apos;laggy&apos; for a lack
-            of better words. Chris wants for everyone to have a good experience.
-          </p>
-          <p>
-            If you think your computer or cell phone is up to it, go ahead and click the button below and learn more
-            about Chris&apos; world. 🌎
-          </p>
+      <section className='flex flex-col items-center order-4 w-full h-screen mt-20'>
+        <div className='flex flex-col items-center justify-center w-full md:w-11/12 lg:w-10/12 xl:w-9/12 2xl:w-8/12'>
+          <h1 className='w-11/12 mb-10 text-2xl text-left sm:text-4xl'>
+            <span className='font-bold text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
+              ...and play harder{' '}
+            </span>
+            🎸
+          </h1>
+          <div className='w-10/12 text-left md:w-8/12'>
+            <p className='mb-2'>
+              As you can see from recent projects, Chris loves working with WebGL and interactive 3D web experiences.
+              The problem is these experiences, depending on your computer device, can be slow or &apos;laggy&apos; for
+              a lack of better words. Chris wants for everyone to have a good experience.
+            </p>
+            <p>
+              If you think your computer or cell phone is up to it, go ahead and click the button below and learn more
+              about Chris&apos; world. 🌎
+            </p>
+          </div>
+          <button
+            className='px-6 py-3 mt-4 border rounded-lg cursor-pointer w-max text-slate-300 hover:bg-slate-700 hover:text-slate-100 bg-slate-800'
+            onClick={() => setShowWorld((prev) => !prev)}
+          >
+            {showWorld ? 'Hide' : 'Show'} 3D World
+          </button>
         </div>
-        <button
-          className='px-6 py-3 mt-4 border rounded-lg cursor-pointer w-max text-slate-300 hover:bg-slate-700 hover:text-slate-100 bg-slate-800'
-          onClick={() => setShowWorld((prev) => !prev)}
-        >
-          {showWorld ? 'Hide' : 'Show'} 3D World
-        </button>
         {showWorld && (
           <div className='relative w-full h-full'>
             <SceneContainer />

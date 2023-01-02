@@ -24,7 +24,7 @@ export default function WorkCards() {
   const groupInView = useInView(groupRef, { once: true, margin: '-150px' })
 
   return (
-    <div className='flex flex-col items-center justify-center w-full h-full md:w-11/12 lg:w-10/12 xl:w-9/12'>
+    <div className='flex flex-col items-center justify-center w-full h-full md:w-11/12 lg:w-10/12 xl:w-9/12 2xl:w-8/12'>
       <h1
         ref={headerRef}
         style={{

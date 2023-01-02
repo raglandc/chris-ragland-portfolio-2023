@@ -36,11 +36,11 @@ export default function SkillList({ ...props }) {
   const headerInView = useInView(headerRef, { once: true })
   const quoteInView = useInView(quoteRef, { once: true })
   return (
-    <>
-      <div
-        {...props}
-        className='flex flex-col items-center justify-center w-full mb-20 mt-28'
-      >
+    <div
+      {...props}
+      className='flex flex-col items-center justify-center w-full mb-20 mt-28 md:w-11/12 lg:w-10/12 xl:w-9/12 2xl:w-8/12'
+    >
+      <div className='flex flex-col items-center justify-center w-full mb-20 mt-28'>
         <h1
           ref={headerRef}
           style={{
@@ -68,7 +68,7 @@ export default function SkillList({ ...props }) {
           <span className='absolute italic text-slate-400 right-5 -bottom-8'>- Albert Einstein</span>
         </p>
       </div>
-      <div className='w-full px-2  grid place-content-stretch grid-cols-3 gap-2 h-max'>
+      <div className='w-full px-2 xl:w-10/12 2xl:w-8/12 grid place-content-stretch grid-cols-3 gap-2 h-max'>
         {skillsArray.map((item, index) => {
           return (
             <SkillCard
@@ -79,7 +79,7 @@ export default function SkillList({ ...props }) {
           )
         })}
       </div>
-    </>
+    </div>
   )
 }
 

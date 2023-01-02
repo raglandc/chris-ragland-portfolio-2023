@@ -68,8 +68,8 @@ function Loader() {
 
 function PinInfo({ title, description, img, closeHandler }) {
   return (
-    <PortalOverlay className='fixed z-30 flex justify-center w-full max-h-screen max-w-screen -translate-y-2/4 -translate-x-2/4 top-2/4 left-2/4 h-max text-slate-100'>
-      <div className='flex flex-col items-center w-10/12 py-3 my-4 overflow-y-scroll rounded-lg bg-slate-800'>
+    <PortalOverlay className='fixed z-30 flex justify-center max-h-screen max-w-screen -translate-y-2/4 -translate-x-2/4 top-2/4 left-2/4 h-max text-slate-100'>
+      <div className='flex flex-col items-center py-3 my-4 overflow-y-scroll rounded-lg sm:overflow-hidden w-80 bg-slate-800'>
         <div className='flex items-center justify-between w-full px-6 py-3'>
           <h1 className='w-11/12 text-4xl font-bold'>{title}</h1>
           <VscClose
