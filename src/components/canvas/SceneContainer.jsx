@@ -89,11 +89,11 @@ const stateInformation = [
   {
     stateTitle: 'Indiana',
     description:
-      'While Chris was born in South Bend, Indiana, he spent most of his early years in Lafayette, Indiana. Lafayette is where Chris would graduate highschool and begin his experience as a young EMT. Chris worked on the ambulance for about six months before he moved to Florida in the fall of 2016.',
+      'Chris was born in South Bend, Indiana, but he spent most of his early years in Lafayette, Indiana. Lafayette is where Chris would graduate highschool and begin his experience as a young EMT. Chris worked on the ambulance for about six months before he moved to Florida in the fall of 2016.',
   },
   {
     stateTitle: 'Florida',
     description:
-      'Shortly after arriving to Florida, Chris continued his journey as an EMT considering medical school and life as a doctor. However, Chris realized that maybe he did not want to be a doctor so he tried other possibilities. It was at this point he decided to give coding a chance and signed up for a web development course. After completing the course Chris knew what he wanted to study. He changed his major, had to take a few extra classes to change his major and now he is currently majoring in computer science at the University of South Florida in Tampa (go Bulls 🐂)',
+      'Shortly after arriving to Florida, Chris continued his journey as an EMT. However, Chris began to think that maybe he did not want a career in medicine. It was at this point he decided to give coding a chance and signed up for a web development course. After completing the course, Chris knew what he wanted to study. He had to take a few extra classes to change his major but now is currently majoring in computer science at the University of South Florida in Tampa (go Bulls 🐂)',
   },
 ]

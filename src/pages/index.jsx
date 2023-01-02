@@ -26,14 +26,14 @@ export default function Page(props) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, delay: 0.5, ease: 'easeInOut' }}
-            className='flex flex-col items-center justify-center w-full h-full font-bold sm:text-center sm:translate-y-20 translate-y-4'
+            className='flex flex-col items-center justify-center w-full h-full font-bold sm:text-center sm:translate-y-20 lg:translate-y-24 2xl:translate-y-28 translate-y-4'
           >
             <h1 className='w-10/12 text-4xl sm:text-5xl'>Hi,</h1>
             <h1 className='w-10/12 text-4xl sm:text-5xl '> my name is </h1>
-            <h1 className='w-10/12 text-5xl font-black text-transparent sm:text-6xl animate-text bg-gradient-to-r from-blue-600 via-fuchsia-500 to-fuchsia-600 bg-clip-text'>
-              Chris
+            <h1 className='w-10/12 pb-1 text-5xl font-black text-transparent sm:text-6xl animate-text bg-gradient-to-r from-blue-600 via-fuchsia-500 to-fuchsia-600 bg-clip-text'>
+              Chris <span className='hidden font-bold sm:contents'>Ragland</span>
             </h1>
-            <h1 className='w-10/12 pb-1 text-5xl font-black text-transparent sm:text-6xl animate-text bg-gradient-to-l from-blue-600 via-fuchsia-500 to-fuchsia-600 bg-clip-text'>
+            <h1 className='w-10/12 pb-1 text-5xl font-black text-transparent sm:hidden sm:text-6xl animate-text bg-gradient-to-l from-blue-600 via-fuchsia-500 to-fuchsia-600 bg-clip-text'>
               Ragland
             </h1>
             <h2 className='w-10/12 ml-3 text-4xl mt-9 sm:text-5xl text-slate-400'>
@@ -102,19 +102,19 @@ export default function Page(props) {
         <div className='flex flex-col items-center justify-center w-full md:w-11/12 lg:w-10/12 xl:w-9/12 2xl:w-8/12'>
           <h1 className='w-11/12 mb-10 text-2xl text-left sm:text-4xl'>
             <span className='font-bold text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
-              ...and play harder{' '}
+              ...and play hard{' '}
             </span>
             🎸
           </h1>
           <div className='w-10/12 text-left md:w-8/12'>
             <p className='mb-2'>
-              As you can see from recent projects, Chris loves working with WebGL and interactive 3D web experiences.
-              The problem is these experiences, depending on your computer device, can be slow or &apos;laggy&apos; for
-              a lack of better words. Chris wants for everyone to have a good experience.
+              As you can see from recent projects, Chris has a lot of fun working with WebGL and interactive 3D web
+              experiences. The problem is these experiences, depending on your computer device, can be slow or
+              &apos;laggy&apos;. Chris wants everyone to have a good experience.
             </p>
             <p>
-              If you think your computer or cell phone is up to it, go ahead and click the button below and learn more
-              about Chris&apos; world. 🌎
+              Go ahead and click the button below and learn more about Chris&apos; world 🌎. If things get too
+              &apos;laggy&apos;, just hide the 3D scene.
             </p>
           </div>
           <button
