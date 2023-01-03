@@ -112,7 +112,6 @@ function Card({ title, link, description, image, projectType, skills }) {
 
       {showPopUp && (
         <>
-          <PortalBackdrop onClick={showPopUpHandler} />
           <CardPopUp
             closeHandler={showPopUpHandler}
             title={title}
@@ -130,9 +129,9 @@ function Card({ title, link, description, image, projectType, skills }) {
 
 function CardPopUp({ title, link, image, description, closeHandler, skills }) {
   return (
-    <PortalOverlay className='fixed z-30 flex justify-center max-h-screen w-max -translate-y-2/4 -translate-x-2/4 top-2/4 left-2/4 h-max text-slate-100'>
-      <div className='flex flex-col items-center py-3 my-4 overflow-y-scroll rounded-lg w-80 sm:w-96 lg:p-3 xl:py-6 sm:overflow-y-hidden bg-slate-800'>
-        <div className='flex items-center justify-between w-full px-6 py-3'>
+    <PortalOverlay className='absolute top-0 left-0 z-30 flex justify-center w-screen h-full overflow-y-scroll min-h-max bg-slate-900/95 text-slate-100'>
+      <div className='flex flex-col items-center w-11/12 py-3 my-3 h-max sm:w-10/12 lg:w-8/12 xl:w-7/12 2xl:w-1/3 md:w-9/12 lg:p-4 xl:p-6'>
+        <div className='flex items-center justify-between w-full px-6 py-3 my-4'>
           <h1 className='w-11/12 text-4xl font-bold'>{title}</h1>
           <VscClose
             className='w-6 h-6 p-1 cursor-pointer hover:rounded-full hover:bg-slate-900/30'
@@ -140,7 +139,7 @@ function CardPopUp({ title, link, image, description, closeHandler, skills }) {
           />
         </div>
         <div className='flex flex-col items-center w-10/12'>
-          <div className='relative w-full h-48'>
+          <div className='relative w-full h-48 my-4'>
             <Image
               src={image}
               alt={`${title} website`}
@@ -151,7 +150,7 @@ function CardPopUp({ title, link, image, description, closeHandler, skills }) {
           </div>
           {/* if the project has a link, show a button that will take them to the web page */}
           {link && (
-            <button className='w-full py-1 mt-4 border rounded-lg bg-slate-500/30 hover:bg-slate-500/50'>
+            <button className='w-full py-1 my-4 border rounded-lg bg-slate-500/30 hover:bg-slate-500/50'>
               <a
                 target='_blank'
                 href={link}
@@ -161,9 +160,9 @@ function CardPopUp({ title, link, image, description, closeHandler, skills }) {
               </a>
             </button>
           )}
-          <p className='py-4 text-slate-300'>{description}</p>
-          <p className='pt-3 text-center text-slate-400'>Project Skills</p>
-          <div className='flex flex-wrap items-center justify-around w-full pt-4 my-2 mb-3 text-xl'>
+          <p className='my-4 text-slate-300'>{description}</p>
+          <p className='pt-3 my-2 text-center text-slate-400'>Project Skills</p>
+          <div className='flex flex-wrap items-center justify-around w-full pt-4 my-4 text-xl'>
             {skills.map((item, index) => (
               <span key={index}>{item}</span>
             ))}
