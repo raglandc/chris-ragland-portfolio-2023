@@ -81,20 +81,6 @@ export default function Page() {
       </section>
 
       {/*------------- SECTION 4 ------------ SECTION 4 ---------------*/}
-      {/* currently wrapping up project, may add section later on */}
-
-      {/* <section className='order-4 h-screen col-span-full'>
-        <div className='flex items-center justify-center w-full h-full '>
-          <h1 className='w-11/12 text-2xl'>
-            <span className='font-bold text-left text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
-              ...and play harder{' '}
-            </span>
-            🎸
-          </h1>
-        </div>
-      </section> */}
-
-      {/*------------- SECTION 5 ------------ SECTION 5 ---------------*/}
 
       <section className='flex flex-col items-center order-4 w-full h-screen mt-20'>
         <div className='flex flex-col items-center justify-center w-full md:w-11/12 lg:w-10/12 xl:w-9/12 2xl:w-8/12'>
