@@ -75,7 +75,7 @@ function PinInfo({ title, description, img, closeHandler }) {
         <div className='flex items-center justify-between w-full px-6 py-3'>
           <h1 className='w-11/12 text-4xl font-bold'>{title}</h1>
           <VscClose
-            className='p-1 cursor-pointer w-max h-max hover:rounded-full hover:bg-slate-900/30'
+            className='w-6 h-6 p-1 cursor-pointer hover:rounded-full hover:bg-slate-900/30'
             onClick={closeHandler}
           />
         </div>

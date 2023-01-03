@@ -71,7 +71,7 @@ function MenuWindow({ closeHandler }) {
             title='Instagram'
           />
           <ContactLink
-            link='chrisragland97@gmail.com'
+            link=''
             icon={<MdAlternateEmail />}
             title='Chrisragland97@gmail.com'
           />
