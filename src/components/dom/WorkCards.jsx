@@ -131,11 +131,11 @@ function Card({ title, link, description, image, projectType, skills }) {
 function CardPopUp({ title, link, image, description, closeHandler, skills }) {
   return (
     <PortalOverlay className='fixed z-30 flex justify-center max-h-screen w-max -translate-y-2/4 -translate-x-2/4 top-2/4 left-2/4 h-max text-slate-100'>
-      <div className='flex flex-col items-center py-3 my-4 overflow-y-scroll rounded-lg h-max w-80 sm:w-96 lg:p-3 xl:py-6 sm:overflow-y-hidden bg-slate-800'>
+      <div className='flex flex-col items-center py-3 my-4 overflow-y-scroll rounded-lg w-80 sm:w-96 lg:p-3 xl:py-6 sm:overflow-y-hidden bg-slate-800'>
         <div className='flex items-center justify-between w-full px-6 py-3'>
           <h1 className='w-11/12 text-4xl font-bold'>{title}</h1>
           <VscClose
-            className='p-1 cursor-pointer w-max h-max hover:rounded-full hover:bg-slate-900/30'
+            className='w-6 h-6 p-1 cursor-pointer hover:rounded-full hover:bg-slate-900/30'
             onClick={closeHandler}
           />
         </div>
