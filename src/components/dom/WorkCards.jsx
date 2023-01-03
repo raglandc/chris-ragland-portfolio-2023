@@ -14,8 +14,8 @@ import {
   SiAuth0,
   SiGithub,
 } from 'react-icons/si'
-import PortalOverlay from '../util/PortalOverlay'
-import PortalBackdrop from '../util/PortalBackdrop'
+import PortalOverlay from './util/PortalOverlay'
+import PortalBackdrop from './util/PortalBackdrop'
 
 export default function WorkCards() {
   const headerRef = useRef(null)
@@ -82,8 +82,6 @@ export default function WorkCards() {
 
 function Card({ title, link, description, image, projectType, skills }) {
   const cardRef = useRef(null)
-  const cardInView = useInView(cardRef, { once: true })
-
   const [showPopUp, setShowPopUp] = useState(false)
   const showPopUpHandler = () => {
     setShowPopUp((prev) => !prev)

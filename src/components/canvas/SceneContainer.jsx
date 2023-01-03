@@ -1,10 +1,12 @@
+import dynamic from 'next/dynamic'
 import { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Environment, Preload, useProgress, Html } from '@react-three/drei'
-import PortalBackdrop from '@/components/util/PortalBackdrop'
-import SceneOne from './scenes/SceneOne'
-import PortalOverlay from '../util/PortalOverlay'
+import PortalBackdrop from '@/components/dom/util/PortalBackdrop'
+import PortalOverlay from '../dom/util/PortalOverlay'
 import { VscClose } from 'react-icons/vsc'
+
+const SceneOne = dynamic(() => import('@/components/canvas/scenes/SceneOne.jsx'))
 
 export default function SceneContainer() {
   const [showIndiana, setShowIndiana] = useState(false)

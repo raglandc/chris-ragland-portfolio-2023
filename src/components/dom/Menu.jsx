@@ -3,8 +3,8 @@ import { FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa'
 import { MdAlternateEmail } from 'react-icons/md'
 import { VscClose } from 'react-icons/vsc'
 import { motion } from 'framer-motion'
-import PortalOverlay from '../util/PortalOverlay.jsx'
-import PortalBackdrop from '../util/PortalBackdrop.jsx'
+import PortalOverlay from './util/PortalOverlay.jsx'
+import PortalBackdrop from './util/PortalBackdrop.jsx'
 
 export default function Menu() {
   const [showMenu, setShowMenu] = useState(false)

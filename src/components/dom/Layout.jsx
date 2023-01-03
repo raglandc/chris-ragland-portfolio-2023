@@ -3,7 +3,7 @@ import { mergeRefs } from 'react-merge-refs'
 import Navigation from './Navigation'
 import Footer from './Footer'
 
-const Layout = forwardRef(({ children, ...props }, ref) => {
+const Layout = forwardRef(({ children }, ref) => {
   const localRef = useRef()
   return (
     <div

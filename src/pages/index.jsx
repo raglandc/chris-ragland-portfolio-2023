@@ -4,24 +4,20 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Typewriter from 'typewriter-effect'
 import SkillList from '@/components/dom/SkillList'
-import Scroll from '@/components/dom/Scroll'
 import WorkCards from '@/components/dom/WorkCards'
-import FadeIcon from '@/components/util/FadeIcon'
+import FadeIcon from '@/components/dom/util/FadeIcon'
 
 // Dynamic import is used to prevent a payload when the website starts, that includes threejs, r3f etc..
 // WARNING ! errors might get obfuscated by using dynamic import.
 // If something goes wrong go back to a static import to show the error.
 // https://github.com/pmndrs/react-three-next/issues/49
-// const Logo = dynamic(() => import('@/components/canvas/Logo'), { ssr: false })
 const SceneContainer = dynamic(() => import('@/components/canvas/SceneContainer.jsx'))
 
-// Dom components go here
-export default function Page(props) {
+export default function Page() {
   const [showWorld, setShowWorld] = useState(false)
   return (
     <>
       <section className='flex flex-col items-center order-1 w-full h-max bg-gradient-to-b from-black'>
-        {/* The div below is for the space that would be present if nav was not fixed */}
         <div className='flex flex-col items-center justify-center w-full h-screen md:w-11/12 lg:w-10/12 xl:w-9/12'>
           <motion.div
             initial={{ opacity: 0 }}
@@ -65,13 +61,14 @@ export default function Page(props) {
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, delay: 3.0, ease: 'easeInOut' }}
           >
-            <Scroll />
+            <div className='flex items-center justify-center w-full mt-8 mb-4 h-max'>
+              <div className='relative h-12 border before:rounded-full w-7 rounded-3xl before:w-2 before:h-2 before:absolute before:top-3 before:left-2/4 before:-translate-x-2/4 before:bg-slate-50/50 before:animate-wheel' />
+            </div>
           </motion.span>
         </div>
       </section>
 
       {/*------------- SECTION 2 ------------ SECTION 2 ------------*/}
-      {/* md:col-start-2 md:col-end-12 2xl:col-start-3 2xl:col-end-11 */}
 
       <section className='relative flex flex-col items-center justify-around order-2 h-max col-span-full'>
         <SkillList />

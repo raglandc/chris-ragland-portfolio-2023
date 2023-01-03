@@ -50,6 +50,7 @@ export default function SceneOne({ showStateHandler }) {
         />
         <group
           ref={pinTwoRef}
+          raycast={meshBounds}
           onClick={showStateHandler[1]}
           position={[-0.65, 1.15, 1.75]}
           rotation={[-2.97, -1.29, 2.16]}
@@ -61,7 +62,6 @@ export default function SceneOne({ showStateHandler }) {
             material={materials['pin handle']}
           />
           <mesh
-            raycast={meshBounds}
             castShadow
             receiveShadow
             geometry={nodes.Cube002_1.geometry}
@@ -70,6 +70,7 @@ export default function SceneOne({ showStateHandler }) {
         </group>
         <group
           ref={pinOneRef}
+          raycast={meshBounds}
           onClick={showStateHandler[0]}
           position={[-0.61, 0.64, 2.01]}
           rotation={[-2.75, -1.29, 2.16]}
@@ -81,7 +82,6 @@ export default function SceneOne({ showStateHandler }) {
             material={materials['pin handle']}
           />
           <mesh
-            raycast={meshBounds}
             castShadow
             receiveShadow
             geometry={nodes.Cube_1.geometry}
