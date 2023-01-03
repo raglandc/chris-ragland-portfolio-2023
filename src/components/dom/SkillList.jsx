@@ -44,7 +44,7 @@ export default function SkillList({ ...props }) {
         <h1
           ref={headerRef}
           style={{
-            transform: headerInView ? 'none' : 'translateX(-200px)',
+            transform: headerInView ? 'none' : 'translateY(50px)',
             opacity: headerInView ? 1 : 0,
             transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
           }}

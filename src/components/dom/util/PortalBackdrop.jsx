@@ -14,7 +14,7 @@ export default function PortalBackdrop({ ...props }) {
     ? createPortal(
         <div
           {...props}
-          className='fixed top-0 left-0 z-20 w-full h-full bg-black/70'
+          className='fixed top-0 left-0 z-20 w-full h-full bg-gradient-to-b from-black/70 to-slate-900'
         />,
         ref.current,
       )
