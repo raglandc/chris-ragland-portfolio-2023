@@ -181,7 +181,7 @@ const workArray = [
     image: '/img/work-images/vidal-developers-landing-page.webp',
     projectType: 'Web Development',
     description:
-      'Vidal Developers is a freelance web development business Chris started when he began learning web development.',
+      'Vidal Developers is a freelance web development business Chris started when he began learning web development. This was his first start to finish react application. Chris got a first hand experience as to why it is mobile-first when designing responsive web apps.',
     skills: [
       <SiTypescript key={'Typescript Logo'} />,
       <SiReact key={'React Logo'} />,
@@ -195,7 +195,7 @@ const workArray = [
     image: '/img/work-images/daily-derivative-landing-page.webp',
     projectType: 'Web Development',
     description:
-      'The Daily Derivative is a daily calculus problem game where users can sign up and keep track of their stats with an account and retain calculus skills over a period of time such as a holiday break from school.',
+      'The Daily Derivative is a daily calculus problem game where users can sign up and keep track of their stats with an account and retain calculus skills over a period of time such as a holiday break from school. Chris actually had to design software to take user input and convert it to latex code. It was challenging and took several designs, but the final design discussed in the docs works really well and is intuitive to how we normally enter equations into a calculator.',
     skills: [
       <SiTypescript key={'Typescript Logo'} />,
       <SiReact key={'React Logo'} />,
@@ -211,7 +211,7 @@ const workArray = [
     image: '/img/work-images/vidal-version-2-landing-page.webp',
     projectType: 'Web Development',
     description:
-      'Vidal Developers V2 is the second version of the concept free lance website. The second rendition features new skills and technologies such as ThreeJs and Svelte. The web page is interactive, users are able to interact with the scenes background objects. The site features a blog using mark down for the styling of blog entries',
+      'Vidal Developers V2 is the second version of the free lance website. The second rendition features new skills and technologies such as ThreeJs and Svelte. The web page is interactive, meaning users are able to interact with the scenes background objects. The site features a blog using mark down for the styling of blog entries. Chris is working on improving the performance of the website to give a better experience to users and hopes to push to production this year.',
     skills: [
       <SiTypescript key={'Typescript Logo'} />,
       <SiSvelte key={'Svelte Logo'} />,
