@@ -45,12 +45,12 @@ function MenuWindow({ closeHandler }) {
         transition={{ duration: 0.2 }}
         className='px-3 text-lg bg-slate-800 text-slate-100 rounded-xl h-80 w-80'
       >
-        <div className='flex items-center justify-between w-full px-3 py-4 rounded-t-lg'>
+        <div className='flex items-center justify-between w-full px-3 py-4 rounded-t-lg h-max'>
           <h1 className='text-2xl font-bold'>
             Say <span className='font-bold text-indigo-600'>Hi</span> 👋
           </h1>
           <VscClose
-            className='p-1 cursor-pointer w-max h-max hover:rounded-full hover:bg-black/30'
+            className='w-6 h-6 p-1 cursor-pointer hover:rounded-full hover:bg-black/30'
             onClick={closeHandler}
           />
         </div>
@@ -83,7 +83,7 @@ function MenuWindow({ closeHandler }) {
 
 function ContactLink({ link, icon, title }) {
   return (
-    <li className='w-full my-2'>
+    <li className='w-full my-2 h-max'>
       <a
         className='flex items-center w-full py-2'
         target='_blank'
