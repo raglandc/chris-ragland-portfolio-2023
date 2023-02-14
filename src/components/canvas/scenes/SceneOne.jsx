@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, Suspense } from 'react'
 import { useGLTF, Center, Text3D, meshBounds } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 
@@ -16,7 +16,7 @@ export default function SceneOne({ showStateHandler }) {
   })
 
   return (
-    <>
+    <Suspense fallback={<p>Error loading modal.</p>}>
       <Center
         top
         position={[0, 2.5, 0]}
@@ -89,6 +89,6 @@ export default function SceneOne({ showStateHandler }) {
           />
         </group>
       </group>
-    </>
+    </Suspense>
   )
 }
