@@ -34,7 +34,7 @@ export default function SceneContainer() {
           enableZoom={false}
         />
         <Environment preset='city' />
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={<p>Loading...</p>}>
           <SceneOne showStateHandler={[showFloridaHandler, showIndianaHandler]} />
         </Suspense>
         <Preload all />
