@@ -82,6 +82,7 @@ export default function Page() {
 
       {/*------------- SECTION 4 ------------ SECTION 4 ---------------*/}
 
+      {/*
       <section className='flex flex-col items-center order-4 w-full h-screen mt-20'>
         <div className='flex flex-col items-center justify-center w-full md:w-11/12 lg:w-10/12 xl:w-9/12 2xl:w-8/12'>
           <h1 className='w-11/12 mb-10 text-2xl text-left sm:text-4xl'>
@@ -120,6 +121,7 @@ export default function Page() {
           </div>
         )}
       </section>
+      //*/}
     </>
   )
 }
