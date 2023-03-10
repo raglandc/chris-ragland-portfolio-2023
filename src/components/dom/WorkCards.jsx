@@ -33,7 +33,7 @@ export default function WorkCards() {
         className='w-11/12 mb-10 text-2xl sm:text-4xl'
       >
         <span className='font-bold text-left text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
-          I work hard...{' '}
+          Work hard, play hard{' '}
         </span>
         💼
       </h1>
