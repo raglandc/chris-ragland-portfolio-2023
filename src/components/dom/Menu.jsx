@@ -83,9 +83,9 @@ function MenuWindow({ closeHandler }) {
 
 function ContactLink({ link, icon, title }) {
   return (
-    <li className='w-full my-2 h-max'>
+    <li className='w-full py-2 h-max'>
       <a
-        className='flex items-center w-full py-2'
+        className='flex items-center w-full py-2 hover:underline-offset-4 hover:underline'
         target='_blank'
         href={link}
         rel='noreferrer'
