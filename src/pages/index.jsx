@@ -83,7 +83,7 @@ export default function Page() {
 
       {/*------------- SECTION 4 ------------ SECTION 4 ---------------*/}
 
-      <section className='flex flex-col items-center mt-10 col-span-full'>
+      <section className='flex flex-col items-center py-1 my-10 h-max col-span-full'>
         <SlideShow />
       </section>
 
