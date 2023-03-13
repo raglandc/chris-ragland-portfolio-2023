@@ -83,7 +83,7 @@ export default function Page() {
 
       {/*------------- SECTION 4 ------------ SECTION 4 ---------------*/}
 
-      <section className='flex flex-col items-center mt-10'>
+      <section className='flex flex-col items-center mt-10 col-span-full'>
         <h1 className='w-11/12 mb-10 text-2xl sm:text-4xl'>
           <span className='font-bold text-left text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
            A look at Chris' life{' '}
