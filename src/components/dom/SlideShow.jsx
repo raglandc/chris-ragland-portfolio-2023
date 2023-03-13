@@ -39,6 +39,12 @@ export default function SlideShow()
 
   return (
   <div className="w-10/12">
+    <h1 className='w-11/12 mb-10 text-2xl sm:text-4xl'>
+          <span className='font-bold text-left text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
+           A look at Chris' life{' '}
+          </span>
+          👀
+    </h1>
     {photos.map((image, index) => (
       <Image
         src={image.photoLink}
