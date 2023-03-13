@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import Typewriter from 'typewriter-effect'
 import SkillList from '@/components/dom/SkillList'
 import WorkCards from '@/components/dom/WorkCards'
+import SlideShow from '@/components/dom/SlideShow'
 import FadeIcon from '@/components/dom/util/FadeIcon'
 
 // Dynamic import is used to prevent a payload when the website starts, that includes threejs, r3f etc..
@@ -81,6 +82,17 @@ export default function Page() {
       </section>
 
       {/*------------- SECTION 4 ------------ SECTION 4 ---------------*/}
+
+      <section className='flex flex-col items-center mt-10'>
+        <h1 className='w-11/12 mb-10 text-2xl sm:text-4xl'>
+          <span className='font-bold text-left text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
+           A look at Chris' life{' '}
+          </span>
+          👀
+        </h1>
+        <SlideShow />
+      </section>
+
 
       {/*
       <section className='flex flex-col items-center order-4 w-full h-screen mt-20'>
