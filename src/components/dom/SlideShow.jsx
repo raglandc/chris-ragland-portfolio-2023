@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react"
-import { AnimatePresence, motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react"
+import Image from "next/image";
 
 //array of photos
 const photos = [
@@ -22,48 +22,59 @@ export default function SlideShow()
 {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const slideRef = useRef();
 
-
-  const showNextImage = () => {
+  const showNextImage = () =>
+  {
     setCurrentImageIndex((prevIndex) =>
       prevIndex === photos.length - 1 ? 0 : prevIndex + 1
     )
   }
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      if (!isPaused) showNextImage();
+  const showPrevImage = () =>
+  {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? photos.length - 1 : prevIndex - 1
+    )
+  }
+
+  useEffect(() =>
+  {
+    const intervalId = setInterval(() =>
+    {
+      if(!isPaused) 
+        showNextImage();
     }, 4000);
 
     return () => { clearInterval(intervalId) }
   }, [isPaused]);
 
   return (
-  <div className="w-10/12 h-96">
+  <div className="w-10/12 m-auto">
     <h1 className='w-11/12 mb-10 text-2xl sm:text-4xl'>
           <span className='font-bold text-left text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
            A look at Chris&apos; life{' '}
           </span>
           👀
     </h1>
-    <div className="relative mx-auto">
-    <AnimatePresence>
-      {photos.map((image, index) => (
-        index === currentImageIndex && <motion.img
-          className="rounded-lg"
-          key={index}
-          src={image.photoLink}
-          alt={image.description}
-          initial={{opacity: 0}}
-          animate={{opacity: 1}}
-          exit={{opacity: 0}}
-          transition={{duration: 0.5}}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-          style={{position: "absolute"}}
-        />
-      ))}
-    </AnimatePresence>
+    <div
+      ref={slideRef}
+      className="relative flex justify-center"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      <Image
+        src={photos[currentImageIndex].photoLink} 
+        alt={photos[currentImageIndex].description} 
+        className="rounded-xl"
+        width={1024}
+        height={1024}
+      />
+      <div className="absolute flex items-center justify-around w-full px-3 -bottom-12 transform -translate-y-1/2">
+        <button onClick={showPrevImage}>Prev</button>
+        <p>{currentImageIndex}</p>
+        <button onClick={showNextImage}>Next</button>
+      </div>
     </div>
   </div>)
 }
