@@ -2,19 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.slideRight img {
-  animation: slideRight 0.5s ease-out;
-}
-
-@keyframes slideRight {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 @layer base {
   * {
     box-sizing: border-box;
