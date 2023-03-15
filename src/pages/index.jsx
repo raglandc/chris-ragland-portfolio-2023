@@ -18,7 +18,7 @@ export default function Page() {
   const [showWorld, setShowWorld] = useState(false)
   return (
     <>
-      <section className='flex flex-col items-center order-1 w-full min-h-0 bg-gradient-to-b from-black'>
+      <section className='flex flex-col items-center w-full min-h-0 bg-gradient-to-b from-black'>
         <div className='flex flex-col items-center w-full h-screen md:w-11/12 lg:w-10/12 xl:w-9/12'>
           <motion.div
             initial={{ opacity: 0 }}
@@ -71,19 +71,19 @@ export default function Page() {
 
       {/*------------- SECTION 2 ------------ SECTION 2 ------------*/}
 
-      <section className='relative flex flex-col items-center justify-around order-2 h-max col-span-full'>
+      <section className='relative flex flex-col items-center justify-around h-max col-span-full'>
         <SkillList />
       </section>
 
       {/*------------- SECTION 3 ------------ SECTION 3 ---------------*/}
 
-      <section className='flex flex-col items-center order-3 px-2 py-10 bg-black/20 h-max col-span-full'>
+      <section className='flex flex-col items-center px-2 py-10 bg-black/20 h-max col-span-full'>
         <WorkCards />
       </section>
 
       {/*------------- SECTION 4 ------------ SECTION 4 ---------------*/}
 
-      <section className='flex flex-col items-center py-1 my-10 col-span-full'>
+      <section className='flex flex-col items-center px-2 py-10 my-10 h-max col-span-full'>
         <SlideShow />
       </section>
 
