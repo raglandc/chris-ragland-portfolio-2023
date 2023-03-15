@@ -72,7 +72,9 @@ export default function SlideShow()
       />
       <div className="absolute flex items-center justify-around w-full px-3 -bottom-12 transform -translate-y-1/2">
         <button onClick={showPrevImage}>Prev</button>
-        <p>{currentImageIndex}</p>
+        <div>
+          <p>{currentImageIndex === 0 ? "00" : "0"}{(currentImageIndex + 1).toString(2)} : {photos.length}</p>
+        </div>
         <button onClick={showNextImage}>Next</button>
       </div>
     </div>
