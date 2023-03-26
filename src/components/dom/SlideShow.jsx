@@ -6,16 +6,20 @@ import { AnimatePresence, motion } from "framer-motion"
 //array of photos
 const photos = [
   {
-    photoLink: '/img/life-images/cda-lab.webp',
-    description: "cda lab circuit"
+    photoLink: '/img/life-images/after-hackabull-2023.webp',
+    description: "My friends and I after our schools 2023 hack-a-thon"
+  },
+  {
+    photoLink: '/img/life-images/cda-circuit.webp',
+    description: "A circuit I built in my logic and design class. The inner left chip is equivalent to all the basic logic chips on the right side of the picture."
   },
   {
     photoLink: '/img/life-images/group-photo.webp',
     description: "test 2"
   },
   {
-    photoLink: '/img/work-images/vidal-version-2-landing-page.webp',
-    description: "test 3"
+    photoLink: '/img/life-images/before-hackabull-2023.webp',
+    description: "My friends and I before our schools 2023 hack-a-thon"
   },
 ]
 
