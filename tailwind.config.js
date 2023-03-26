@@ -10,7 +10,8 @@ module.exports = {
         'ping-slow': 'ping 3s ease-out infinite',
       },
       keyframes: {
-        text: {
+        text:
+        {
           '0%, 100%': {
             'background-size': '200% 200%',
             'background-position': 'left center',
@@ -20,7 +21,8 @@ module.exports = {
             'background-position': 'right center',
           },
         },
-        wheel: {
+        wheel:
+        {
           '0%': {
             opacity: '1',
           },
