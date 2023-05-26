@@ -91,7 +91,7 @@ function Card({ title, link, description, image, projectType, skills }) {
       <div
         ref={cardRef}
         onClick={showPopUpHandler}
-        className='w-11/12 mx-2 my-4 rounded-sm cursor-pointer group hover:scale-105 sm:mx-1 lg:mx-2 lg:my-8 sm:w-8/12 md:w-1/3 h-max bg-slate-100/20'
+        className='w-11/12 mx-2 my-4 cursor-pointer rounded-md group hover:scale-105 sm:mx-1 lg:mx-2 lg:my-8 sm:w-8/12 md:w-1/3 h-max bg-slate-100/20'
       >
         <div className='relative w-full h-48 overflow-hidden rounded-t-sm'>
           <Image
@@ -100,7 +100,7 @@ function Card({ title, link, description, image, projectType, skills }) {
             layout='fill'
             objectFit='cover'
             className='group-hover:scale-105'
-            style={{ borderTopRightRadius: '.10rem', borderTopLeftRadius: '.10rem' }}
+            style={{ borderTopRightRadius: '.15rem', borderTopLeftRadius: '.15rem' }}
           />
         </div>
         <div className='w-full h-24 p-4 rounded-b-sm bg-slate-800'>
@@ -144,12 +144,12 @@ function CardPopUp({ title, link, image, description, closeHandler, skills }) {
               alt={`${title} website`}
               layout='fill'
               objectFit='cover'
-              style={{ borderRadius: '.5rem' }}
+              style={{ borderRadius: '.15rem' }}
             />
           </div>
           {/* if the project has a link, show a button that will take them to the web page */}
           {link && (
-            <button className='w-full py-2 my-4 border rounded-sm hover:bg-slate-500/50'>
+            <button className='w-full py-2 my-4 border rounded-md hover:bg-slate-500/50'>
               <a
                 target='_blank'
                 href={link}
