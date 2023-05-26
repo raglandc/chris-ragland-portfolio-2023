@@ -11,11 +11,11 @@ const photos = [
   },
   {
     photoLink: '/img/life-images/cda-circuit.webp',
-    description: "A circuit I built in my logic and design class. The inner left chip is equivalent to all the basic logic chips on the right side of the picture."
+    description: "A circuit I built in my logic and design class."
   },
   {
     photoLink: '/img/life-images/group-photo.webp',
-    description: "test 2"
+    description: "T'was the night before our Computer Org. final"
   },
   {
     photoLink: '/img/life-images/before-hackabull-2023.webp',
@@ -57,7 +57,7 @@ export default function SlideShow()
   }, [isPaused]);
 
   return (
-  <div className="flex flex-col items-center justify-center w-full h-full md:w-11/12 lg:w-10/12 xl:w-9/12 2xl:w-8/12">
+  <div className="flex flex-col w-full h-full md:w-11/12 lg:w-10/12 xl:w-9/12 2xl:w-8/12">
     <h1 
       ref={headerRef}
       style={{
@@ -80,19 +80,23 @@ export default function SlideShow()
           src={photos[currentImageIndex].photoLink} 
           key={photos[currentImageIndex].photoLink}
           alt={photos[currentImageIndex].description} 
-          className="rounded-xl"
+          className="rounded-sm"
           initial={{opacity: 0}}
           animate={{opacity: 1}}
           transition={{duration: .62}}
           exit={{opacity: 0}}
         />
       </AnimatePresence>
-      <div className="absolute px-3 place-items-center grid-cols-3 grid -bottom-10">
+      <div className="absolute bottom-0 w-full p-2 text-center bg-blue-900/40">
+        {photos[currentImageIndex].description}
+      </div>
+      <div className="absolute px-3 place-items-center grid-cols-3 grid -bottom-12">
         <button onClick={showPrevImage}>
           <BsArrowLeft className="text-3xl hover:fill-blue-500 hover:scale-105" />
         </button>
         <div className="mx-3 text-xl">
-          <p>{currentImageIndex === 0 ? "00" : "0"}{(currentImageIndex + 1).toString(2)} : {photos.length}</p>
+          {/* The ...toString(2).padStart(3, '0') ensures that the binary is always 3 bits */}
+          <p>{(currentImageIndex + 1).toString(2).padStart(3, '0')} : {currentImageIndex + 1}</p>
         </div>
         <button onClick={showNextImage}>
           <BsArrowRight className="text-3xl hover:fill-blue-500 hover:scale-105" />
