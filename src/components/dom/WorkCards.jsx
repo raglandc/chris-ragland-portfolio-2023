@@ -63,7 +63,7 @@ export default function WorkCards() {
         </p>
         <div className='relative w-10/12 mt-10 lg:w-8/12 group'>
           <div className='absolute rounded-lg opacity-75 -inset-0.5 bg-gradient-to-r from-fuchsia-600 to-blue-600 blur group-hover:opacity-100 transition duration-200' />
-          <button className='relative w-full text-center rounded-lg bg-slate-800 text-slate-300 group-hover:text-slate-100'>
+          <button className='relative w-full text-center rounded-sm bg-slate-800 text-slate-300 group-hover:text-slate-100'>
             <a
               target='_blank'
               href='https://www.github.com/raglandc'
@@ -91,19 +91,19 @@ function Card({ title, link, description, image, projectType, skills }) {
       <div
         ref={cardRef}
         onClick={showPopUpHandler}
-        className='w-11/12 mx-2 my-4 rounded-lg cursor-pointer group hover:scale-105 sm:mx-1 lg:mx-2 lg:my-8 sm:w-8/12 md:w-1/3 h-max bg-slate-100/20'
+        className='w-11/12 mx-2 my-4 rounded-sm cursor-pointer group hover:scale-105 sm:mx-1 lg:mx-2 lg:my-8 sm:w-8/12 md:w-1/3 h-max bg-slate-100/20'
       >
-        <div className='relative w-full h-48 overflow-hidden rounded-t-lg'>
+        <div className='relative w-full h-48 overflow-hidden rounded-t-sm'>
           <Image
             src={image}
             alt={`${title} website`}
             layout='fill'
             objectFit='cover'
-            className='group-hover:scale-110'
-            style={{ borderTopRightRadius: '.5rem', borderTopLeftRadius: '.5rem' }}
+            className='group-hover:scale-105'
+            style={{ borderTopRightRadius: '.10rem', borderTopLeftRadius: '.10rem' }}
           />
         </div>
-        <div className='w-full h-24 p-3 rounded-b-lg bg-slate-800'>
+        <div className='w-full h-24 p-4 rounded-b-sm bg-slate-800'>
           <h3 className='font-bold '>{title}</h3>
           <p className='text-slate-400'>{projectType}</p>
         </div>
@@ -133,7 +133,7 @@ function CardPopUp({ title, link, image, description, closeHandler, skills }) {
         <div className='flex items-center justify-between w-full px-6 py-3 my-4'>
           <h1 className='w-11/12 text-4xl font-bold'>{title}</h1>
           <VscClose
-            className='w-6 h-6 p-1 cursor-pointer hover:rounded-full hover:bg-slate-900/30'
+            className='w-6 h-6 p-1 cursor-pointer hover:rounded-full hover:bg-slate-300/50'
             onClick={closeHandler}
           />
         </div>
@@ -149,7 +149,7 @@ function CardPopUp({ title, link, image, description, closeHandler, skills }) {
           </div>
           {/* if the project has a link, show a button that will take them to the web page */}
           {link && (
-            <button className='w-full py-1 my-4 border rounded-lg bg-slate-500/30 hover:bg-slate-500/50'>
+            <button className='w-full py-2 my-4 border rounded-sm hover:bg-slate-500/50'>
               <a
                 target='_blank'
                 href={link}

@@ -11,7 +11,7 @@ const photos = [
   },
   {
     photoLink: '/img/life-images/cda-circuit.webp',
-    description: "A circuit I built in my logic and design class."
+    description: "A circuit I built in my logic and design lab."
   },
   {
     photoLink: '/img/life-images/group-photo.webp',

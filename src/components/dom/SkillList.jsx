@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { useInView } from 'framer-motion'
+import { GiLogicGateNxor } from 'react-icons/gi'
 import {
   SiJavascript,
   SiReact,
@@ -8,11 +9,10 @@ import {
   SiCplusplus,
   SiC,
   SiNextdotjs,
-  SiSvelte,
   SiThreedotjs,
-  SiHtml5,
-  SiCss3,
   SiMongodb,
+  SiPostgresql,
+  SiLinux,
 } from 'react-icons/si'
 
 const skillsArray = [
@@ -22,12 +22,12 @@ const skillsArray = [
   { title: 'NextJs', logo: <SiNextdotjs /> },
   { title: 'C++', logo: <SiCplusplus /> },
   { title: 'C', logo: <SiC /> },
-  { title: 'HTML', logo: <SiHtml5 /> },
-  { title: 'CSS', logo: <SiCss3 /> },
+  { title: 'Linux/Unix', logo: <SiLinux /> },
+  { title: 'PostgresSQL', logo: <SiPostgresql /> },
+  { title: 'MongoDB', logo: <SiMongodb /> },
   { title: 'Blender', logo: <SiBlender /> },
   { title: 'ThreeJs', logo: <SiThreedotjs /> },
-  { title: 'Svelte', logo: <SiSvelte /> },
-  { title: 'MongoDB', logo: <SiMongodb /> },
+  { title: 'Digital Logic', logo: <GiLogicGateNxor /> },
 ]
 
 export default function SkillList({ ...props }) {
