@@ -1,11 +1,16 @@
+import { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Typewriter from 'typewriter-effect'
 import SkillList from '@/components/dom/SkillList'
 import WorkCards from '@/components/dom/WorkCards'
 import SlideShow from '@/components/dom/SlideShow'
+import SceneContainer from '@/components/canvas/SceneContainer'
+import FadeIcon from '@/components/dom/util/FadeIcon'
 
 export default function Page() {
+  const [showWorld, setShowWorld] = useState(false)
+
   return (
     <>
       <section className='flex flex-col items-center w-full min-h-0 bg-gradient-to-b from-black'>
@@ -75,6 +80,48 @@ export default function Page() {
 
       <section className='flex flex-col items-center px-2 py-10 my-10 h-max col-span-full'>
         <SlideShow />
+      </section>
+
+      {/*------------- SECTION 5 ------------ SECTION 5 ---------------*/}
+
+      <section className='flex flex-col items-center w-full h-screen mt-20 col-span-full'>
+        <div className='flex flex-col items-center justify-center w-full md:w-11/12 lg:w-10/12 xl:w-9/12 2xl:w-8/12'>
+          <h1 className='w-full mb-10 text-2xl text-left sm:text-4xl'>
+            <span className='font-bold text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
+              A world of learning{' '}
+            </span>
+            🌎
+          </h1>
+          <div className='w-10/12 text-left md:w-8/12'>
+            <p className='mb-2'>
+              As you can see from recent projects, Chris has a lot of fun working with WebGL and interactive 3D web
+              experiences. The problem is these experiences, depending on your computer device, can be slow or
+              &apos;laggy&apos;. Chris wants everyone to have a good experience.
+            </p>
+            <p>
+              Go ahead and click the button below and learn more about Chris&apos; world 🌎. If things get too
+              &apos;laggy&apos;, just hide the 3D scene.
+            </p>
+          </div>
+          <button
+            className='px-6 py-3 mt-4 border rounded-lg cursor-pointer w-max text-slate-300 hover:bg-slate-700 hover:text-slate-100 bg-slate-800'
+            onClick={() => setShowWorld((prev) => !prev)}
+          >
+            {showWorld ? 'Hide' : 'Show'} 3D World
+          </button>
+        </div>
+        {/* set to showWorld state when issue resolved */}
+        {showWorld && (
+          <div className='relative w-full h-full'>
+            <SceneContainer />
+            <FadeIcon
+              iconUrlString={'/icons/swipe-icon.png'}
+              fadeTimeNumber={2500}
+              altString='swipe left or right icon'
+              className='absolute bottom-0 z-30 opacity-1 transition duration-1000 right-1/2 translate-x-1/2'
+            />
+          </div>
+        )}
       </section>
     </>
   )

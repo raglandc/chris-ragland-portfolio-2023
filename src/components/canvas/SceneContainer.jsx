@@ -33,7 +33,10 @@ export default function SceneContainer() {
           minPolarAngle={-Math.PI}
           enableZoom={false}
         />
-        <Environment preset='city' />
+        <Environment
+          path='/hdri/'
+          files='canary_wharf_1k.hdr'
+        />
         <Suspense fallback={<p>Loading...</p>}>
           <SceneOne showStateHandler={[showFloridaHandler, showIndianaHandler]} />
         </Suspense>
