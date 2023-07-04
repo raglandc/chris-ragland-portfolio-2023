@@ -86,7 +86,7 @@ export default function Page() {
 
       <section className='flex flex-col items-center w-full h-screen mt-20 col-span-full'>
         <div className='flex flex-col items-center justify-center w-full md:w-11/12 lg:w-10/12 xl:w-9/12 2xl:w-8/12'>
-          <h1 className='w-full mb-10 text-2xl text-left sm:text-4xl'>
+          <h1 className='w-11/12 mb-10 text-2xl text-left sm:text-4xl'>
             <span className='font-bold text-transparent animate-text bg-gradient-to-r via-blue-500 from-fuchsia-600 to-blue-500 bg-clip-text'>
               A world of learning{' '}
             </span>
