@@ -37,7 +37,7 @@ export default function SceneContainer() {
           path='/hdri/'
           files='canary_wharf_1k.hdr'
         />
-        <Suspense fallback={<p>Loading...</p>}>
+        <Suspense fallback={<Loader />}>
           <SceneOne showStateHandler={[showFloridaHandler, showIndianaHandler]} />
         </Suspense>
         <Preload all />
