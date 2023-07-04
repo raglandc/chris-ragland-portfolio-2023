@@ -13,21 +13,22 @@ import {
   SiMongodb,
   SiPostgresql,
   SiLinux,
+  SiPython,
 } from 'react-icons/si'
 
 const skillsArray = [
   { title: 'JavaScript', logo: <SiJavascript /> },
   { title: 'TypeScript', logo: <SiTypescript /> },
+  { title: 'Python', logo: <SiPython /> },
+  { title: 'C', logo: <SiC /> },
+  { title: 'C++', logo: <SiCplusplus /> },
+  { title: 'Linux/Unix', logo: <SiLinux /> },
   { title: 'React', logo: <SiReact /> },
   { title: 'NextJs', logo: <SiNextdotjs /> },
-  { title: 'C++', logo: <SiCplusplus /> },
-  { title: 'C', logo: <SiC /> },
-  { title: 'Linux/Unix', logo: <SiLinux /> },
+  { title: 'ThreeJs', logo: <SiThreedotjs /> },
   { title: 'PostgresSQL', logo: <SiPostgresql /> },
   { title: 'MongoDB', logo: <SiMongodb /> },
   { title: 'Blender', logo: <SiBlender /> },
-  { title: 'ThreeJs', logo: <SiThreedotjs /> },
-  { title: 'Digital Logic', logo: <GiLogicGateNxor /> },
 ]
 
 export default function SkillList({ ...props }) {
