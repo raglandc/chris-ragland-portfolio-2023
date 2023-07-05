@@ -84,8 +84,9 @@ export default function Page() {
 
       {/*------------- SECTION 5 ------------ SECTION 5 ---------------*/}
 
-      <section className='flex flex-col items-center w-full mt-30 h-max col-span-full'>
-        {/* set to showWorld state when issue resolved */}
+      {/* With chrome: hardware device driver turned off causes an error in client side */}
+
+      {/* <section className='flex flex-col items-center w-full mt-30 h-max col-span-full'>
         <div className='relative w-full h-screen'>
           <div className='absolute inset-x-0 flex flex-col items-center justify-center w-full px-8 py-5 bg-transparent top-4 md:top-16 lg:top-24'>
             <h2 className='text-4xl'>Thanks for stopping by!</h2>
@@ -94,7 +95,7 @@ export default function Page() {
           </div>
           <SceneContainer />
         </div>
-      </section>
+      </section> */}
     </>
   )
 }
